@@ -104,8 +104,27 @@ export default async function ProjectDetailPage({
   // Ensure displayProject is not null for TypeScript
   if (!displayProject) return null;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: displayProject.title,
+    image: displayProject.coverImageUrl,
+    datePublished:
+      displayProject.createdAt?.toISOString() || new Date().toISOString(),
+    dateModified:
+      displayProject.updatedAt?.toISOString() || new Date().toISOString(),
+    author: {
+      "@type": "Organization",
+      name: "Khakim Interior",
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <article className="bg-background pt-32 pb-24 md:pt-40 md:pb-32">
         <Container>
           {/* Back button */}
