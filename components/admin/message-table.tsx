@@ -49,7 +49,7 @@ export function MessageTable({ messages }: MessageTableProps) {
       if (selectedMessage && selectedMessage.id === id) {
         setSelectedMessage({ ...selectedMessage, isRead: !currentStatus });
       }
-    } catch (_error) {
+    } catch {
       toast.error("Failed to update status");
     } finally {
       setIsUpdating(null);
@@ -67,7 +67,7 @@ export function MessageTable({ messages }: MessageTableProps) {
       if (selectedMessage?.id === id) {
         setSelectedMessage(null);
       }
-    } catch (_error) {
+    } catch {
       toast.error("Failed to delete message");
       setIsUpdating(null);
     }
