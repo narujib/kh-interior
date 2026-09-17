@@ -61,7 +61,7 @@ export function GalleryPreview() {
         </div>
 
         <StaggerContainer className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-          {MOCK_GALLERY.map((item, index) => (
+          {MOCK_GALLERY.map((item) => (
             <StaggerItem
               key={item.id}
               className={`group relative overflow-hidden ${
