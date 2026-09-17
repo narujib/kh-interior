@@ -11,7 +11,10 @@ interface RevealProps {
 
 export function Reveal({ children, className, delay = 0 }: RevealProps) {
   return (
-    <div className={className} style={{ position: "relative", overflow: "hidden" }}>
+    <div
+      className={className}
+      style={{ position: "relative", overflow: "hidden" }}
+    >
       <motion.div
         initial={{ y: "100%" }}
         whileInView={{ y: 0 }}

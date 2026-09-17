@@ -23,20 +23,20 @@ export function PageHeading({
         "flex flex-col gap-4",
         {
           "text-left": align === "left",
-          "text-center items-center": align === "center",
-          "text-right items-end": align === "right",
+          "items-center text-center": align === "center",
+          "items-end text-right": align === "right",
         },
         className
       )}
     >
       <h1
-        className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-tight text-foreground"
+        className="font-heading text-foreground text-4xl leading-tight font-normal sm:text-5xl md:text-6xl lg:text-7xl"
         {...props}
       >
         {title}
       </h1>
       {subtitle && (
-        <p className="max-w-2xl text-base md:text-lg text-foreground-soft font-light">
+        <p className="text-foreground-soft max-w-2xl text-base font-light md:text-lg">
           {subtitle}
         </p>
       )}

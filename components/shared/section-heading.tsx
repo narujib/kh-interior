@@ -21,7 +21,7 @@ export function SectionHeading({
     <FadeIn direction="up">
       <div
         className={cn(
-          "flex flex-col mb-12 sm:mb-16 md:mb-20",
+          "mb-12 flex flex-col sm:mb-16 md:mb-20",
           {
             "items-start text-left": align === "left",
             "items-center text-center": align === "center",
@@ -31,15 +31,15 @@ export function SectionHeading({
         {...props}
       >
         {(numbering || subtitle) && (
-          <div className="flex items-center gap-4 mb-4 sm:mb-6 text-xs sm:text-sm tracking-widest uppercase text-foreground-soft">
+          <div className="text-foreground-soft mb-4 flex items-center gap-4 text-xs tracking-widest uppercase sm:mb-6 sm:text-sm">
             {numbering && <span className="font-medium">{numbering}</span>}
             {numbering && subtitle && (
-              <span className="w-8 h-[1px] bg-border" />
+              <span className="bg-border h-[1px] w-8" />
             )}
             {subtitle && <span>{subtitle}</span>}
           </div>
         )}
-        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-tight">
+        <h2 className="font-heading text-3xl leading-tight font-normal sm:text-4xl md:text-5xl lg:text-6xl">
           {title}
         </h2>
       </div>

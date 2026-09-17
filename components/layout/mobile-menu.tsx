@@ -35,10 +35,10 @@ export function MobileMenu() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="md:hidden p-2 -mr-2 text-foreground hover:text-foreground-soft transition-colors"
+        className="text-foreground hover:text-foreground-soft -mr-2 p-2 transition-colors md:hidden"
         aria-label="Open menu"
       >
-        <Menu strokeWidth={1.5} className="w-6 h-6" />
+        <Menu strokeWidth={1.5} className="h-6 w-6" />
       </button>
 
       <AnimatePresence>
@@ -48,26 +48,26 @@ export function MobileMenu() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 flex flex-col bg-background/95 backdrop-blur-md"
+            className="bg-background/95 fixed inset-0 z-50 flex flex-col backdrop-blur-md"
           >
-            <div className="flex items-center justify-between px-5 sm:px-8 py-6 border-b border-border/50">
+            <div className="border-border/50 flex items-center justify-between border-b px-5 py-6 sm:px-8">
               <Link
                 href="/"
-                className="font-heading text-2xl tracking-wide uppercase text-foreground"
+                className="font-heading text-foreground text-2xl tracking-wide uppercase"
                 onClick={() => setIsOpen(false)}
               >
                 Khakim Interior
               </Link>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2 -mr-2 text-foreground hover:text-foreground-soft transition-colors"
+                className="text-foreground hover:text-foreground-soft -mr-2 p-2 transition-colors"
                 aria-label="Close menu"
               >
-                <X strokeWidth={1.5} className="w-6 h-6" />
+                <X strokeWidth={1.5} className="h-6 w-6" />
               </button>
             </div>
 
-            <div className="flex flex-col items-center justify-center flex-1 gap-8 px-6">
+            <div className="flex flex-1 flex-col items-center justify-center gap-8 px-6">
               {links.map((link, i) => (
                 <motion.div
                   key={link.href}
@@ -78,7 +78,7 @@ export function MobileMenu() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`font-heading text-3xl sm:text-4xl transition-colors ${
+                    className={`font-heading text-3xl transition-colors sm:text-4xl ${
                       pathname === link.href
                         ? "text-foreground"
                         : "text-foreground-soft hover:text-foreground"
@@ -89,8 +89,8 @@ export function MobileMenu() {
                 </motion.div>
               ))}
             </div>
-            
-            <div className="py-8 text-center text-sm text-foreground-soft font-light border-t border-border/50">
+
+            <div className="text-foreground-soft border-border/50 border-t py-8 text-center text-sm font-light">
               Jakarta, Indonesia
             </div>
           </motion.div>

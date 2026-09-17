@@ -10,12 +10,16 @@ interface ImageRevealProps {
   delay?: number;
 }
 
-export function ImageReveal({ children, className, delay = 0 }: ImageRevealProps) {
+export function ImageReveal({
+  children,
+  className,
+  delay = 0,
+}: ImageRevealProps) {
   return (
     <div className={cn("relative overflow-hidden", className)}>
       {/* The masking block that slides away */}
       <motion.div
-        className="absolute inset-0 z-10 bg-background"
+        className="bg-background absolute inset-0 z-10"
         initial={{ y: 0 }}
         whileInView={{ y: "100%" }}
         viewport={{ once: true, margin: "-10%" }}
@@ -25,7 +29,7 @@ export function ImageReveal({ children, className, delay = 0 }: ImageRevealProps
           delay,
         }}
       />
-      
+
       {/* The actual image container that scales slightly down while revealing */}
       <motion.div
         initial={{ scale: 1.1 }}

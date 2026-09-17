@@ -4,8 +4,8 @@ import { PageHeading } from "@/components/shared/page-heading";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-background">
-      <Container className="text-center flex flex-col items-center">
+    <div className="bg-background flex min-h-screen flex-col items-center justify-center">
+      <Container className="flex flex-col items-center text-center">
         <PageHeading
           title="404"
           subtitle="Halaman yang Anda cari tidak dapat ditemukan."
@@ -14,7 +14,7 @@ export default function NotFound() {
         <div className="mt-12">
           <Link
             href="/"
-            className="inline-block px-8 py-3 bg-foreground text-background text-sm tracking-widest uppercase font-medium hover:bg-foreground-soft transition-colors"
+            className="bg-foreground text-background hover:bg-foreground-soft inline-block px-8 py-3 text-sm font-medium tracking-widest uppercase transition-colors"
           >
             Kembali ke Beranda
           </Link>

@@ -26,8 +26,12 @@ export function FadeIn({
     none: 0,
   };
 
-  const y = direction === "up" || direction === "down" ? directionOffset[direction] : 0;
-  const x = direction === "left" || direction === "right" ? directionOffset[direction] : 0;
+  const y =
+    direction === "up" || direction === "down" ? directionOffset[direction] : 0;
+  const x =
+    direction === "left" || direction === "right"
+      ? directionOffset[direction]
+      : 0;
 
   return (
     <motion.div
