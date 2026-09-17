@@ -30,7 +30,7 @@ export function LoginForm() {
         router.push("/admin/dashboard");
         router.refresh();
       }
-    } catch (error) {
+    } catch {
       toast.error("An error occurred during login");
     } finally {
       setIsSubmitting(false);
