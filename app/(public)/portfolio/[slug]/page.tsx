@@ -18,9 +18,10 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const project = await getProjectBySlug(params.slug);
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     return {
@@ -40,10 +41,11 @@ export async function generateMetadata({
 export default async function ProjectDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   // Try to fetch project from DB
-  const project = await getProjectBySlug(params.slug);
+  const project = await getProjectBySlug(slug);
 
   // If no project is found (e.g., DB empty during dev), we either use mock data if it's a known slug or 404
   let displayProject = project;
@@ -94,8 +96,8 @@ export default async function ProjectDetailPage({
       },
     };
 
-    if (MOCK_PROJECTS[params.slug]) {
-      displayProject = MOCK_PROJECTS[params.slug] as unknown as typeof project; // Cast via unknown to the Prisma type
+    if (MOCK_PROJECTS[slug]) {
+      displayProject = MOCK_PROJECTS[slug] as unknown as typeof project; // Cast via unknown to the Prisma type
     } else {
       notFound();
     }

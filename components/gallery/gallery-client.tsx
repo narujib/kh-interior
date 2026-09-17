@@ -58,12 +58,24 @@ export function GalleryClient({ items }: GalleryClientProps) {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
+      <div className="grid grid-flow-dense auto-rows-[150px] grid-cols-2 gap-2 md:auto-rows-[250px] md:grid-cols-3 md:gap-4 lg:auto-rows-[300px] lg:grid-cols-4">
         {items.map((item, index) => {
+          // Pola pseudo-random untuk memberikan efek "acak tapi rapi"
+          const p = index % 10;
+          let spanClasses = "col-span-1 row-span-1"; // Default kecil
+
+          if (p === 0 || p === 6) {
+            spanClasses = "col-span-2 row-span-2"; // Besar (2x2)
+          } else if (p === 3) {
+            spanClasses = "col-span-2 row-span-1"; // Lebar (2x1)
+          } else if (p === 4 || p === 8) {
+            spanClasses = "col-span-1 row-span-2"; // Tinggi (1x2)
+          }
+
           return (
             <div
               key={item.id}
-              className="group relative aspect-square cursor-pointer overflow-hidden"
+              className={`group relative cursor-pointer overflow-hidden rounded-md ${spanClasses}`}
               onClick={() => openLightbox(index)}
             >
               <Image
@@ -71,7 +83,7 @@ export function GalleryClient({ items }: GalleryClientProps) {
                 alt={item.altText}
                 fill
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
               <div className="bg-black-soft/0 group-hover:bg-black-soft/20 absolute inset-0 transition-colors duration-500" />
             </div>

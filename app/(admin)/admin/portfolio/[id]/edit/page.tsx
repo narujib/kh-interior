@@ -11,11 +11,12 @@ export const metadata = {
   robots: "noindex, nofollow",
 };
 
-export default async function AdminPortfolioEditPage({
+export default async function EditProjectPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
+  const { id } = await params;
   const session = await getServerSession(authOptions);
 
   if (!session) {
@@ -23,7 +24,7 @@ export default async function AdminPortfolioEditPage({
   }
 
   const project = await prisma.project.findUnique({
-    where: { id: params.id },
+    where: { id },
     include: {
       images: {
         orderBy: { orderIndex: "asc" },
