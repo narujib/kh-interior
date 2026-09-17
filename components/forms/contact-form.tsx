@@ -63,11 +63,11 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-      <div>
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-6">
+      <div className="space-y-1">
         <label
           htmlFor="name"
-          className="text-foreground-soft mb-2 block text-xs tracking-widest uppercase"
+          className="text-foreground-soft block text-xs tracking-widest uppercase"
         >
           Nama
         </label>
@@ -75,8 +75,8 @@ export function ContactForm() {
           id="name"
           placeholder="Nama lengkap Anda"
           {...register("name")}
-          className={`focus-visible:border-foreground rounded-none border-b-2 bg-transparent px-0 py-4 focus-visible:ring-0 ${
-            errors.name ? "border-red-500" : "border-border"
+          className={`border-border focus-visible:border-foreground rounded-none border-0 border-b bg-transparent px-0 py-5 text-base transition-colors focus-visible:ring-0 ${
+            errors.name ? "border-red-500" : ""
           }`}
         />
         {errors.name && (
@@ -84,10 +84,10 @@ export function ContactForm() {
         )}
       </div>
 
-      <div>
+      <div className="space-y-1">
         <label
           htmlFor="email"
-          className="text-foreground-soft mb-2 block text-xs tracking-widest uppercase"
+          className="text-foreground-soft block text-xs tracking-widest uppercase"
         >
           Email
         </label>
@@ -96,8 +96,8 @@ export function ContactForm() {
           type="email"
           placeholder="Alamat email Anda"
           {...register("email")}
-          className={`focus-visible:border-foreground rounded-none border-b-2 bg-transparent px-0 py-4 focus-visible:ring-0 ${
-            errors.email ? "border-red-500" : "border-border"
+          className={`border-border focus-visible:border-foreground rounded-none border-0 border-b bg-transparent px-0 py-5 text-base transition-colors focus-visible:ring-0 ${
+            errors.email ? "border-red-500" : ""
           }`}
         />
         {errors.email && (
@@ -105,10 +105,10 @@ export function ContactForm() {
         )}
       </div>
 
-      <div>
+      <div className="space-y-1">
         <label
           htmlFor="message"
-          className="text-foreground-soft mb-2 block text-xs tracking-widest uppercase"
+          className="text-foreground-soft block text-xs tracking-widest uppercase"
         >
           Pesan
         </label>
@@ -117,8 +117,8 @@ export function ContactForm() {
           placeholder="Ceritakan tentang proyek Anda..."
           rows={5}
           {...register("message")}
-          className={`focus-visible:border-foreground resize-none rounded-none border-b-2 bg-transparent px-0 py-4 focus-visible:ring-0 ${
-            errors.message ? "border-red-500" : "border-border"
+          className={`border-border focus-visible:border-foreground resize-none rounded-none border-0 border-b bg-transparent px-0 py-5 text-base transition-colors focus-visible:ring-0 ${
+            errors.message ? "border-red-500" : ""
           }`}
         />
         {errors.message && (
@@ -126,23 +126,27 @@ export function ContactForm() {
         )}
       </div>
 
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="bg-foreground text-white-soft hover:bg-foreground/90 group inline-flex w-full items-center justify-center gap-4 px-8 py-5 text-sm font-medium tracking-widest uppercase transition-colors disabled:pointer-events-none disabled:opacity-50 sm:w-auto"
-      >
-        {isSubmitting ? (
-          <>
-            <Loader2 className="h-4 w-4 animate-spin" />
-            Mengirim...
-          </>
-        ) : (
-          <>
-            Kirim Pesan
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </>
-        )}
-      </button>
+      <div className="pt-4">
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="bg-foreground text-white-soft hover:bg-foreground/90 group relative flex w-full items-center justify-center overflow-hidden px-8 py-4 text-xs font-medium tracking-widest uppercase transition-all duration-300 disabled:opacity-50 sm:w-auto"
+        >
+          <span className="relative z-10 flex items-center gap-2">
+            {isSubmitting ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" />
+                <span>Mengirim...</span>
+              </>
+            ) : (
+              <>
+                Kirim Pesan
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </>
+            )}
+          </span>
+        </button>
+      </div>
     </form>
   );
 }
