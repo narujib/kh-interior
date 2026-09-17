@@ -11,13 +11,6 @@ import { Label } from "@/components/ui/label";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { ImageUpload } from "./image-upload";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { createGalleryItemAction } from "@/lib/actions/admin-gallery";
 
 export function GalleryForm() {
@@ -28,7 +21,6 @@ export function GalleryForm() {
     defaultValues: {
       imageUrl: "",
       altText: "",
-      orientation: "LANDSCAPE",
     },
   });
 
@@ -75,31 +67,6 @@ export function GalleryForm() {
         {form.formState.errors.altText && (
           <p className="text-sm text-red-500">
             {form.formState.errors.altText.message}
-          </p>
-        )}
-      </div>
-
-      <div className="space-y-2">
-        <Label htmlFor="orientation">Orientation</Label>
-        <Select
-          value={form.watch("orientation")}
-          onValueChange={(value) =>
-            form.setValue("orientation", value as "LANDSCAPE" | "PORTRAIT", {
-              shouldValidate: true,
-            })
-          }
-        >
-          <SelectTrigger className="border-border rounded-none">
-            <SelectValue placeholder="Select orientation" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="LANDSCAPE">Landscape</SelectItem>
-            <SelectItem value="PORTRAIT">Portrait</SelectItem>
-          </SelectContent>
-        </Select>
-        {form.formState.errors.orientation && (
-          <p className="text-sm text-red-500">
-            {form.formState.errors.orientation.message}
           </p>
         )}
       </div>

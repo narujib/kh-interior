@@ -43,11 +43,7 @@ export function GalleryGrid({ items }: GalleryGridProps) {
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
       {items.map((item) => (
         <div key={item.id} className="group border-border relative border">
-          <div
-            className={`relative ${
-              item.orientation === "PORTRAIT" ? "aspect-[3/4]" : "aspect-[4/3]"
-            }`}
-          >
+          <div className="relative aspect-square">
             <Image
               src={item.imageUrl}
               alt={item.altText}

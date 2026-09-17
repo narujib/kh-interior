@@ -6,9 +6,6 @@ export const gallerySchema = z.object({
     .string()
     .min(3, "Teks alternatif terlalu pendek")
     .max(150, "Maks 150 karakter"),
-  orientation: z.enum(["LANDSCAPE", "PORTRAIT"], {
-    message: "Please select a valid orientation",
-  }),
 });
 
 export type GalleryFormData = z.infer<typeof gallerySchema>;

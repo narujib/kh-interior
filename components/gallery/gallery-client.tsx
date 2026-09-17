@@ -15,7 +15,6 @@ interface GalleryItem {
   id: string;
   imageUrl: string;
   altText: string;
-  orientation: "LANDSCAPE" | "PORTRAIT";
 }
 
 interface GalleryClientProps {
@@ -59,15 +58,12 @@ export function GalleryClient({ items }: GalleryClientProps) {
 
   return (
     <>
-      <div className="grid auto-rows-[250px] grid-cols-2 gap-4 md:auto-rows-[350px] md:grid-cols-3 md:gap-6 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
         {items.map((item, index) => {
-          const isLandscape = item.orientation === "LANDSCAPE";
           return (
             <div
               key={item.id}
-              className={`group relative cursor-pointer overflow-hidden ${
-                isLandscape ? "col-span-2 md:col-span-2" : "col-span-1"
-              }`}
+              className="group relative aspect-square cursor-pointer overflow-hidden"
               onClick={() => openLightbox(index)}
             >
               <Image
@@ -75,11 +71,7 @@ export function GalleryClient({ items }: GalleryClientProps) {
                 alt={item.altText}
                 fill
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                sizes={
-                  isLandscape
-                    ? "(max-width: 768px) 100vw, 50vw"
-                    : "(max-width: 768px) 50vw, 25vw"
-                }
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
               />
               <div className="bg-black-soft/0 group-hover:bg-black-soft/20 absolute inset-0 transition-colors duration-500" />
             </div>

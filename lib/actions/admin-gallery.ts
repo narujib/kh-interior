@@ -18,7 +18,6 @@ export async function createGalleryItemAction(data: GalleryFormData) {
     data: {
       imageUrl: parsed.imageUrl,
       altText: parsed.altText,
-      orientation: parsed.orientation,
     },
   });
 

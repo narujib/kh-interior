@@ -36,19 +36,12 @@ model ProjectImage {
   @@index([projectId, orderIndex])
 }
 
-enum GalleryOrientation {
-  LANDSCAPE
-  PORTRAIT
-}
-
 model GalleryItem {
   id          String             @id @default(uuid())
   imageUrl    String
   altText     String
-  orientation GalleryOrientation
   createdAt   DateTime           @default(now())
 
-  @@index([orientation])
   @@index([createdAt])
 }
 
