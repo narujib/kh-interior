@@ -1,15 +1,26 @@
 import { Container } from "@/components/shared/container";
 import { PageHeading } from "@/components/shared/page-heading";
 
+import { Hero } from "@/components/sections/hero";
+import { FeaturedProjects } from "@/components/sections/featured-projects";
+import { ServicesPreview } from "@/components/sections/services-preview";
+import { AboutPreview } from "@/components/sections/about-preview";
+import { GalleryPreview } from "@/components/sections/gallery-preview";
+import { ProcessSection } from "@/components/sections/process-section";
+import { Testimonials } from "@/components/sections/testimonials";
+import { ContactCTA } from "@/components/sections/contact-cta";
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col pt-32 pb-24">
-      <Container>
-        <PageHeading
-          title="Home Page"
-          subtitle="This is a placeholder for the Khakim Interior homepage."
-        />
-      </Container>
-    </div>
+    <>
+      <Hero />
+      <FeaturedProjects />
+      <ServicesPreview />
+      <AboutPreview />
+      <GalleryPreview />
+      <ProcessSection />
+      <Testimonials />
+      <ContactCTA />
+    </>
   );
 }
