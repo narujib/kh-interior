@@ -30,8 +30,13 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files — template is safe to commit, local secrets are not
+.env.local
+.env.*.local
+.env
+
+# Prisma generated client
+/generated/
 
 # vercel
 .vercel
