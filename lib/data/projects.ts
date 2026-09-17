@@ -13,6 +13,7 @@ export const getProjects = cache(async () => {
       clientName: true,
       coverImageUrl: true,
       completionDate: true,
+      updatedAt: true,
     },
   });
 });
