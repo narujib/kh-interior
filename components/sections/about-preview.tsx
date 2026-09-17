@@ -15,41 +15,43 @@ export function AboutPreview() {
               <div className="text-foreground-soft mb-8 flex items-center gap-4 text-xs tracking-widest uppercase sm:text-sm">
                 <span className="font-medium">03</span>
                 <span className="bg-border h-[1px] w-8" />
-                <span>The Studio</span>
+                <span>Studio Kami</span>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.1}>
               <h2 className="font-heading mb-8 text-4xl leading-[1.1] font-normal sm:text-5xl lg:text-6xl">
-                A Philosophy of Quiet Luxury.
+                Filosofi Kemewahan yang Tenang.
               </h2>
             </FadeIn>
 
             <FadeIn delay={0.4} direction="left" className="space-y-6">
               <h3 className="font-heading text-2xl font-medium md:text-3xl">
-                Our Philosophy
+                Filosofi Kami
               </h3>
               <p className="text-foreground-soft leading-relaxed">
-                We believe that true luxury lies in the quality of attention
-                paid to every detail. Our designs don&apos;t shout; they
-                whisper. We create spaces that feel inevitably right—where every
-                element is purposeful and every material is chosen with intent.
+                Kami percaya bahwa kemewahan sejati terletak pada kualitas
+                perhatian terhadap setiap detail. Desain kami tidak berteriak;
+                melainkan berbisik. Kami menciptakan ruang yang terasa begitu
+                pas—di mana setiap elemen memiliki tujuan dan setiap material
+                dipilih dengan niat yang jelas.
               </p>
             </FadeIn>
 
             <FadeIn delay={0.2}>
               <div className="text-foreground-soft mb-12 space-y-6 text-lg leading-relaxed font-light">
                 <p>
-                  At Khakim Interior, we believe that true luxury lies in
-                  simplicity, intentionality, and an unwavering attention to
-                  detail. Our spaces are designed to evoke a sense of calm,
-                  providing a refuge from the noise of the outside world.
+                  Di Khakim Interior, kami percaya bahwa kemewahan sejati
+                  terletak pada kesederhanaan, kesengajaan, dan perhatian yang
+                  tak tergoyahkan terhadap detail. Ruang-ruang kami dirancang
+                  untuk membangkitkan rasa tenang, memberikan tempat
+                  perlindungan dari kebisingan dunia luar.
                 </p>
                 <p>
-                  Through a meticulous curation of natural materials, subtle
-                  textures, and masterful lighting, we craft environments that
-                  are not only visually stunning but also deeply resonant with
-                  those who inhabit them.
+                  Melalui kurasi cermat terhadap material alami, tekstur yang
+                  halus, serta pencahayaan yang mahir, kami merancang lingkungan
+                  yang tidak hanya memukau secara visual, tetapi juga
+                  beresonansi mendalam dengan mereka yang menghuninya.
                 </p>
               </div>
             </FadeIn>
@@ -59,7 +61,7 @@ export function AboutPreview() {
                 href="/about"
                 className="text-foreground hover:text-foreground-soft group border-foreground/30 hover:border-foreground inline-flex items-center gap-2 border-b pb-2 text-sm font-medium tracking-widest uppercase transition-colors"
               >
-                Read Our Story
+                Baca Kisah Kami
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </FadeIn>

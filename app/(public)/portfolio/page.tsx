@@ -11,9 +11,9 @@ import { getProjects } from "@/lib/data/projects";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Portfolio | Khakim Interior",
+  title: "Portofolio | Khakim Interior",
   description:
-    "Explore our selected works of premium custom interior design and architectural projects.",
+    "Jelajahi karya pilihan kami dari proyek desain interior dan arsitektur kustom premium.",
 };
 
 export default async function PortfolioPage() {
@@ -28,49 +28,49 @@ export default async function PortfolioPage() {
       : [
           {
             id: "1",
-            title: "The Glass House",
+            title: "Rumah Kaca",
             slug: "glass-house",
-            clientName: "Private Residence",
+            clientName: "Hunian Pribadi",
             coverImageUrl:
               "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80",
           },
           {
             id: "2",
-            title: "Minimalist Loft",
+            title: "Loteng Minimalis",
             slug: "minimalist-loft",
-            clientName: "Boutique Hotel",
+            clientName: "Hotel Butik",
             coverImageUrl:
               "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80",
           },
           {
             id: "3",
-            title: "Urban Retreat",
+            title: "Tempat Singgah Perkotaan",
             slug: "urban-retreat",
-            clientName: "Private Client",
+            clientName: "Klien Pribadi",
             coverImageUrl:
               "https://images.unsplash.com/photo-1600607687644-aac4c15a819c?auto=format&fit=crop&q=80",
           },
           {
             id: "4",
-            title: "Heritage Restoration",
+            title: "Restorasi Warisan",
             slug: "heritage-restoration",
-            clientName: "Cultural Trust",
+            clientName: "Cagar Budaya",
             coverImageUrl:
               "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&q=80",
           },
           {
             id: "5",
-            title: "Modern Oasis",
+            title: "Oasis Modern",
             slug: "modern-oasis",
-            clientName: "Tech Executive",
+            clientName: "Eksekutif Teknologi",
             coverImageUrl:
               "https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&q=80",
           },
           {
             id: "6",
-            title: "Coastal Villa",
+            title: "Vila Pesisir",
             slug: "coastal-villa",
-            clientName: "Summer Retreat",
+            clientName: "Rumah Peristirahatan Musim Panas",
             coverImageUrl:
               "https://images.unsplash.com/photo-1600566753086-00f18efc2291?auto=format&fit=crop&q=80",
           },
@@ -81,8 +81,8 @@ export default async function PortfolioPage() {
       <div className="bg-surface pt-32 pb-24 md:pt-48 md:pb-32">
         <Container>
           <PageHeading
-            title="Selected Works"
-            subtitle="A curated selection of our finest interior design projects, showcasing our commitment to quiet luxury and timeless aesthetics."
+            title="Karya Pilihan"
+            subtitle="Kurasi karya terbaik dari proyek desain interior kami, menampilkan komitmen kami pada kemewahan yang tenang dan estetika yang abadi."
             align="left"
           />
         </Container>
@@ -109,7 +109,7 @@ export default async function PortfolioPage() {
           ) : (
             <div className="border-border border-t py-32 text-center">
               <p className="text-foreground-soft font-light">
-                No projects found.
+                Tidak ada proyek yang ditemukan.
               </p>
             </div>
           )}

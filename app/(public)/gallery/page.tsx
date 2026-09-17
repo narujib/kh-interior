@@ -7,9 +7,9 @@ import { GalleryClient } from "@/components/gallery/gallery-client";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Gallery | Khakim Interior",
+  title: "Galeri | Khakim Interior",
   description:
-    "A curated gallery of interior details, material textures, and spatial compositions.",
+    "Kurasi galeri dari detail interior, tekstur material, dan komposisi ruang.",
 };
 
 export default async function GalleryPage() {
@@ -24,42 +24,42 @@ export default async function GalleryPage() {
             id: "1",
             imageUrl:
               "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
-            altText: "Interior Detail",
+            altText: "Detail Interior",
             orientation: "PORTRAIT" as const,
           },
           {
             id: "2",
             imageUrl:
               "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80",
-            altText: "Material Texture",
+            altText: "Tekstur Material",
             orientation: "LANDSCAPE" as const,
           },
           {
             id: "3",
             imageUrl:
               "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80",
-            altText: "Living Space",
+            altText: "Ruang Keluarga",
             orientation: "PORTRAIT" as const,
           },
           {
             id: "4",
             imageUrl:
               "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&q=80",
-            altText: "Kitchen Design",
+            altText: "Desain Dapur",
             orientation: "LANDSCAPE" as const,
           },
           {
             id: "5",
             imageUrl:
               "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80",
-            altText: "Natural Light",
+            altText: "Cahaya Alami",
             orientation: "LANDSCAPE" as const,
           },
           {
             id: "6",
             imageUrl:
               "https://images.unsplash.com/photo-1600566752229-250de485458f?auto=format&fit=crop&q=80",
-            altText: "Bedroom Detail",
+            altText: "Detail Kamar Tidur",
             orientation: "PORTRAIT" as const,
           },
         ];
@@ -69,8 +69,8 @@ export default async function GalleryPage() {
       <div className="bg-background pt-32 pb-24 md:pt-48 md:pb-32">
         <Container>
           <PageHeading
-            title="Gallery"
-            subtitle="Moments, textures, and details that define our approach to spatial design."
+            title="Galeri"
+            subtitle="Momen, tekstur, dan detail yang mendefinisikan pendekatan kami terhadap desain spasial."
             align="left"
           />
         </Container>

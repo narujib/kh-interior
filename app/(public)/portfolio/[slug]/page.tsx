@@ -25,7 +25,7 @@ export async function generateMetadata({
 
   if (!project) {
     return {
-      title: "Project Not Found | Khakim Interior",
+      title: "Proyek Tidak Ditemukan | Khakim Interior",
     };
   }
 
@@ -66,11 +66,11 @@ export default async function ProjectDetailPage({
     > = {
       "glass-house": {
         id: "1",
-        title: "The Glass House",
-        clientName: "Private Residence",
+        title: "Rumah Kaca",
+        clientName: "Hunian Pribadi",
         completionDate: new Date("2025-10-15"),
         description:
-          "Situated on a sloping hill, The Glass House is a masterclass in blending interior and exterior spaces. The design intent was to create a sanctuary that feels entirely connected to the surrounding nature while maintaining a sense of profound intimacy. We utilized a restrained palette of natural stone, warm oak, and patinated bronze to ground the expansive glass walls. Every piece of furniture was either custom-designed or sourced from vintage dealers to ensure a completely unique aesthetic that feels both curated and comfortably lived-in.",
+          "Terletak di atas bukit yang landai, The Glass House adalah mahakarya dalam memadukan ruang interior dan eksterior. Tujuan desainnya adalah untuk menciptakan tempat perlindungan yang terasa sepenuhnya terhubung dengan alam sekitar sambil mempertahankan rasa keintiman yang mendalam. Kami menggunakan palet bahan terbatas seperti batu alam, kayu ek hangat, dan perunggu berpatina untuk menyeimbangkan dinding kaca yang luas. Setiap perabot dirancang khusus atau didapatkan dari penjual barang antik untuk memastikan estetika yang benar-benar unik, terasa tertata rapi sekaligus nyaman untuk ditinggali.",
         coverImageUrl:
           "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80",
         images: [
@@ -78,19 +78,19 @@ export default async function ProjectDetailPage({
             id: "img1",
             imageUrl:
               "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80",
-            altText: "Living Room View",
+            altText: "Pemandangan Ruang Keluarga",
           },
           {
             id: "img2",
             imageUrl:
               "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80",
-            altText: "Kitchen Detail",
+            altText: "Detail Dapur",
           },
           {
             id: "img3",
             imageUrl:
               "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80",
-            altText: "Bedroom Sanctuary",
+            altText: "Kamar Tidur Utama",
           },
         ],
       },
@@ -136,7 +136,7 @@ export default async function ProjectDetailPage({
               className="text-foreground-soft hover:text-foreground group inline-flex items-center gap-2 text-xs tracking-widest uppercase transition-colors"
             >
               <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-              Back to Portfolio
+              Kembali ke Portofolio
             </Link>
           </FadeIn>
 
@@ -157,7 +157,7 @@ export default async function ProjectDetailPage({
               >
                 <div>
                   <p className="text-foreground-soft mb-1 text-xs tracking-widest uppercase">
-                    Client
+                    Klien
                   </p>
                   <p className="text-foreground font-medium">
                     {displayProject.clientName}
@@ -165,7 +165,7 @@ export default async function ProjectDetailPage({
                 </div>
                 <div>
                   <p className="text-foreground-soft mb-1 text-xs tracking-widest uppercase">
-                    Completed
+                    Selesai
                   </p>
                   <p className="text-foreground font-medium">
                     {format(
@@ -233,13 +233,13 @@ export default async function ProjectDetailPage({
           {/* Next Project Navigation (Placeholder for now) */}
           <div className="border-border mt-32 flex items-center justify-between border-t pt-16">
             <p className="text-foreground-soft text-sm tracking-widest uppercase">
-              End of Project
+              Akhir dari Proyek
             </p>
             <Link
               href="/portfolio"
               className="text-foreground hover:text-foreground-soft group inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase transition-colors"
             >
-              View More Projects
+              Lihat Proyek Lainnya
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

@@ -47,15 +47,15 @@ export function ContactForm() {
         throw new Error(result.error || "Failed to send message");
       }
 
-      toast.success("Message sent successfully", {
-        description: "We will get back to you as soon as possible.",
+      toast.success("Pesan berhasil dikirim", {
+        description: "Kami akan segera menghubungi Anda kembali.",
       });
 
       reset();
     } catch (error) {
-      toast.error("Failed to send message", {
+      toast.error("Gagal mengirim pesan", {
         description:
-          error instanceof Error ? error.message : "Please try again later.",
+          error instanceof Error ? error.message : "Silakan coba lagi nanti.",
       });
     } finally {
       setIsSubmitting(false);
@@ -69,11 +69,11 @@ export function ContactForm() {
           htmlFor="name"
           className="text-foreground-soft mb-2 block text-xs tracking-widest uppercase"
         >
-          Name
+          Nama
         </label>
         <Input
           id="name"
-          placeholder="Your full name"
+          placeholder="Nama lengkap Anda"
           {...register("name")}
           className={`focus-visible:border-foreground rounded-none border-b-2 bg-transparent px-0 py-4 focus-visible:ring-0 ${
             errors.name ? "border-red-500" : "border-border"
@@ -94,7 +94,7 @@ export function ContactForm() {
         <Input
           id="email"
           type="email"
-          placeholder="Your email address"
+          placeholder="Alamat email Anda"
           {...register("email")}
           className={`focus-visible:border-foreground rounded-none border-b-2 bg-transparent px-0 py-4 focus-visible:ring-0 ${
             errors.email ? "border-red-500" : "border-border"
@@ -110,11 +110,11 @@ export function ContactForm() {
           htmlFor="message"
           className="text-foreground-soft mb-2 block text-xs tracking-widest uppercase"
         >
-          Message
+          Pesan
         </label>
         <Textarea
           id="message"
-          placeholder="Tell us about your project..."
+          placeholder="Ceritakan tentang proyek Anda..."
           rows={5}
           {...register("message")}
           className={`focus-visible:border-foreground resize-none rounded-none border-b-2 bg-transparent px-0 py-4 focus-visible:ring-0 ${
@@ -134,11 +134,11 @@ export function ContactForm() {
         {isSubmitting ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" />
-            Sending...
+            Mengirim...
           </>
         ) : (
           <>
-            Send Message
+            Kirim Pesan
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </>
         )}

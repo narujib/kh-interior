@@ -6,9 +6,9 @@ import { ContactCTA } from "@/components/sections/contact-cta";
 import Image from "next/image";
 
 export const metadata = {
-  title: "About | Khakim Interior",
+  title: "Tentang Kami | Khakim Interior",
   description:
-    "Learn about Khakim Interior's design philosophy, process, and commitment to quiet luxury.",
+    "Pelajari filosofi desain, proses, dan komitmen Khakim Interior terhadap kemewahan yang tenang.",
 };
 
 export default function AboutPage() {
@@ -17,8 +17,8 @@ export default function AboutPage() {
       <div className="bg-background pt-32 pb-24 md:pt-48 md:pb-32">
         <Container>
           <PageHeading
-            title="The Studio"
-            subtitle="Creating spaces that transcend trends, focusing on materiality, light, and proportion."
+            title="Studio Kami"
+            subtitle="Menciptakan ruang yang melampaui tren sesaat, berfokus pada material, cahaya, dan proporsi."
             align="left"
           />
         </Container>
@@ -43,34 +43,36 @@ export default function AboutPage() {
             <div className="flex flex-col justify-center lg:col-span-6 lg:col-start-7">
               <FadeIn delay={0.1}>
                 <h2 className="font-heading mb-8 text-3xl leading-[1.1] md:text-5xl">
-                  Design Philosophy
+                  Filosofi Desain
                 </h2>
               </FadeIn>
 
               <div className="text-foreground-soft mb-12 space-y-6 text-lg leading-relaxed font-light">
                 <FadeIn delay={0.2}>
                   <p>
-                    Founded on the principles of quiet luxury and intentional
-                    design, Khakim Interior is a boutique studio specializing in
-                    high-end residential and commercial spaces. We believe that
-                    true luxury is not defined by excess, but by the thoughtful
-                    curation of materials, light, and form.
+                    Dibangun di atas prinsip kemewahan yang tenang dan desain
+                    yang bertujuan, Khakim Interior adalah studio butik yang
+                    berspesialisasi dalam ruang hunian dan komersial kelas atas.
+                    Kami percaya bahwa kemewahan sejati tidak ditentukan oleh
+                    kemegahan yang berlebihan, melainkan oleh kurasi cermat
+                    terhadap material, cahaya, dan bentuk.
                   </p>
                 </FadeIn>
                 <FadeIn delay={0.3}>
                   <p>
-                    Our approach is deeply contextual. Before we sketch a single
-                    line or select a material, we seek to intimately understand
-                    the architecture of the space, the nuances of natural light
-                    throughout the day, and most importantly, the lifestyle and
-                    vision of our clients.
+                    Pendekatan kami sangat berdasar pada konteks. Sebelum kami
+                    menarik satu garis pun atau memilih material, kami berusaha
+                    untuk memahami secara mendalam arsitektur ruang, nuansa
+                    cahaya alami sepanjang hari, dan yang terpenting, gaya hidup
+                    serta visi dari klien kami.
                   </p>
                 </FadeIn>
                 <FadeIn delay={0.4}>
                   <p>
-                    We act as editors as much as designers—distilling spaces
-                    down to their essential elements to create environments that
-                    feel calm, sophisticated, and effortlessly timeless.
+                    Kami bertindak sebagai desainer sekaligus editor—menyaring
+                    elemen ruang hingga ke bagian yang paling esensial untuk
+                    menciptakan lingkungan yang terasa tenang, canggih, dan
+                    elegan tanpa lekang oleh waktu.
                   </p>
                 </FadeIn>
               </div>
@@ -82,7 +84,7 @@ export default function AboutPage() {
                       15+
                     </h3>
                     <p className="text-foreground-soft text-xs tracking-widest uppercase">
-                      Years of Experience
+                      Tahun Pengalaman
                     </p>
                   </div>
                   <div>
@@ -90,7 +92,7 @@ export default function AboutPage() {
                       50+
                     </h3>
                     <p className="text-foreground-soft text-xs tracking-widest uppercase">
-                      Projects Completed
+                      Proyek Selesai
                     </p>
                   </div>
                 </div>
@@ -107,15 +109,16 @@ export default function AboutPage() {
             <FadeIn>
               <div className="text-foreground-soft mb-12 flex items-center justify-center gap-4 text-xs tracking-widest uppercase">
                 <span className="bg-border h-[1px] w-8" />
-                <span>Our Principles</span>
+                <span>Prinsip Kami</span>
                 <span className="bg-border h-[1px] w-8" />
               </div>
             </FadeIn>
 
             <FadeIn delay={0.1}>
               <h2 className="font-heading text-foreground text-3xl leading-relaxed font-normal italic sm:text-4xl md:text-5xl">
-                &quot;We don&apos;t just decorate rooms; we sculpt environments
-                that elevate the everyday human experience.&quot;
+                &quot;Kami tidak hanya mendekorasi ruangan; kami memahat
+                lingkungan yang meningkatkan pengalaman manusia
+                sehari-hari.&quot;
               </h2>
             </FadeIn>
           </div>

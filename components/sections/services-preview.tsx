@@ -9,24 +9,24 @@ import { ArrowRight } from "lucide-react";
 
 const SERVICES = [
   {
-    title: "Interior Design",
+    title: "Desain Interior",
     description:
-      "Full-service interior design for residential and boutique commercial spaces, from conceptualization to final styling.",
+      "Layanan desain interior menyeluruh untuk hunian dan ruang komersial butik, mulai dari konsep hingga penataan akhir.",
   },
   {
-    title: "Space Planning",
+    title: "Perencanaan Ruang",
     description:
-      "Optimizing the layout and flow of your environment to maximize both functionality and aesthetic harmony.",
+      "Mengoptimalkan tata letak dan alur lingkungan Anda untuk memaksimalkan fungsionalitas dan harmoni estetika.",
   },
   {
-    title: "Custom Furniture",
+    title: "Furnitur Kustom",
     description:
-      "Bespoke furniture design and fabrication tailored specifically to the unique dimensions and style of your space.",
+      "Desain dan pembuatan furnitur khusus yang disesuaikan dengan dimensi dan gaya unik ruang Anda.",
   },
   {
-    title: "Renovation Consultancy",
+    title: "Konsultasi Renovasi",
     description:
-      "Expert guidance throughout the renovation process, ensuring design integrity and high-quality execution.",
+      "Panduan ahli di sepanjang proses renovasi, memastikan integritas desain dan eksekusi berkualitas tinggi.",
   },
 ];
 
@@ -35,9 +35,9 @@ export function ServicesPreview() {
     <section className="bg-surface py-24 md:py-32">
       <Container>
         <SectionHeading
-          title="Our Expertise"
+          title="Keahlian Kami"
           numbering="02"
-          subtitle="Services"
+          subtitle="Layanan"
           className="mb-16 md:mb-24"
         />
 
@@ -62,7 +62,7 @@ export function ServicesPreview() {
             href="/services"
             className="text-foreground hover:text-foreground-soft group flex items-center gap-2 pb-2 text-sm font-medium tracking-widest uppercase transition-colors"
           >
-            Discover All Services
+            Temukan Semua Layanan
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>

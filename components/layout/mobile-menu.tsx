@@ -7,12 +7,12 @@ import { X, Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/services", label: "Services" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/about", label: "Studio" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Beranda" },
+  { href: "/portfolio", label: "Portofolio" },
+  { href: "/services", label: "Layanan" },
+  { href: "/gallery", label: "Galeri" },
+  { href: "/about", label: "Tentang Kami" },
+  { href: "/contact", label: "Kontak" },
 ];
 
 export function MobileMenu() {

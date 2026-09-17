@@ -10,50 +10,50 @@ import Image from "next/image";
 
 const SERVICES = [
   {
-    title: "Interior Design",
+    title: "Desain Interior",
     description:
-      "Our comprehensive interior design service covers everything from initial conceptualization to final installation. We work closely with you to understand your lifestyle, preferences, and the unique characteristics of your space, delivering a cohesive design that perfectly balances form and function.",
+      "Layanan desain interior menyeluruh untuk hunian dan ruang komersial butik, mulai dari konsep awal hingga penataan akhir. Kami bekerja erat dengan Anda untuk memahami gaya hidup, preferensi, dan karakteristik unik ruang Anda, menghasilkan desain kohesif yang menyeimbangkan bentuk dan fungsi dengan sempurna.",
     image:
       "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
     features: [
-      "Concept Development",
-      "Material Selection",
-      "Custom Millwork Design",
-      "Styling & Accessorizing",
+      "Pengembangan Konsep",
+      "Pemilihan Material",
+      "Desain Furnitur Kayu Kustom",
+      "Penataan & Aksesori",
     ],
   },
   {
-    title: "Space Planning",
+    title: "Perencanaan Ruang",
     description:
-      "A well-designed space must first be well-planned. We analyze how you use your environment and create optimized layouts that improve flow, maximize usable square footage, and enhance the overall spatial experience without compromising on aesthetics.",
+      "Ruang yang didesain dengan baik harus direncanakan dengan baik pula. Kami menganalisis cara Anda menggunakan lingkungan dan menciptakan tata letak optimal yang meningkatkan alur, memaksimalkan luas ruang yang dapat digunakan, serta menyempurnakan pengalaman spasial secara keseluruhan tanpa mengorbankan estetika.",
     image:
       "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80",
     features: [
-      "Floor Plan Optimization",
-      "Traffic Flow Analysis",
-      "Furniture Layouts",
-      "Spatial Ergonomics",
+      "Optimasi Denah Lantai",
+      "Analisis Alur Lalu Lintas Ruang",
+      "Tata Letak Furnitur",
+      "Ergonomi Spasial",
     ],
   },
   {
-    title: "Custom Furniture",
+    title: "Furnitur Kustom",
     description:
-      "When off-the-shelf pieces don't meet your exacting standards, our custom furniture service provides bespoke solutions. We design and oversee the fabrication of unique pieces tailored specifically to the dimensions, style, and functional needs of your project.",
+      "Ketika produk siap pakai tidak memenuhi standar tinggi Anda, layanan furnitur kustom kami memberikan solusi khusus. Kami merancang dan mengawasi pembuatan karya unik yang disesuaikan secara khusus dengan dimensi, gaya, dan kebutuhan fungsional proyek Anda.",
     image:
       "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80",
     features: [
-      "Bespoke Cabinetry",
-      "Custom Upholstery",
-      "Unique Dining & Coffee Tables",
-      "Built-in Storage Solutions",
+      "Kabinet Khusus",
+      "Pelapis Furnitur Kustom",
+      "Meja Makan & Kopi Unik",
+      "Solusi Penyimpanan Bawaan",
     ],
   },
 ];
 
 export const metadata = {
-  title: "Services | Khakim Interior",
+  title: "Layanan | Khakim Interior",
   description:
-    "Comprehensive interior design services including space planning, custom furniture, and renovation consultancy.",
+    "Layanan desain interior komprehensif termasuk perencanaan ruang, furnitur kustom, dan konsultasi renovasi.",
 };
 
 export default function ServicesPage() {
@@ -62,8 +62,8 @@ export default function ServicesPage() {
       <div className="bg-surface-muted pt-32 pb-24 md:pt-48 md:pb-32">
         <Container>
           <PageHeading
-            title="Our Services"
-            subtitle="Expertise driven by a philosophy of quiet luxury and intentional design."
+            title="Layanan Kami"
+            subtitle="Keahlian yang didorong oleh filosofi kemewahan yang tenang dan desain yang bertujuan."
             align="center"
           />
         </Container>

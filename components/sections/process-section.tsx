@@ -8,27 +8,27 @@ import {
 const PROCESS_STEPS = [
   {
     number: "01",
-    title: "Discovery",
+    title: "Penemuan",
     description:
-      "An initial consultation to understand your vision, lifestyle requirements, and the unique characteristics of your space.",
+      "Konsultasi awal untuk memahami visi, kebutuhan gaya hidup, dan karakteristik unik ruang Anda.",
   },
   {
     number: "02",
-    title: "Concept",
+    title: "Konsep",
     description:
-      "Developing a comprehensive design direction, including mood boards, spatial layouts, and preliminary material selections.",
+      "Mengembangkan arahan desain menyeluruh, mencakup mood board, tata letak ruang, dan pemilihan material awal.",
   },
   {
     number: "03",
-    title: "Refinement",
+    title: "Penyempurnaan",
     description:
-      "Detailed 3D visualizations, final material sourcing, and precise technical drawings for flawless execution.",
+      "Visualisasi 3D mendetail, pencarian material akhir, dan gambar teknis presisi untuk eksekusi yang sempurna.",
   },
   {
     number: "04",
-    title: "Realization",
+    title: "Realisasi",
     description:
-      "Overseeing the construction, custom fabrication, and final styling to bring the design to life exactly as envisioned.",
+      "Mengawasi jalannya konstruksi, pembuatan kustom, dan penataan akhir untuk mewujudkan desain tepat seperti yang dibayangkan.",
   },
 ];
 
@@ -37,9 +37,9 @@ export function ProcessSection() {
     <section className="bg-background py-24 md:py-32">
       <Container>
         <SectionHeading
-          title="How We Work"
+          title="Cara Kami Bekerja"
           numbering="05"
-          subtitle="Process"
+          subtitle="Proses"
           className="mb-16 md:mb-24"
         />
 

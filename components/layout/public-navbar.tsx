@@ -8,10 +8,10 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/services", label: "Services" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/about", label: "Studio" },
+  { href: "/portfolio", label: "Portofolio" },
+  { href: "/services", label: "Layanan" },
+  { href: "/gallery", label: "Galeri" },
+  { href: "/about", label: "Tentang Kami" },
 ];
 
 export function PublicNavbar() {
@@ -64,7 +64,7 @@ export function PublicNavbar() {
             href="/contact"
             className="bg-foreground text-background hover:bg-foreground-soft ml-4 px-6 py-2 text-sm font-medium tracking-wider uppercase transition-colors"
           >
-            Contact
+            Kontak
           </Link>
         </nav>
 

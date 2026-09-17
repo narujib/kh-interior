@@ -50,16 +50,16 @@ export function FeaturedProjects() {
       <Container>
         <div className="mb-16 flex flex-col justify-between gap-8 md:mb-24 md:flex-row md:items-end">
           <SectionHeading
-            title="Selected Works"
+            title="Karya Pilihan"
             numbering="01"
-            subtitle="Portfolio"
+            subtitle="Portofolio"
             className="mb-0"
           />
           <Link
             href="/portfolio"
             className="text-foreground hover:text-foreground-soft group flex items-center gap-2 pb-2 text-sm font-medium tracking-widest uppercase transition-colors"
           >
-            View All Projects
+            Lihat Semua Proyek
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>

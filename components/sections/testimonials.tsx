@@ -8,15 +8,15 @@ import {
 const TESTIMONIALS = [
   {
     quote:
-      "Khakim Interior transformed our space into a serene sanctuary. Their attention to detail and understanding of materials is unmatched. Every corner feels intentional.",
+      "Khakim Interior mengubah ruang kami menjadi tempat perlindungan yang tenang. Perhatian mereka terhadap detail dan pemahaman akan material tidak tertandingi. Setiap sudut terasa begitu berarti.",
     author: "Sarah J.",
-    role: "Private Residence Client",
+    role: "Klien Hunian Pribadi",
   },
   {
     quote:
-      "Working with them was a seamless experience. They respected our vision while elevating it with their signature quiet luxury aesthetic. Highly recommended.",
+      "Bekerja sama dengan mereka merupakan pengalaman yang mulus. Mereka menghargai visi kami sekaligus menyempurnakannya dengan estetika kemewahan yang tenang khas mereka. Sangat direkomendasikan.",
     author: "David M.",
-    role: "Boutique Hotel Owner",
+    role: "Pemilik Hotel Butik",
   },
 ];
 
@@ -28,13 +28,13 @@ export function Testimonials() {
           <FadeIn>
             <div className="text-foreground-soft mb-8 flex items-center gap-4 text-xs tracking-widest uppercase sm:text-sm">
               <span className="bg-border h-[1px] w-8" />
-              <span>Client Voices</span>
+              <span>Suara Klien</span>
               <span className="bg-border h-[1px] w-8" />
             </div>
           </FadeIn>
           <FadeIn delay={0.1}>
             <h2 className="font-heading text-4xl leading-[1.1] font-normal sm:text-5xl">
-              Words from Our Clients.
+              Kata Klien Kami.
             </h2>
           </FadeIn>
         </div>

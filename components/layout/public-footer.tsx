@@ -14,14 +14,14 @@ export function PublicFooter() {
               Khakim Interior
             </Link>
             <p className="text-foreground-soft max-w-sm font-light">
-              Creating timeless, minimal, and sophisticated spaces tailored to
-              your lifestyle.
+              Menciptakan ruang yang tak lekang oleh waktu, minimalis, dan
+              elegan yang disesuaikan dengan gaya hidup Anda.
             </p>
           </div>
 
           <div>
             <h4 className="mb-6 text-sm font-medium tracking-wider uppercase">
-              Navigation
+              Navigasi
             </h4>
             <ul className="text-foreground-soft space-y-4 font-light">
               <li>
@@ -29,7 +29,7 @@ export function PublicFooter() {
                   href="/portfolio"
                   className="hover:text-foreground transition-colors"
                 >
-                  Portfolio
+                  Portofolio
                 </Link>
               </li>
               <li>
@@ -37,7 +37,7 @@ export function PublicFooter() {
                   href="/services"
                   className="hover:text-foreground transition-colors"
                 >
-                  Services
+                  Layanan
                 </Link>
               </li>
               <li>
@@ -45,7 +45,7 @@ export function PublicFooter() {
                   href="/gallery"
                   className="hover:text-foreground transition-colors"
                 >
-                  Gallery
+                  Galeri
                 </Link>
               </li>
               <li>
@@ -53,7 +53,7 @@ export function PublicFooter() {
                   href="/about"
                   className="hover:text-foreground transition-colors"
                 >
-                  Studio
+                  Tentang Kami
                 </Link>
               </li>
               <li>
@@ -61,7 +61,7 @@ export function PublicFooter() {
                   href="/contact"
                   className="hover:text-foreground transition-colors"
                 >
-                  Contact
+                  Kontak
                 </Link>
               </li>
             </ul>
@@ -69,7 +69,7 @@ export function PublicFooter() {
 
           <div>
             <h4 className="mb-6 text-sm font-medium tracking-wider uppercase">
-              Connect
+              Terhubung
             </h4>
             <ul className="text-foreground-soft space-y-4 font-light">
               <li>
@@ -97,7 +97,7 @@ export function PublicFooter() {
                   href="mailto:hello@khakiminterior.com"
                   className="hover:text-foreground transition-colors"
                 >
-                  Email Us
+                  Hubungi Kami
                 </a>
               </li>
             </ul>
@@ -106,15 +106,15 @@ export function PublicFooter() {
 
         <div className="border-border/50 text-foreground-soft flex flex-col items-center justify-between gap-4 border-t pt-8 text-xs font-light md:flex-row">
           <p>
-            &copy; {new Date().getFullYear()} Khakim Interior. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Khakim Interior. Seluruh hak cipta
+            dilindungi.
           </p>
           <div className="flex gap-4">
             <Link href="#" className="hover:text-foreground">
-              Privacy Policy
+              Kebijakan Privasi
             </Link>
             <Link href="#" className="hover:text-foreground">
-              Terms of Service
+              Syarat & Ketentuan
             </Link>
           </div>
         </div>

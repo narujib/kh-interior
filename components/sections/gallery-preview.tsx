@@ -14,28 +14,28 @@ const MOCK_GALLERY = [
     id: "1",
     imageUrl:
       "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
-    altText: "Interior Detail",
+    altText: "Detail Interior",
     orientation: "PORTRAIT",
   },
   {
     id: "2",
     imageUrl:
       "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80",
-    altText: "Material Texture",
+    altText: "Tekstur Material",
     orientation: "LANDSCAPE",
   },
   {
     id: "3",
     imageUrl:
       "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80",
-    altText: "Living Space",
+    altText: "Ruang Keluarga",
     orientation: "PORTRAIT",
   },
   {
     id: "4",
     imageUrl:
       "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&q=80",
-    altText: "Kitchen Design",
+    altText: "Desain Dapur",
     orientation: "LANDSCAPE",
   },
 ];
@@ -46,16 +46,16 @@ export function GalleryPreview() {
       <Container>
         <div className="mb-16 flex flex-col justify-between gap-8 md:mb-24 md:flex-row md:items-end">
           <SectionHeading
-            title="Moments & Details"
+            title="Momen & Detail"
             numbering="04"
-            subtitle="Gallery"
+            subtitle="Galeri"
             className="mb-0"
           />
           <Link
             href="/gallery"
             className="text-foreground hover:text-foreground-soft group flex items-center gap-2 pb-2 text-sm font-medium tracking-widest uppercase transition-colors"
           >
-            View Full Gallery
+            Lihat Semua Galeri
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>

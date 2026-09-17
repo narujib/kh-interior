@@ -5,9 +5,9 @@ import { ContactForm } from "@/components/forms/contact-form";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 export const metadata = {
-  title: "Contact | Khakim Interior",
+  title: "Kontak | Khakim Interior",
   description:
-    "Get in touch to discuss your next interior design or architectural project.",
+    "Hubungi kami untuk mendiskusikan proyek desain interior atau arsitektur Anda berikutnya.",
 };
 
 export default function ContactPage() {
@@ -16,8 +16,8 @@ export default function ContactPage() {
       <div className="bg-surface pt-32 pb-16 md:pt-48 md:pb-24">
         <Container>
           <PageHeading
-            title="Contact Us"
-            subtitle="We would love to hear about your vision. Reach out to discuss your project, and let's create something extraordinary together."
+            title="Hubungi Kami"
+            subtitle="Kami ingin mendengar tentang visi Anda. Hubungi kami untuk mendiskusikan proyek Anda, dan mari kita ciptakan sesuatu yang luar biasa bersama."
             align="left"
           />
         </Container>
@@ -46,7 +46,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-foreground mb-6 flex items-center gap-3 text-sm font-medium tracking-widest uppercase">
                       <Phone className="h-4 w-4" />
-                      Phone
+                      Telepon
                     </h3>
                     <p className="text-foreground-soft font-light">
                       +62 811 2345 6789
@@ -68,7 +68,7 @@ export default function ContactPage() {
 
             <div className="border-border border-t pt-16 lg:col-span-7 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8">
               <FadeIn delay={0.2}>
-                <h2 className="font-heading mb-12 text-3xl">Send a Message</h2>
+                <h2 className="font-heading mb-12 text-3xl">Kirim Pesan</h2>
                 <ContactForm />
               </FadeIn>
             </div>

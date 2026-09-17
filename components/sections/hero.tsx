@@ -37,14 +37,15 @@ export function Hero() {
         <div className="max-w-3xl">
           <FadeIn delay={0.2} duration={1}>
             <h1 className="font-heading text-white-soft mb-6 text-4xl leading-[1.1] sm:text-5xl md:text-6xl lg:text-7xl">
-              Designing Spaces That Tell Your Story.
+              Mendesain Ruang yang Bercerita Tentang Anda.
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.4} duration={1}>
             <p className="text-white-soft/80 mb-10 max-w-xl text-lg font-light md:text-xl">
-              We specialize in premium custom interior design, creating calm,
-              editorial, and timeless environments.
+              Kami berspesialisasi dalam desain interior kustom premium,
+              menciptakan lingkungan yang tenang, editorial, dan tak lekang oleh
+              waktu.
             </p>
           </FadeIn>
 
@@ -54,13 +55,13 @@ export function Hero() {
                 href="/portfolio"
                 className="bg-white-soft text-foreground hover:bg-white-soft/90 px-8 py-4 text-sm font-medium tracking-widest uppercase transition-colors"
               >
-                View Portfolio
+                Lihat Portofolio
               </Link>
               <Link
                 href="/contact"
                 className="border-white-soft/30 text-white-soft hover:bg-white-soft hover:text-foreground border px-8 py-4 text-sm font-medium tracking-widest uppercase transition-all duration-300"
               >
-                Let&apos;s Talk
+                Mari Berdiskusi
               </Link>
             </div>
           </FadeIn>
