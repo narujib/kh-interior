@@ -38,11 +38,11 @@ export function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-sm space-y-6">
-      <div>
+    <form onSubmit={handleSubmit} className="w-full space-y-6">
+      <div className="space-y-1">
         <label
           htmlFor="username"
-          className="text-foreground-soft mb-2 block text-xs tracking-widest uppercase"
+          className="text-foreground-soft block text-xs tracking-widest uppercase"
         >
           Username
         </label>
@@ -52,14 +52,15 @@ export function LoginForm() {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-          className="focus-visible:border-foreground rounded-none border-b-2 bg-transparent px-0 py-4 focus-visible:ring-0"
+          placeholder="Enter your username"
+          className="border-border focus-visible:border-foreground rounded-none border-0 border-b bg-transparent px-0 py-5 text-base transition-colors focus-visible:ring-0"
         />
       </div>
 
-      <div>
+      <div className="space-y-1">
         <label
           htmlFor="password"
-          className="text-foreground-soft mb-2 block text-xs tracking-widest uppercase"
+          className="text-foreground-soft block text-xs tracking-widest uppercase"
         >
           Password
         </label>
@@ -69,17 +70,29 @@ export function LoginForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="focus-visible:border-foreground rounded-none border-b-2 bg-transparent px-0 py-4 focus-visible:ring-0"
+          placeholder="Enter your password"
+          className="border-border focus-visible:border-foreground rounded-none border-0 border-b bg-transparent px-0 py-5 text-base transition-colors focus-visible:ring-0"
         />
       </div>
 
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="bg-foreground text-white-soft hover:bg-foreground/90 flex w-full items-center justify-center px-8 py-4 text-sm font-medium tracking-widest uppercase transition-colors disabled:opacity-50"
-      >
-        {isSubmitting ? <Loader2 className="h-5 w-5 animate-spin" /> : "Log In"}
-      </button>
+      <div className="pt-4">
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="bg-foreground text-white-soft hover:bg-foreground/90 group relative flex w-full items-center justify-center overflow-hidden px-8 py-4 text-xs font-medium tracking-widest uppercase transition-all duration-300 disabled:opacity-50"
+        >
+          <span className="relative z-10 flex items-center gap-2">
+            {isSubmitting ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" />
+                <span>Authenticating</span>
+              </>
+            ) : (
+              "Log In"
+            )}
+          </span>
+        </button>
+      </div>
     </form>
   );
 }
