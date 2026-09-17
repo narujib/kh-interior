@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   Table,
   TableBody,
@@ -9,9 +10,11 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { Edit, Trash2 } from "lucide-react";
+import { Edit, Trash2, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { format } from "date-fns";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 type ProjectSummary = {
   id: string;
@@ -26,6 +29,34 @@ interface ProjectTableProps {
 }
 
 export function ProjectTable({ projects }: ProjectTableProps) {
+  const router = useRouter();
+  const [isDeleting, setIsDeleting] = useState<string | null>(null);
+
+  const handleDelete = async (id: string) => {
+    if (
+      !confirm(
+        "Are you sure you want to delete this project? This will also delete all associated project images."
+      )
+    )
+      return;
+
+    setIsDeleting(id);
+    try {
+      const res = await fetch(`/api/admin/projects/${id}`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) throw new Error("Failed to delete project");
+
+      toast.success("Project deleted successfully");
+      router.refresh();
+    } catch {
+      toast.error("Failed to delete project");
+    } finally {
+      setIsDeleting(null);
+    }
+  };
+
   if (projects.length === 0) {
     return (
       <div className="border-border bg-surface-muted flex flex-col items-center justify-center border border-dashed p-12 text-center">
@@ -70,6 +101,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                   size="icon"
                   className="border-border h-8 w-8 rounded-none"
                   asChild
+                  disabled={isDeleting === project.id}
                 >
                   <Link href={`/admin/portfolio/${project.id}/edit`}>
                     <Edit className="h-4 w-4" />
@@ -79,9 +111,15 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                 <Button
                   variant="outline"
                   size="icon"
+                  onClick={() => handleDelete(project.id)}
+                  disabled={isDeleting === project.id}
                   className="border-border h-8 w-8 rounded-none text-red-500 hover:bg-red-50 hover:text-red-600"
                 >
-                  <Trash2 className="h-4 w-4" />
+                  {isDeleting === project.id ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Trash2 className="h-4 w-4" />
+                  )}
                   <span className="sr-only">Delete</span>
                 </Button>
               </TableCell>
