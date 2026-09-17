@@ -44,7 +44,7 @@ export function ProjectForm({ initialData, onSubmit }: ProjectFormProps) {
       await onSubmit(data);
     } catch (error) {
       toast.error(
-        error instanceof Error ? error.message : "Failed to save project"
+        error instanceof Error ? error.message : "Gagal menyimpan proyek"
       );
     } finally {
       setIsSubmitting(false);
@@ -67,7 +67,7 @@ export function ProjectForm({ initialData, onSubmit }: ProjectFormProps) {
     <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-8">
       <div className="grid gap-6 md:grid-cols-2">
         <div className="space-y-2">
-          <Label htmlFor="title">Project Title</Label>
+          <Label htmlFor="title">Judul Proyek</Label>
           <div className="flex gap-2">
             <Input
               id="title"
@@ -96,7 +96,7 @@ export function ProjectForm({ initialData, onSubmit }: ProjectFormProps) {
               onClick={generateSlug}
               className="border-border rounded-none"
             >
-              Generate
+              Buat
             </Button>
           </div>
           {form.formState.errors.slug && (
@@ -107,7 +107,7 @@ export function ProjectForm({ initialData, onSubmit }: ProjectFormProps) {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="clientName">Client Name / Location</Label>
+          <Label htmlFor="clientName">Nama Klien / Lokasi</Label>
           <Input
             id="clientName"
             {...form.register("clientName")}
@@ -121,7 +121,7 @@ export function ProjectForm({ initialData, onSubmit }: ProjectFormProps) {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="completionDate">Completion Date</Label>
+          <Label htmlFor="completionDate">Tanggal Selesai</Label>
           <Input
             id="completionDate"
             type="date"
@@ -137,7 +137,7 @@ export function ProjectForm({ initialData, onSubmit }: ProjectFormProps) {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="description">Description</Label>
+        <Label htmlFor="description">Deskripsi</Label>
         <Textarea
           id="description"
           {...form.register("description")}
@@ -151,7 +151,7 @@ export function ProjectForm({ initialData, onSubmit }: ProjectFormProps) {
       </div>
 
       <div className="space-y-2">
-        <Label>Cover Image</Label>
+        <Label>Gambar Sampul</Label>
         <ImageUpload
           folder="custom-interior/projects/covers"
           value={form.watch("coverImageUrl")}
@@ -174,9 +174,9 @@ export function ProjectForm({ initialData, onSubmit }: ProjectFormProps) {
         {isSubmitting ? (
           <Loader2 className="h-5 w-5 animate-spin" />
         ) : initialData ? (
-          "Update Project"
+          "Perbarui Proyek"
         ) : (
-          "Create Project"
+          "Buat Proyek"
         )}
       </Button>
     </form>

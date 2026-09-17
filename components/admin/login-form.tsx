@@ -25,13 +25,13 @@ export function LoginForm() {
       });
 
       if (result?.error) {
-        toast.error("Invalid credentials");
+        toast.error("Kredensial tidak valid");
       } else {
         router.push("/admin/dashboard");
         router.refresh();
       }
     } catch {
-      toast.error("An error occurred during login");
+      toast.error("Terjadi kesalahan saat login");
     } finally {
       setIsSubmitting(false);
     }
@@ -52,7 +52,7 @@ export function LoginForm() {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-          placeholder="Enter your username"
+          placeholder="Masukkan username Anda"
           className="border-border focus-visible:border-foreground rounded-none border-0 border-b bg-transparent px-0 py-5 text-base transition-colors focus-visible:ring-0"
         />
       </div>
@@ -70,7 +70,7 @@ export function LoginForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          placeholder="Enter your password"
+          placeholder="Masukkan password Anda"
           className="border-border focus-visible:border-foreground rounded-none border-0 border-b bg-transparent px-0 py-5 text-base transition-colors focus-visible:ring-0"
         />
       </div>
@@ -85,10 +85,10 @@ export function LoginForm() {
             {isSubmitting ? (
               <>
                 <Loader2 className="h-4 w-4 animate-spin" />
-                <span>Authenticating</span>
+                <span>Autentikasi...</span>
               </>
             ) : (
-              "Log In"
+              "Masuk"
             )}
           </span>
         </button>

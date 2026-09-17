@@ -43,14 +43,16 @@ export function MessageTable({ messages }: MessageTableProps) {
     setIsUpdating(id);
     try {
       await toggleMessageReadAction(id, !currentStatus);
-      toast.success(currentStatus ? "Marked as unread" : "Marked as read");
+      toast.success(
+        currentStatus ? "Ditandai belum dibaca" : "Ditandai sudah dibaca"
+      );
 
       // Update selected message if it's currently open
       if (selectedMessage && selectedMessage.id === id) {
         setSelectedMessage({ ...selectedMessage, isRead: !currentStatus });
       }
     } catch {
-      toast.error("Failed to update status");
+      toast.error("Gagal memperbarui status");
     } finally {
       setIsUpdating(null);
     }
@@ -58,17 +60,17 @@ export function MessageTable({ messages }: MessageTableProps) {
 
   const handleDelete = async (id: string, e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
-    if (!confirm("Are you sure you want to delete this message?")) return;
+    if (!confirm("Apakah Anda yakin ingin menghapus pesan ini?")) return;
 
     setIsUpdating(id);
     try {
       await deleteMessageAction(id);
-      toast.success("Message deleted");
+      toast.success("Pesan dihapus");
       if (selectedMessage?.id === id) {
         setSelectedMessage(null);
       }
     } catch {
-      toast.error("Failed to delete message");
+      toast.error("Gagal menghapus pesan");
       setIsUpdating(null);
     }
   };
@@ -84,7 +86,7 @@ export function MessageTable({ messages }: MessageTableProps) {
     return (
       <div className="border-border bg-surface-muted flex h-full flex-col items-center justify-center border border-dashed p-12 text-center">
         <Mail className="text-foreground-soft mb-4 h-12 w-12 opacity-50" />
-        <p className="text-foreground-soft">No messages found.</p>
+        <p className="text-foreground-soft">Tidak ada pesan yang ditemukan.</p>
       </div>
     );
   }
@@ -97,13 +99,13 @@ export function MessageTable({ messages }: MessageTableProps) {
             <TableRow className="bg-surface-muted hover:bg-surface-muted">
               <TableHead className="w-[50px]"></TableHead>
               <TableHead className="font-heading text-foreground-soft text-xs tracking-widest uppercase">
-                Sender
+                Pengirim
               </TableHead>
               <TableHead className="font-heading text-foreground-soft text-xs tracking-widest uppercase">
-                Date
+                Tanggal
               </TableHead>
               <TableHead className="font-heading text-foreground-soft text-right text-xs tracking-widest uppercase">
-                Actions
+                Aksi
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -149,7 +151,7 @@ export function MessageTable({ messages }: MessageTableProps) {
                     className="h-8 w-8 text-red-500 hover:bg-red-50 hover:text-red-600"
                   >
                     <Trash2 className="h-4 w-4" />
-                    <span className="sr-only">Delete</span>
+                    <span className="sr-only">Hapus</span>
                   </Button>
                 </TableCell>
               </TableRow>
@@ -167,7 +169,7 @@ export function MessageTable({ messages }: MessageTableProps) {
             <>
               <DialogHeader>
                 <DialogTitle className="font-heading text-xl">
-                  Message from {selectedMessage.senderName}
+                  Pesan dari {selectedMessage.senderName}
                 </DialogTitle>
                 <DialogDescription>
                   <a
@@ -179,7 +181,7 @@ export function MessageTable({ messages }: MessageTableProps) {
                   {" • "}
                   {format(
                     new Date(selectedMessage.createdAt),
-                    "MMMM d, yyyy 'at' h:mm a"
+                    "MMMM d, yyyy 'pada' h:mm a"
                   )}
                 </DialogDescription>
               </DialogHeader>
@@ -204,7 +206,8 @@ export function MessageTable({ messages }: MessageTableProps) {
                   ) : (
                     <CheckCircle className="mr-2 h-4 w-4" />
                   )}
-                  Mark as {selectedMessage.isRead ? "Unread" : "Read"}
+                  Tandai{" "}
+                  {selectedMessage.isRead ? "Belum Dibaca" : "Sudah Dibaca"}
                 </Button>
 
                 <Button
@@ -218,7 +221,7 @@ export function MessageTable({ messages }: MessageTableProps) {
                   ) : (
                     <Trash2 className="mr-2 h-4 w-4" />
                   )}
-                  Delete
+                  Hapus
                 </Button>
               </div>
             </>

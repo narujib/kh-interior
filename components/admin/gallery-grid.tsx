@@ -16,15 +16,15 @@ export function GalleryGrid({ items }: GalleryGridProps) {
   const [isDeleting, setIsDeleting] = useState<string | null>(null);
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Are you sure you want to delete this gallery item?")) return;
+    if (!confirm("Apakah Anda yakin ingin menghapus item galeri ini?")) return;
 
     setIsDeleting(id);
     try {
       await deleteGalleryItemAction(id);
-      toast.success("Gallery item deleted");
+      toast.success("Item galeri dihapus");
     } catch (error) {
       toast.error(
-        error instanceof Error ? error.message : "Failed to delete item"
+        error instanceof Error ? error.message : "Gagal menghapus item"
       );
     } finally {
       setIsDeleting(null);
@@ -34,7 +34,9 @@ export function GalleryGrid({ items }: GalleryGridProps) {
   if (items.length === 0) {
     return (
       <div className="border-border bg-surface-muted flex h-full flex-col items-center justify-center border border-dashed p-12 text-center">
-        <p className="text-foreground-soft">No gallery items found.</p>
+        <p className="text-foreground-soft">
+          Tidak ada item galeri yang ditemukan.
+        </p>
       </div>
     );
   }

@@ -4,7 +4,7 @@ import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
 export const metadata = {
-  title: "Admin Login | Khakim Interior",
+  title: "Login Admin | Khakim Interior",
   robots: "noindex, nofollow",
 };
 
@@ -28,7 +28,7 @@ export default async function AdminLoginPage() {
           Khakim Interior
         </h1>
         <p className="text-foreground-soft mb-10 text-center text-xs tracking-[0.2em] uppercase">
-          Admin Portal
+          Portal Admin
         </p>
 
         <LoginForm />

@@ -8,7 +8,7 @@ import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
 export const metadata = {
-  title: "Portfolio Management | Admin",
+  title: "Manajemen Portofolio | Admin",
   robots: "noindex, nofollow",
 };
 
@@ -26,10 +26,10 @@ export default async function AdminPortfolioPage() {
       <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
         <div>
           <h2 className="font-heading text-2xl font-medium">
-            Portfolio Projects
+            Proyek Portofolio
           </h2>
           <p className="text-foreground-soft text-sm">
-            Manage your project portfolio and case studies.
+            Kelola portofolio proyek dan studi kasus Anda.
           </p>
         </div>
         <Link
@@ -37,7 +37,7 @@ export default async function AdminPortfolioPage() {
           className={buttonVariants({ className: "rounded-none" })}
         >
           <Plus className="mr-2 h-4 w-4" />
-          New Project
+          Proyek Baru
         </Link>
       </div>
 

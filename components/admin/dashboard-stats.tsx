@@ -24,7 +24,7 @@ export function DashboardStats({
       <Card className="border-border rounded-none shadow-none">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-foreground-soft text-sm font-medium tracking-widest uppercase">
-            Total Projects
+            Total Proyek
           </CardTitle>
           <FolderOpen className="text-foreground-soft h-4 w-4" />
         </CardHeader>
@@ -38,7 +38,7 @@ export function DashboardStats({
       <Card className="border-border rounded-none shadow-none">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-foreground-soft text-sm font-medium tracking-widest uppercase">
-            Gallery Items
+            Item Galeri
           </CardTitle>
           <ImageIcon className="text-foreground-soft h-4 w-4" />
         </CardHeader>
@@ -52,7 +52,7 @@ export function DashboardStats({
       <Card className="border-border rounded-none shadow-none">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-foreground-soft text-sm font-medium tracking-widest uppercase">
-            Unread Messages
+            Pesan Belum Dibaca
           </CardTitle>
           <MessageSquare className="text-foreground-soft h-4 w-4" />
         </CardHeader>
@@ -66,13 +66,13 @@ export function DashboardStats({
       <Card className="border-border rounded-none shadow-none">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-foreground-soft text-sm font-medium tracking-widest uppercase">
-            Latest Project
+            Proyek Terbaru
           </CardTitle>
           <Clock className="text-foreground-soft h-4 w-4" />
         </CardHeader>
         <CardContent>
           <div className="font-heading truncate text-lg font-medium">
-            {latestProjectTitle || "None"}
+            {latestProjectTitle || "Tidak ada"}
           </div>
         </CardContent>
       </Card>

@@ -65,10 +65,10 @@ export function ImageSorter({ projectId, initialImages }: ImageSorterProps) {
         }
       );
 
-      if (!response.ok) throw new Error("Failed to save order");
-      toast.success("Image order saved");
+      if (!response.ok) throw new Error("Gagal menyimpan urutan");
+      toast.success("Urutan gambar disimpan");
     } catch {
-      toast.error("Failed to save order");
+      toast.error("Gagal menyimpan urutan");
     } finally {
       setIsUpdating(false);
     }
@@ -84,25 +84,25 @@ export function ImageSorter({ projectId, initialImages }: ImageSorterProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           imageUrl: url,
-          altText: "Project image",
+          altText: "Gambar proyek",
           orderIndex: images.length,
         }),
       });
 
-      if (!response.ok) throw new Error("Failed to add image");
+      if (!response.ok) throw new Error("Gagal menambahkan gambar");
 
       const newImage = await response.json();
       setImages([...images, newImage.data]);
-      toast.success("Image added");
+      toast.success("Gambar ditambahkan");
     } catch {
-      toast.error("Failed to add image");
+      toast.error("Gagal menambahkan gambar");
     } finally {
       setIsUpdating(false);
     }
   };
 
   const handleDeleteImage = async (imageId: string) => {
-    if (!confirm("Are you sure you want to remove this image?")) return;
+    if (!confirm("Apakah Anda yakin ingin menghapus gambar ini?")) return;
 
     setIsUpdating(true);
     try {
@@ -113,12 +113,12 @@ export function ImageSorter({ projectId, initialImages }: ImageSorterProps) {
         }
       );
 
-      if (!response.ok) throw new Error("Failed to delete image");
+      if (!response.ok) throw new Error("Gagal menghapus gambar");
 
       setImages(images.filter((img) => img.id !== imageId));
-      toast.success("Image deleted");
+      toast.success("Gambar dihapus");
     } catch {
-      toast.error("Failed to delete image");
+      toast.error("Gagal menghapus gambar");
     } finally {
       setIsUpdating(false);
     }
@@ -127,7 +127,7 @@ export function ImageSorter({ projectId, initialImages }: ImageSorterProps) {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h3 className="font-heading text-xl font-medium">Project Gallery</h3>
+        <h3 className="font-heading text-xl font-medium">Galeri Proyek</h3>
         <Button
           variant="outline"
           onClick={handleSaveOrder}
@@ -137,7 +137,7 @@ export function ImageSorter({ projectId, initialImages }: ImageSorterProps) {
           {isUpdating ? (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
           ) : null}
-          Save Order
+          Simpan Urutan
         </Button>
       </div>
 
@@ -155,7 +155,7 @@ export function ImageSorter({ projectId, initialImages }: ImageSorterProps) {
           >
             <Image
               src={image.imageUrl}
-              alt={image.altText || "Project image"}
+              alt={image.altText || "Gambar proyek"}
               fill
               className="object-cover"
             />

@@ -8,7 +8,7 @@ import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export const metadata = {
-  title: "Admin Dashboard | Khakim Interior",
+  title: "Dasbor Admin | Khakim Interior",
   robots: "noindex, nofollow",
 };
 
@@ -28,9 +28,9 @@ export default async function AdminDashboardPage() {
   return (
     <div className="animate-fade-in space-y-8">
       <div className="flex flex-col gap-1">
-        <h2 className="font-heading text-2xl font-medium">Overview</h2>
+        <h2 className="font-heading text-2xl font-medium">Ringkasan</h2>
         <p className="text-foreground-soft text-sm">
-          Welcome back to the Khakim Interior administration dashboard.
+          Selamat datang kembali di dasbor administrasi Khakim Interior.
         </p>
       </div>
 

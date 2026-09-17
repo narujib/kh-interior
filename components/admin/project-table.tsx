@@ -35,7 +35,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
   const handleDelete = async (id: string) => {
     if (
       !confirm(
-        "Are you sure you want to delete this project? This will also delete all associated project images."
+        "Apakah Anda yakin ingin menghapus proyek ini? Ini juga akan menghapus semua gambar proyek yang terkait."
       )
     )
       return;
@@ -46,12 +46,12 @@ export function ProjectTable({ projects }: ProjectTableProps) {
         method: "DELETE",
       });
 
-      if (!res.ok) throw new Error("Failed to delete project");
+      if (!res.ok) throw new Error("Gagal menghapus proyek");
 
-      toast.success("Project deleted successfully");
+      toast.success("Proyek berhasil dihapus");
       router.refresh();
     } catch {
-      toast.error("Failed to delete project");
+      toast.error("Gagal menghapus proyek");
     } finally {
       setIsDeleting(null);
     }
@@ -60,12 +60,14 @@ export function ProjectTable({ projects }: ProjectTableProps) {
   if (projects.length === 0) {
     return (
       <div className="border-border bg-surface-muted flex flex-col items-center justify-center border border-dashed p-12 text-center">
-        <p className="text-foreground-soft mb-4">No projects found.</p>
+        <p className="text-foreground-soft mb-4">
+          Tidak ada proyek yang ditemukan.
+        </p>
         <Link
           href="/admin/portfolio/new"
           className={buttonVariants({ className: "rounded-none" })}
         >
-          Create Project
+          Buat Proyek
         </Link>
       </div>
     );
@@ -77,16 +79,16 @@ export function ProjectTable({ projects }: ProjectTableProps) {
         <TableHeader>
           <TableRow className="bg-surface-muted hover:bg-surface-muted">
             <TableHead className="font-heading text-foreground-soft text-xs tracking-widest uppercase">
-              Title
+              Judul
             </TableHead>
             <TableHead className="font-heading text-foreground-soft text-xs tracking-widest uppercase">
-              Client
+              Klien
             </TableHead>
             <TableHead className="font-heading text-foreground-soft text-xs tracking-widest uppercase">
-              Completion Date
+              Tanggal Selesai
             </TableHead>
             <TableHead className="font-heading text-foreground-soft text-right text-xs tracking-widest uppercase">
-              Actions
+              Aksi
             </TableHead>
           </TableRow>
         </TableHeader>
@@ -122,7 +124,7 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                   ) : (
                     <Trash2 className="h-4 w-4" />
                   )}
-                  <span className="sr-only">Delete</span>
+                  <span className="sr-only">Hapus</span>
                 </Button>
               </TableCell>
             </TableRow>

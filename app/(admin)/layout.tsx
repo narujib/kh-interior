@@ -1,7 +1,7 @@
 import { AdminLayoutClient } from "@/components/layout/admin-layout-client";
 
 export const metadata = {
-  title: "Admin Dashboard | Khakim Interior",
+  title: "Dasbor Admin | Khakim Interior",
   robots: "noindex, nofollow",
 };
 

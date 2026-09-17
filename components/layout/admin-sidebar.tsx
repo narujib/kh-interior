@@ -13,10 +13,10 @@ import {
 import { signOut } from "next-auth/react";
 
 const NAV_ITEMS = [
-  { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/admin/portfolio", label: "Portfolio", icon: FolderOpen },
-  { href: "/admin/gallery", label: "Gallery", icon: ImageIcon },
-  { href: "/admin/messages", label: "Messages", icon: MessageSquare },
+  { href: "/admin/dashboard", label: "Dasbor", icon: LayoutDashboard },
+  { href: "/admin/portfolio", label: "Portofolio", icon: FolderOpen },
+  { href: "/admin/gallery", label: "Galeri", icon: ImageIcon },
+  { href: "/admin/messages", label: "Pesan", icon: MessageSquare },
 ];
 
 interface AdminSidebarProps {
@@ -39,7 +39,7 @@ export function AdminSidebar({ isOpen, setIsOpen }: AdminSidebarProps) {
           className="font-heading text-xl"
           onClick={() => setIsOpen(false)}
         >
-          Khakim Admin
+          Admin Khakim
         </Link>
         <button
           onClick={() => setIsOpen(false)}
@@ -79,7 +79,7 @@ export function AdminSidebar({ isOpen, setIsOpen }: AdminSidebarProps) {
           className="flex w-full items-center gap-3 rounded-md px-4 py-3 text-left text-red-500 transition-colors hover:bg-red-50 hover:text-red-600"
         >
           <LogOut className="h-5 w-5" />
-          <span className="text-sm font-medium">Log Out</span>
+          <span className="text-sm font-medium">Keluar</span>
         </button>
       </div>
     </aside>

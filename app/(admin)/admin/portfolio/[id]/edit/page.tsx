@@ -7,7 +7,7 @@ import { redirect, notFound } from "next/navigation";
 import prisma from "@/lib/prisma";
 
 export const metadata = {
-  title: "Edit Project | Admin",
+  title: "Edit Proyek | Admin",
   robots: "noindex, nofollow",
 };
 
@@ -42,15 +42,15 @@ export default async function EditProjectPage({
   return (
     <div className="animate-fade-in max-w-4xl space-y-12">
       <div className="flex flex-col gap-1">
-        <h2 className="font-heading text-2xl font-medium">Edit Project</h2>
+        <h2 className="font-heading text-2xl font-medium">Edit Proyek</h2>
         <p className="text-foreground-soft text-sm">
-          Update the project details or manage the gallery images.
+          Perbarui detail proyek atau kelola gambar galeri.
         </p>
       </div>
 
       <div className="bg-surface-muted border-border border p-6">
         <h3 className="font-heading mb-6 text-xl font-medium">
-          Basic Information
+          Informasi Dasar
         </h3>
         <ProjectForm initialData={project} onSubmit={updateAction} />
       </div>

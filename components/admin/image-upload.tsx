@@ -29,7 +29,7 @@ export function ImageUpload({
     if (!file) return;
 
     if (file.size > 10 * 1024 * 1024) {
-      toast.error("File size exceeds 10MB limit.");
+      toast.error("Ukuran file melebihi batas 10MB.");
       return;
     }
 
@@ -48,14 +48,14 @@ export function ImageUpload({
       const result = await response.json();
 
       if (!response.ok || !result.success) {
-        throw new Error(result.error || "Failed to upload image");
+        throw new Error(result.error || "Gagal mengunggah gambar");
       }
 
       onChange(result.data.imageUrl);
-      toast.success("Image uploaded successfully");
+      toast.success("Gambar berhasil diunggah");
     } catch (error) {
       toast.error(
-        error instanceof Error ? error.message : "Failed to upload image"
+        error instanceof Error ? error.message : "Gagal mengunggah gambar"
       );
     } finally {
       setIsUploading(false);
@@ -71,7 +71,7 @@ export function ImageUpload({
         <div className="bg-surface-muted group border-border relative aspect-video w-full overflow-hidden border">
           <Image
             src={value}
-            alt="Upload preview"
+            alt="Pratinjau unggahan"
             fill
             className="object-cover transition-opacity group-hover:opacity-50"
           />
@@ -98,13 +98,15 @@ export function ImageUpload({
           {isUploading ? (
             <div className="text-foreground-soft flex flex-col items-center">
               <Loader2 className="mb-4 h-8 w-8 animate-spin" />
-              <p className="text-sm font-medium">Uploading...</p>
+              <p className="text-sm font-medium">Mengunggah...</p>
             </div>
           ) : (
             <div className="text-foreground-soft flex flex-col items-center">
               <UploadCloud className="mb-4 h-8 w-8" />
-              <p className="mb-1 text-sm font-medium">Click to upload image</p>
-              <p className="text-xs">JPG, PNG, WEBP up to 10MB</p>
+              <p className="mb-1 text-sm font-medium">
+                Klik untuk mengunggah gambar
+              </p>
+              <p className="text-xs">JPG, PNG, WEBP hingga 10MB</p>
             </div>
           )}
         </div>

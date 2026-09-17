@@ -22,13 +22,13 @@ export function RecentMessages({ messages }: RecentMessagesProps) {
     <Card className="border-border rounded-none shadow-none">
       <CardHeader className="flex flex-row items-center justify-between pb-6">
         <CardTitle className="font-heading text-lg font-medium">
-          Recent Messages
+          Pesan Terbaru
         </CardTitle>
         <Link
           href="/admin/messages"
           className="text-foreground-soft hover:text-foreground text-xs tracking-widest uppercase transition-colors"
         >
-          View All
+          Lihat Semua
         </Link>
       </CardHeader>
       <CardContent>
@@ -36,7 +36,7 @@ export function RecentMessages({ messages }: RecentMessagesProps) {
           <div className="flex flex-col items-center justify-center py-8 text-center">
             <MessageSquare className="text-border mb-4 h-8 w-8" />
             <p className="text-foreground-soft text-sm">
-              No recent messages found.
+              Tidak ada pesan terbaru.
             </p>
           </div>
         ) : (
@@ -58,7 +58,7 @@ export function RecentMessages({ messages }: RecentMessagesProps) {
                       variant="default"
                       className="bg-foreground hover:bg-foreground/90 text-white-soft rounded-none px-2 py-0.5 text-[10px] tracking-widest uppercase"
                     >
-                      New
+                      Baru
                     </Badge>
                   )}
                 </div>

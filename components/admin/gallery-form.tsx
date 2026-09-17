@@ -28,11 +28,11 @@ export function GalleryForm() {
     setIsSubmitting(true);
     try {
       await createGalleryItemAction(data);
-      toast.success("Gallery item added");
+      toast.success("Item galeri ditambahkan");
       form.reset();
     } catch (error) {
       toast.error(
-        error instanceof Error ? error.message : "Failed to add gallery item"
+        error instanceof Error ? error.message : "Gagal menambahkan item galeri"
       );
     } finally {
       setIsSubmitting(false);
@@ -42,7 +42,7 @@ export function GalleryForm() {
   return (
     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
       <div className="space-y-2">
-        <Label>Image</Label>
+        <Label>Gambar</Label>
         <ImageUpload
           folder="custom-interior/gallery"
           value={form.watch("imageUrl")}
@@ -58,10 +58,10 @@ export function GalleryForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="altText">Alt Text</Label>
+        <Label htmlFor="altText">Teks Alternatif</Label>
         <Input
           id="altText"
-          placeholder="Brief description of the image"
+          placeholder="Deskripsi singkat tentang gambar"
           {...form.register("altText")}
         />
         {form.formState.errors.altText && (
@@ -79,10 +79,10 @@ export function GalleryForm() {
         {isSubmitting ? (
           <>
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Adding...
+            Menambahkan...
           </>
         ) : (
-          "Add to Gallery"
+          "Tambahkan ke Galeri"
         )}
       </Button>
     </form>
