@@ -49,6 +49,7 @@ model Message {
   id          String   @id @default(uuid())
   senderName  String
   email       String
+  whatsapp    String
   messageText String   @db.Text
   isRead      Boolean  @default(false)
   createdAt   DateTime @default(now())

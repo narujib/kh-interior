@@ -8,6 +8,7 @@ interface Message {
   id: string;
   senderName: string;
   email: string;
+  whatsapp: string;
   messageText: string;
   isRead: boolean;
   createdAt: Date;
@@ -50,7 +51,7 @@ export function RecentMessages({ messages }: RecentMessagesProps) {
                   <div>
                     <p className="font-medium">{message.senderName}</p>
                     <p className="text-foreground-soft text-xs">
-                      {message.email}
+                      {message.email} &bull; {message.whatsapp}
                     </p>
                   </div>
                   {!message.isRead && (

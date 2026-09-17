@@ -38,6 +38,7 @@ export async function POST(req: Request) {
       data: {
         senderName: validatedData.name,
         email: validatedData.email,
+        whatsapp: validatedData.whatsapp,
         messageText: validatedData.message,
         isRead: false,
       },

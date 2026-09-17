@@ -25,6 +25,7 @@ export function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
+      whatsapp: "",
       message: "",
     },
   });
@@ -102,6 +103,27 @@ export function ContactForm() {
         />
         {errors.email && (
           <p className="mt-2 text-xs text-red-500">{errors.email.message}</p>
+        )}
+      </div>
+
+      <div className="space-y-1">
+        <label
+          htmlFor="whatsapp"
+          className="text-foreground-soft block text-xs tracking-widest uppercase"
+        >
+          Nomor WhatsApp
+        </label>
+        <Input
+          id="whatsapp"
+          type="tel"
+          placeholder="Contoh: 081234567890"
+          {...register("whatsapp")}
+          className={`border-border focus-visible:border-foreground rounded-none border-0 border-b bg-transparent px-0 py-5 text-base transition-colors focus-visible:ring-0 ${
+            errors.whatsapp ? "border-red-500" : ""
+          }`}
+        />
+        {errors.whatsapp && (
+          <p className="mt-2 text-xs text-red-500">{errors.whatsapp.message}</p>
         )}
       </div>
 

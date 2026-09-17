@@ -135,7 +135,7 @@ export function MessageTable({ messages }: MessageTableProps) {
                   <div className="flex flex-col">
                     <span>{msg.senderName}</span>
                     <span className="text-foreground-soft text-xs font-normal">
-                      {msg.email}
+                      {msg.email} &bull; {msg.whatsapp}
                     </span>
                   </div>
                 </TableCell>
@@ -177,6 +177,15 @@ export function MessageTable({ messages }: MessageTableProps) {
                     className="text-foreground hover:underline"
                   >
                     {selectedMessage.email}
+                  </a>
+                  {" • "}
+                  <a
+                    href={`https://wa.me/${selectedMessage.whatsapp.replace(/[^0-9]/g, "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground hover:underline"
+                  >
+                    {selectedMessage.whatsapp}
                   </a>
                   {" • "}
                   {format(

@@ -6,6 +6,14 @@ export const contactSchema = z.object({
     .min(2, "Nama terlalu pendek")
     .max(100, "Nama terlalu panjang"),
   email: z.string().email("Format email tidak valid"),
+  whatsapp: z
+    .string()
+    .min(9, "Nomor WhatsApp tidak valid")
+    .max(20, "Nomor WhatsApp terlalu panjang")
+    .regex(
+      /^[0-9+\-\s]+$/,
+      "Hanya angka dan karakter valid yang diperbolehkan"
+    ),
   message: z
     .string()
     .min(10, "Pesan minimal 10 karakter")
