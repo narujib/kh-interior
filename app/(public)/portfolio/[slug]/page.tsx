@@ -12,6 +12,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { format } from "date-fns";
+import { id } from "date-fns/locale";
 
 export const dynamic = "force-dynamic";
 
@@ -170,7 +171,8 @@ export default async function ProjectDetailPage({
                   <p className="text-foreground font-medium">
                     {format(
                       new Date(displayProject.completionDate),
-                      "MMMM yyyy"
+                      "MMMM yyyy",
+                      { locale: id }
                     )}
                   </p>
                 </div>

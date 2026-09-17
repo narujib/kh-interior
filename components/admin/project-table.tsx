@@ -13,6 +13,7 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { Edit, Trash2, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { format } from "date-fns";
+import { id } from "date-fns/locale";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
@@ -98,7 +99,9 @@ export function ProjectTable({ projects }: ProjectTableProps) {
               <TableCell className="font-medium">{project.title}</TableCell>
               <TableCell>{project.clientName}</TableCell>
               <TableCell>
-                {format(new Date(project.completionDate), "MMM yyyy")}
+                {format(new Date(project.completionDate), "MMM yyyy", {
+                  locale: id,
+                })}
               </TableCell>
               <TableCell className="space-x-2 text-right">
                 <Link

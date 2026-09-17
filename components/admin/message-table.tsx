@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Message } from "@/generated/prisma/client";
 import { format } from "date-fns";
+import { id as idLocale } from "date-fns/locale";
 import { Trash2, CheckCircle, Circle, Mail, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -140,7 +141,9 @@ export function MessageTable({ messages }: MessageTableProps) {
                   </div>
                 </TableCell>
                 <TableCell>
-                  {format(new Date(msg.createdAt), "MMM d, yyyy")}
+                  {format(new Date(msg.createdAt), "MMM d, yyyy", {
+                    locale: idLocale,
+                  })}
                 </TableCell>
                 <TableCell className="text-right">
                   <Button
@@ -190,7 +193,8 @@ export function MessageTable({ messages }: MessageTableProps) {
                   {" • "}
                   {format(
                     new Date(selectedMessage.createdAt),
-                    "MMMM d, yyyy 'pada' h:mm a"
+                    "MMMM d, yyyy 'pada' h:mm a",
+                    { locale: idLocale }
                   )}
                 </DialogDescription>
               </DialogHeader>

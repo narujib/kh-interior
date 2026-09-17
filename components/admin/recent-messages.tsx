@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MessageSquare, Calendar } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
+import { id } from "date-fns/locale";
 import Link from "next/link";
 
 interface Message {
@@ -72,6 +73,7 @@ export function RecentMessages({ messages }: RecentMessagesProps) {
                   <Calendar className="h-3 w-3" />
                   {formatDistanceToNow(new Date(message.createdAt), {
                     addSuffix: true,
+                    locale: id,
                   })}
                 </div>
               </div>
