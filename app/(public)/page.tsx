@@ -1,6 +1,3 @@
-import { Container } from "@/components/shared/container";
-import { PageHeading } from "@/components/shared/page-heading";
-
 import { Hero } from "@/components/sections/hero";
 import { FeaturedProjects } from "@/components/sections/featured-projects";
 import { ServicesPreview } from "@/components/sections/services-preview";
