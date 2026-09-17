@@ -1,0 +1,17 @@
+import { AdminLayoutClient } from "@/components/layout/admin-layout-client";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+
+export const metadata = {
+  title: "Admin Dashboard | Khakim Interior",
+  robots: "noindex, nofollow",
+};
+
+export default async function AdminLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  // We'll rely on NextAuth middleware or page-level protection
+  return <AdminLayoutClient>{children}</AdminLayoutClient>;
+}
