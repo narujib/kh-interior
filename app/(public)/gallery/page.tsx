@@ -4,6 +4,8 @@ import { ContactCTA } from "@/components/sections/contact-cta";
 import { getGalleryItems } from "@/lib/data/gallery";
 import { GalleryClient } from "@/components/gallery/gallery-client";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Gallery | Khakim Interior",
   description:

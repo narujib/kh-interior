@@ -5,7 +5,7 @@ import prisma from "@/lib/prisma";
 
 export async function DELETE(
   req: Request,
-  { params }: { params: { id: string; imageId: string } }
+  { params }: { params: Promise<{ id: string; imageId: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -16,13 +16,15 @@ export async function DELETE(
       );
     }
 
+    const { imageId } = await params;
+
     // According to rule 22: We only delete from DB, not from Cloudinary in phase 1
     await prisma.projectImage.delete({
-      where: { id: params.imageId },
+      where: { id: imageId },
     });
 
     return NextResponse.json({ success: true });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { success: false, error: "Failed to delete image" },
       { status: 500 }

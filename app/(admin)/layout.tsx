@@ -1,6 +1,4 @@
 import { AdminLayoutClient } from "@/components/layout/admin-layout-client";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
 
 export const metadata = {
   title: "Admin Dashboard | Khakim Interior",

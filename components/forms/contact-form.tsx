@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
-  contactFormSchema,
+  contactSchema,
   type ContactFormValues,
 } from "@/lib/validations/contact";
 import { Input } from "@/components/ui/input";
@@ -21,7 +21,7 @@ export function ContactForm() {
     reset,
     formState: { errors },
   } = useForm<ContactFormValues>({
-    resolver: zodResolver(contactFormSchema),
+    resolver: zodResolver(contactSchema),
     defaultValues: {
       name: "",
       email: "",

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ProjectImage } from "@prisma/client";
+import { ProjectImage } from "@/generated/prisma/client";
 import { GripVertical, X, Loader2 } from "lucide-react";
 import Image from "next/image";
 import { ImageUpload } from "./image-upload";
@@ -67,7 +67,7 @@ export function ImageSorter({ projectId, initialImages }: ImageSorterProps) {
 
       if (!response.ok) throw new Error("Failed to save order");
       toast.success("Image order saved");
-    } catch (error) {
+    } catch {
       toast.error("Failed to save order");
     } finally {
       setIsUpdating(false);
@@ -94,7 +94,7 @@ export function ImageSorter({ projectId, initialImages }: ImageSorterProps) {
       const newImage = await response.json();
       setImages([...images, newImage.data]);
       toast.success("Image added");
-    } catch (error) {
+    } catch {
       toast.error("Failed to add image");
     } finally {
       setIsUpdating(false);
@@ -117,7 +117,7 @@ export function ImageSorter({ projectId, initialImages }: ImageSorterProps) {
 
       setImages(images.filter((img) => img.id !== imageId));
       toast.success("Image deleted");
-    } catch (error) {
+    } catch {
       toast.error("Failed to delete image");
     } finally {
       setIsUpdating(false);

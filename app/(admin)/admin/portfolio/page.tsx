@@ -1,6 +1,6 @@
 import { getProjects } from "@/lib/data/projects";
 import { ProjectTable } from "@/components/admin/project-table";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import { getServerSession } from "next-auth";
@@ -32,12 +32,13 @@ export default async function AdminPortfolioPage() {
             Manage your project portfolio and case studies.
           </p>
         </div>
-        <Button asChild className="bg-foreground text-white-soft rounded-none">
-          <Link href="/admin/portfolio/new">
-            <Plus className="mr-2 h-4 w-4" />
-            New Project
-          </Link>
-        </Button>
+        <Link
+          href="/admin/portfolio/new"
+          className={buttonVariants({ className: "rounded-none" })}
+        >
+          <Plus className="mr-2 h-4 w-4" />
+          New Project
+        </Link>
       </div>
 
       <ProjectTable projects={projects} />

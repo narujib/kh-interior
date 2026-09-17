@@ -7,7 +7,7 @@ export const gallerySchema = z.object({
     .min(3, "Teks alternatif terlalu pendek")
     .max(150, "Maks 150 karakter"),
   orientation: z.enum(["LANDSCAPE", "PORTRAIT"], {
-    required_error: "Pilih orientasi gambar",
+    message: "Please select a valid orientation",
   }),
 });
 

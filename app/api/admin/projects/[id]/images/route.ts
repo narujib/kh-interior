@@ -5,7 +5,7 @@ import prisma from "@/lib/prisma";
 
 export async function POST(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions);
@@ -16,6 +16,7 @@ export async function POST(
       );
     }
 
+    const { id } = await params;
     const { imageUrl, altText, orderIndex } = await req.json();
 
     if (!imageUrl) {
@@ -27,7 +28,7 @@ export async function POST(
 
     const newImage = await prisma.projectImage.create({
       data: {
-        projectId: params.id,
+        projectId: id,
         imageUrl,
         altText: altText || "Project image",
         orderIndex: orderIndex || 0,
@@ -35,7 +36,7 @@ export async function POST(
     });
 
     return NextResponse.json({ success: true, data: newImage });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { success: false, error: "Failed to add image" },
       { status: 500 }

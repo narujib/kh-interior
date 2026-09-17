@@ -82,8 +82,10 @@ export function GalleryForm() {
         <Label htmlFor="orientation">Orientation</Label>
         <Select
           value={form.watch("orientation")}
-          onValueChange={(value: "LANDSCAPE" | "PORTRAIT") =>
-            form.setValue("orientation", value, { shouldValidate: true })
+          onValueChange={(value) =>
+            form.setValue("orientation", value as "LANDSCAPE" | "PORTRAIT", {
+              shouldValidate: true,
+            })
           }
         >
           <SelectTrigger className="border-border rounded-none">

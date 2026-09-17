@@ -9,7 +9,9 @@ export const contactSchema = z.object({
   message: z
     .string()
     .min(10, "Pesan minimal 10 karakter")
-    .max(1000, "Pesan maksimal 1000 karakter"),
+    .max(1000, "Maksimal 1000 karakter"),
 });
+
+export type ContactFormValues = z.infer<typeof contactSchema>;
 
 export type ContactFormData = z.infer<typeof contactSchema>;

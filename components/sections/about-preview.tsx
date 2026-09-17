@@ -25,6 +25,18 @@ export function AboutPreview() {
               </h2>
             </FadeIn>
 
+            <FadeIn delay={0.4} direction="left" className="space-y-6">
+              <h3 className="font-heading text-2xl font-medium md:text-3xl">
+                Our Philosophy
+              </h3>
+              <p className="text-foreground-soft leading-relaxed">
+                We believe that true luxury lies in the quality of attention
+                paid to every detail. Our designs don&apos;t shout; they
+                whisper. We create spaces that feel inevitably right—where every
+                element is purposeful and every material is chosen with intent.
+              </p>
+            </FadeIn>
+
             <FadeIn delay={0.2}>
               <div className="text-foreground-soft mb-12 space-y-6 text-lg leading-relaxed font-light">
                 <p>

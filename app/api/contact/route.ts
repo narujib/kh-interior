@@ -28,12 +28,9 @@ export async function POST(req: Request) {
     });
   } catch (error) {
     if (error instanceof z.ZodError) {
+      const zodError = error as z.ZodError;
       return NextResponse.json(
-        {
-          success: false,
-          error: "Validasi gagal. Silakan periksa kembali isian form Anda.",
-          details: error.errors,
-        },
+        { success: false, error: zodError.issues[0].message },
         { status: 400 }
       );
     }

@@ -8,6 +8,8 @@ import {
 import { ContactCTA } from "@/components/sections/contact-cta";
 import { getProjects } from "@/lib/data/projects";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Portfolio | Khakim Interior",
   description:

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Message } from "@prisma/client";
+import { Message } from "@/generated/prisma/client";
 import { format } from "date-fns";
 import { Trash2, CheckCircle, Circle, Mail, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";

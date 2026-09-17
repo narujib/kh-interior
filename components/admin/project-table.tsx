@@ -9,7 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Edit, Trash2, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { format } from "date-fns";
@@ -61,9 +61,12 @@ export function ProjectTable({ projects }: ProjectTableProps) {
     return (
       <div className="border-border bg-surface-muted flex flex-col items-center justify-center border border-dashed p-12 text-center">
         <p className="text-foreground-soft mb-4">No projects found.</p>
-        <Button asChild className="rounded-none">
-          <Link href="/admin/portfolio/new">Create Project</Link>
-        </Button>
+        <Link
+          href="/admin/portfolio/new"
+          className={buttonVariants({ className: "rounded-none" })}
+        >
+          Create Project
+        </Link>
       </div>
     );
   }
@@ -96,18 +99,17 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                 {format(new Date(project.completionDate), "MMM yyyy")}
               </TableCell>
               <TableCell className="space-x-2 text-right">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="border-border h-8 w-8 rounded-none"
-                  asChild
-                  disabled={isDeleting === project.id}
+                <Link
+                  href={`/admin/portfolio/${project.id}/edit`}
+                  className={buttonVariants({
+                    variant: "outline",
+                    size: "icon",
+                    className: "border-border h-8 w-8 rounded-none",
+                  })}
                 >
-                  <Link href={`/admin/portfolio/${project.id}/edit`}>
-                    <Edit className="h-4 w-4" />
-                    <span className="sr-only">Edit</span>
-                  </Link>
-                </Button>
+                  <Edit className="h-4 w-4" />
+                  <span className="sr-only">Edit</span>
+                </Link>
                 <Button
                   variant="outline"
                   size="icon"
