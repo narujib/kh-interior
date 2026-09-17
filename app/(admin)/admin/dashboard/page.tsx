@@ -6,6 +6,14 @@ import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
+import {
+  PlusCircle,
+  FolderOpen,
+  Image as ImageIcon,
+  ArrowRight,
+} from "lucide-react";
 
 export const metadata = {
   title: "Dasbor Admin | Khakim Interior",
@@ -43,12 +51,17 @@ export default async function AdminDashboardPage() {
         />
       </Suspense>
 
-      <div className="grid gap-8 md:grid-cols-2">
-        <Suspense
-          fallback={<Skeleton className="h-[400px] w-full rounded-none" />}
-        >
-          <RecentMessages messages={messages} />
-        </Suspense>
+      <div className="grid gap-8 md:grid-cols-3">
+        <div className="md:col-span-2">
+          <Suspense
+            fallback={<Skeleton className="h-[400px] w-full rounded-none" />}
+          >
+            <RecentMessages messages={messages} />
+          </Suspense>
+        </div>
+        <div className="md:col-span-1">
+          <DashboardQuickActions />
+        </div>
       </div>
     </div>
   );
@@ -61,5 +74,51 @@ function DashboardStatsSkeleton() {
         <Skeleton key={i} className="h-28 w-full rounded-none" />
       ))}
     </div>
+  );
+}
+
+function DashboardQuickActions() {
+  return (
+    <Card className="border-border rounded-none shadow-none">
+      <CardHeader className="flex flex-row items-center justify-between pb-6">
+        <CardTitle className="font-heading text-lg font-medium">
+          Tindakan Cepat
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <Link
+          href="/admin/portfolio/new"
+          className="border-border bg-surface-muted hover:bg-surface-muted/80 group flex items-center justify-between border p-4 transition-colors"
+        >
+          <div className="flex items-center gap-3">
+            <PlusCircle className="text-foreground-soft h-5 w-5" />
+            <span className="text-sm font-medium">Tambah Proyek</span>
+          </div>
+          <ArrowRight className="text-foreground-soft h-4 w-4 -translate-x-2 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+        </Link>
+
+        <Link
+          href="/admin/portfolio"
+          className="border-border bg-surface-muted hover:bg-surface-muted/80 group flex items-center justify-between border p-4 transition-colors"
+        >
+          <div className="flex items-center gap-3">
+            <FolderOpen className="text-foreground-soft h-5 w-5" />
+            <span className="text-sm font-medium">Kelola Portofolio</span>
+          </div>
+          <ArrowRight className="text-foreground-soft h-4 w-4 -translate-x-2 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+        </Link>
+
+        <Link
+          href="/admin/gallery"
+          className="border-border bg-surface-muted hover:bg-surface-muted/80 group flex items-center justify-between border p-4 transition-colors"
+        >
+          <div className="flex items-center gap-3">
+            <ImageIcon className="text-foreground-soft h-5 w-5" />
+            <span className="text-sm font-medium">Kelola Galeri</span>
+          </div>
+          <ArrowRight className="text-foreground-soft h-4 w-4 -translate-x-2 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+        </Link>
+      </CardContent>
+    </Card>
   );
 }
