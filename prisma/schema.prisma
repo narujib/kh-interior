@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Project {
+  id             String         @id @default(uuid())
+  title          String
+  slug           String         @unique
+  description    String         @db.Text
+  coverImageUrl  String
+  clientName     String
+  completionDate DateTime
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  images ProjectImage[]
+
+  @@index([completionDate])
+  @@index([createdAt])
+}
+
+model ProjectImage {
+  id         String  @id @default(uuid())
+  projectId  String
+  imageUrl   String
+  altText    String
+  orderIndex Int     @default(0)
+
+  project Project @relation(
+    fields: [projectId],
+    references: [id],
+    onDelete: Cascade
+  )
+
+  @@index([projectId, orderIndex])
+}
+
+enum GalleryOrientation {
+  LANDSCAPE
+  PORTRAIT
+}
+
+model GalleryItem {
+  id          String             @id @default(uuid())
+  imageUrl    String
+  altText     String
+  orientation GalleryOrientation
+  createdAt   DateTime           @default(now())
+
+  @@index([orientation])
+  @@index([createdAt])
+}
+
+model Message {
+  id          String   @id @default(uuid())
+  senderName  String
+  email       String
+  messageText String   @db.Text
+  isRead      Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  @@index([isRead, createdAt])
+}
+
+model Admin {
+  id           String @id @default(uuid())
+  username     String @unique
+  passwordHash String
+}
