@@ -1,0 +1,183 @@
+"use client";
+
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { projectSchema, ProjectFormData } from "@/lib/validations/project";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { ImageUpload } from "@/components/admin/image-upload";
+import { toast } from "sonner";
+import { Loader2 } from "lucide-react";
+
+interface ProjectFormProps {
+  initialData?: ProjectFormData & { id?: string };
+  onSubmit: (data: ProjectFormData) => Promise<void>;
+}
+
+export function ProjectForm({ initialData, onSubmit }: ProjectFormProps) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Helper to format date for date input (YYYY-MM-DD)
+  const defaultDate = initialData?.completionDate
+    ? new Date(initialData.completionDate).toISOString().split("T")[0]
+    : new Date().toISOString().split("T")[0];
+
+  const form = useForm<ProjectFormData>({
+    resolver: zodResolver(projectSchema),
+    defaultValues: {
+      title: initialData?.title || "",
+      slug: initialData?.slug || "",
+      description: initialData?.description || "",
+      clientName: initialData?.clientName || "",
+      completionDate: defaultDate,
+      coverImageUrl: initialData?.coverImageUrl || "",
+    },
+  });
+
+  const handleSubmit = async (data: ProjectFormData) => {
+    setIsSubmitting(true);
+    try {
+      await onSubmit(data);
+    } catch (error) {
+      toast.error(
+        error instanceof Error ? error.message : "Failed to save project"
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Auto-generate slug from title
+  const generateSlug = () => {
+    const title = form.getValues("title");
+    if (title) {
+      const slug = title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)+/g, "");
+      form.setValue("slug", slug, { shouldValidate: true });
+    }
+  };
+
+  return (
+    <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-8">
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="space-y-2">
+          <Label htmlFor="title">Project Title</Label>
+          <div className="flex gap-2">
+            <Input
+              id="title"
+              {...form.register("title")}
+              className="border-border flex-1 rounded-none"
+            />
+          </div>
+          {form.formState.errors.title && (
+            <p className="text-sm text-red-500">
+              {form.formState.errors.title.message}
+            </p>
+          )}
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="slug">Slug</Label>
+          <div className="flex gap-2">
+            <Input
+              id="slug"
+              {...form.register("slug")}
+              className="border-border flex-1 rounded-none"
+            />
+            <Button
+              type="button"
+              variant="outline"
+              onClick={generateSlug}
+              className="border-border rounded-none"
+            >
+              Generate
+            </Button>
+          </div>
+          {form.formState.errors.slug && (
+            <p className="text-sm text-red-500">
+              {form.formState.errors.slug.message}
+            </p>
+          )}
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="clientName">Client Name / Location</Label>
+          <Input
+            id="clientName"
+            {...form.register("clientName")}
+            className="border-border rounded-none"
+          />
+          {form.formState.errors.clientName && (
+            <p className="text-sm text-red-500">
+              {form.formState.errors.clientName.message}
+            </p>
+          )}
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="completionDate">Completion Date</Label>
+          <Input
+            id="completionDate"
+            type="date"
+            {...form.register("completionDate")}
+            className="border-border rounded-none"
+          />
+          {form.formState.errors.completionDate && (
+            <p className="text-sm text-red-500">
+              {form.formState.errors.completionDate.message}
+            </p>
+          )}
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="description">Description</Label>
+        <Textarea
+          id="description"
+          {...form.register("description")}
+          className="border-border min-h-[150px] rounded-none"
+        />
+        {form.formState.errors.description && (
+          <p className="text-sm text-red-500">
+            {form.formState.errors.description.message}
+          </p>
+        )}
+      </div>
+
+      <div className="space-y-2">
+        <Label>Cover Image</Label>
+        <ImageUpload
+          folder="custom-interior/projects/covers"
+          value={form.watch("coverImageUrl")}
+          onChange={(url) =>
+            form.setValue("coverImageUrl", url, { shouldValidate: true })
+          }
+        />
+        {form.formState.errors.coverImageUrl && (
+          <p className="text-sm text-red-500">
+            {form.formState.errors.coverImageUrl.message}
+          </p>
+        )}
+      </div>
+
+      <Button
+        type="submit"
+        disabled={isSubmitting}
+        className="bg-foreground text-white-soft w-full rounded-none py-6"
+      >
+        {isSubmitting ? (
+          <Loader2 className="h-5 w-5 animate-spin" />
+        ) : initialData ? (
+          "Update Project"
+        ) : (
+          "Create Project"
+        )}
+      </Button>
+    </form>
+  );
+}
