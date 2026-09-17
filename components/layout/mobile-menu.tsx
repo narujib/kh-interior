@@ -19,11 +19,6 @@ export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  // Close menu on route change
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
-
   // Lock body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
@@ -82,6 +77,7 @@ export function MobileMenu() {
                 >
                   <Link
                     href={link.href}
+                    onClick={() => setIsOpen(false)}
                     className={`font-heading text-3xl sm:text-4xl transition-colors ${
                       pathname === link.href
                         ? "text-foreground"
