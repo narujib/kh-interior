@@ -1,6 +1,6 @@
 import { getProjects } from "@/lib/data/projects";
 import { ProjectTable } from "@/components/admin/project-table";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import { getServerSession } from "next-auth";
