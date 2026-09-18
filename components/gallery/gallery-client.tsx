@@ -95,7 +95,7 @@ export function GalleryClient({ items }: GalleryClientProps) {
         open={selectedIndex !== null}
         onOpenChange={(open) => !open && closeLightbox()}
       >
-        <DialogContent className="flex h-[95vh] max-w-[95vw] flex-col items-center justify-center border-none bg-transparent p-0 shadow-none">
+        <DialogContent className="flex h-screen max-w-[100vw] flex-col items-center justify-center border-none bg-black/95 p-0 shadow-none">
           <VisuallyHidden>
             <DialogTitle>Image Lightbox</DialogTitle>
             <DialogDescription>View high resolution image</DialogDescription>
@@ -103,8 +103,8 @@ export function GalleryClient({ items }: GalleryClientProps) {
 
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 z-50 rounded-full bg-black/50 p-2 text-white/70 transition-colors hover:text-white"
-            aria-label="Close lightbox"
+            className="absolute top-6 right-6 z-50 rounded-full bg-white/10 p-3 text-white/70 backdrop-blur-sm transition-all hover:bg-white/20 hover:text-white"
+            aria-label="Tutup lightbox"
           >
             <X className="h-6 w-6" />
           </button>
@@ -113,20 +113,20 @@ export function GalleryClient({ items }: GalleryClientProps) {
             <div className="relative flex h-full w-full items-center justify-center">
               <button
                 onClick={showPrev}
-                className="absolute left-4 z-50 rounded-full bg-black/50 p-3 text-white/70 transition-all hover:bg-black/80 hover:text-white"
-                aria-label="Previous image"
+                className="absolute left-4 z-50 rounded-full bg-white/10 p-4 text-white/70 backdrop-blur-sm transition-all hover:scale-110 hover:bg-white/20 hover:text-white md:left-8"
+                aria-label="Gambar sebelumnya"
               >
                 <ChevronLeft className="h-8 w-8" />
               </button>
 
-              <div className="relative flex h-full w-full items-center justify-center p-12">
-                <div className="relative h-full max-h-[80vh] w-full max-w-5xl">
+              <div className="relative flex h-full w-full items-center justify-center p-4 md:p-24">
+                <div className="relative h-full w-full">
                   <Image
                     src={items[selectedIndex].imageUrl}
                     alt={items[selectedIndex].altText}
                     fill
                     className="object-contain"
-                    sizes="95vw"
+                    sizes="100vw"
                     priority
                   />
                 </div>
@@ -134,8 +134,8 @@ export function GalleryClient({ items }: GalleryClientProps) {
 
               <button
                 onClick={showNext}
-                className="absolute right-4 z-50 rounded-full bg-black/50 p-3 text-white/70 transition-all hover:bg-black/80 hover:text-white"
-                aria-label="Next image"
+                className="absolute right-4 z-50 rounded-full bg-white/10 p-4 text-white/70 backdrop-blur-sm transition-all hover:scale-110 hover:bg-white/20 hover:text-white md:right-8"
+                aria-label="Gambar selanjutnya"
               >
                 <ChevronRight className="h-8 w-8" />
               </button>
