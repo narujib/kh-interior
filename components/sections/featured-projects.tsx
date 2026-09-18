@@ -7,44 +7,16 @@ import {
 } from "@/components/shared/stagger-container";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { getFeaturedProjects } from "@/lib/data/projects";
 
-// Mock data until DB is ready
-const MOCK_PROJECTS = [
-  {
-    id: "1",
-    title: "The Glass House",
-    slug: "glass-house",
-    clientName: "Private Residence",
-    coverImageUrl:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80",
-  },
-  {
-    id: "2",
-    title: "Minimalist Loft",
-    slug: "minimalist-loft",
-    clientName: "Boutique Hotel",
-    coverImageUrl:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80",
-  },
-  {
-    id: "3",
-    title: "Urban Retreat",
-    slug: "urban-retreat",
-    clientName: "Private Client",
-    coverImageUrl:
-      "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
-  },
-  {
-    id: "4",
-    title: "Heritage Restoration",
-    slug: "heritage-restoration",
-    clientName: "Cultural Trust",
-    coverImageUrl:
-      "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
-  },
-];
+export async function FeaturedProjects() {
+  // Fetch up to 4 featured projects from the database
+  const projects = await getFeaturedProjects(4);
 
-export function FeaturedProjects() {
+  if (!projects || projects.length === 0) {
+    return null;
+  }
+
   return (
     <section className="bg-background py-24 md:py-32">
       <Container>
@@ -65,7 +37,7 @@ export function FeaturedProjects() {
         </div>
 
         <StaggerContainer className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 md:gap-y-24">
-          {MOCK_PROJECTS.map((project, index) => (
+          {projects.map((project, index) => (
             <StaggerItem
               key={project.id}
               className={index % 2 !== 0 ? "md:mt-24" : ""}

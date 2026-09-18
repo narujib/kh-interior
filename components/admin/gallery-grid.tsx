@@ -61,45 +61,45 @@ export function GalleryGrid({ items }: GalleryGridProps) {
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
       {items.map((item) => (
-        <div key={item.id} className="group border-border relative border">
-          <div className="relative aspect-square">
+        <div key={item.id} className="border-border relative flex flex-col border bg-surface">
+          <div className="relative aspect-square border-b border-border">
             <Image
               src={item.imageUrl}
               alt={item.altText}
               fill
               className="object-cover"
             />
+            {/* Badge isFeatured always visible if true */}
+            {item.isFeatured && (
+              <div className="absolute top-2 right-2 rounded-full bg-black/60 p-1.5 text-yellow-400">
+                <Star className="h-4 w-4 fill-current" />
+              </div>
+            )}
           </div>
 
-          {/* Badge isFeatured always visible if true */}
-          {item.isFeatured && (
-            <div className="absolute top-2 right-2 rounded-full bg-black/60 p-1.5 text-yellow-400">
-              <Star className="h-4 w-4 fill-current" />
-            </div>
-          )}
-
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
+          <div className="flex flex-col gap-2 p-3">
             <Button
               variant={item.isFeatured ? "default" : "secondary"}
               size="sm"
               onClick={() => handleToggleFeatured(item.id)}
               disabled={isPending}
-              className="rounded"
+              className="w-full rounded text-xs"
             >
               {item.isFeatured ? "Hapus dari Beranda" : "Tampilkan di Beranda"}
             </Button>
             <Button
               variant="destructive"
-              size="icon"
+              size="sm"
               onClick={() => handleDelete(item.id)}
               disabled={isDeleting === item.id || isPending}
-              className="rounded"
+              className="w-full rounded text-xs"
             >
               {isDeleting === item.id ? (
-                <Loader2 className="h-4 w-4 animate-spin" />
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
               ) : (
-                <Trash2 className="h-4 w-4" />
+                <Trash2 className="mr-2 h-4 w-4" />
               )}
+              Hapus Item
             </Button>
           </div>
         </div>
