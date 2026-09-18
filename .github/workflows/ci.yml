@@ -10,6 +10,15 @@ jobs:
   test-and-build:
     name: Lint, Typecheck, and Build
     runs-on: ubuntu-latest
+    env:
+      # Dummy environment variables to allow Prisma and Next.js to run in CI
+      DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/dummy"
+      DIRECT_URL: "postgresql://postgres:postgres@localhost:5432/dummy"
+      NEXTAUTH_SECRET: "dummy_secret_for_ci_build_only"
+      NEXTAUTH_URL: "http://localhost:3000"
+      CLOUDINARY_CLOUD_NAME: "dummy_cloud_name"
+      CLOUDINARY_API_KEY: "dummy_api_key"
+      CLOUDINARY_API_SECRET: "dummy_api_secret"
 
     steps:
       - name: Checkout Repository
@@ -38,12 +47,3 @@ jobs:
 
       - name: Build Next.js App
         run: npm run build
-        env:
-          # Dummy environment variables to allow Next.js to build without a real database
-          DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/dummy"
-          DIRECT_URL: "postgresql://postgres:postgres@localhost:5432/dummy"
-          NEXTAUTH_SECRET: "dummy_secret_for_ci_build_only"
-          NEXTAUTH_URL: "http://localhost:3000"
-          CLOUDINARY_CLOUD_NAME: "dummy_cloud_name"
-          CLOUDINARY_API_KEY: "dummy_api_key"
-          CLOUDINARY_API_SECRET: "dummy_api_secret"
