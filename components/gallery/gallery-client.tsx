@@ -21,7 +21,7 @@ interface GalleryClientProps {
   items: GalleryItem[];
 }
 
-const ITEMS_PER_PAGE = 12;
+const ITEMS_PER_PAGE = 36;
 
 export function GalleryClient({ items }: GalleryClientProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -103,7 +103,7 @@ export function GalleryClient({ items }: GalleryClientProps) {
 
   return (
     <>
-      <div className="grid grid-flow-dense auto-rows-[150px] grid-cols-2 gap-2 md:auto-rows-[250px] md:grid-cols-3 md:gap-4 lg:auto-rows-[300px] lg:grid-cols-4">
+      <div className="grid grid-flow-dense auto-rows-[150px] grid-cols-2 gap-2 sm:grid-cols-3 md:auto-rows-[200px] md:grid-cols-4 md:gap-4 lg:auto-rows-[250px] lg:grid-cols-5 xl:grid-cols-6">
         {displayedItems.map((item, index) => {
           // Pola pseudo-random untuk memberikan efek "acak tapi rapi"
           const p = index % 10;
