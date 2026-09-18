@@ -4,7 +4,7 @@ import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
 export const metadata = {
-  title: "Login Admin | Khakim Interior",
+  title: "Login Admin",
   robots: "noindex, nofollow",
 };
 

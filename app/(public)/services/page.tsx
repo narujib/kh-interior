@@ -51,7 +51,7 @@ const SERVICES = [
 ];
 
 export const metadata = {
-  title: "Layanan | Khakim Interior",
+  title: "Layanan",
   description:
     "Layanan desain interior komprehensif termasuk perencanaan ruang, furnitur kustom, dan konsultasi renovasi.",
 };

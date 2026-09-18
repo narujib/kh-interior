@@ -7,7 +7,7 @@ import { GalleryClient } from "@/components/gallery/gallery-client";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Galeri | Khakim Interior",
+  title: "Galeri",
   description:
     "Kurasi galeri dari detail interior, tekstur material, dan komposisi ruang.",
 };

@@ -6,7 +6,7 @@ import { ContactCTA } from "@/components/sections/contact-cta";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Tentang Kami | Khakim Interior",
+  title: "Tentang Kami",
   description:
     "Pelajari filosofi desain, proses, dan komitmen Khakim Interior terhadap kemewahan yang tenang.",
 };

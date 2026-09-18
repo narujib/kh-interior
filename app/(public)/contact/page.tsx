@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/forms/contact-form";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 export const metadata = {
-  title: "Kontak | Khakim Interior",
+  title: "Kontak",
   description:
     "Hubungi kami untuk mendiskusikan proyek desain interior atau arsitektur Anda berikutnya.",
 };

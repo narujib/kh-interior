@@ -11,7 +11,7 @@ import { getProjects } from "@/lib/data/projects";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Portofolio | Khakim Interior",
+  title: "Portofolio",
   description:
     "Jelajahi karya pilihan kami dari proyek desain interior dan arsitektur kustom premium.",
 };

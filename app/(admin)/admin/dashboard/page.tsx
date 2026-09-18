@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Dasbor Admin | Khakim Interior",
+  title: "Dasbor Admin",
   robots: "noindex, nofollow",
 };
 

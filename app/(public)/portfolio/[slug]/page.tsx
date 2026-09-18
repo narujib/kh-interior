@@ -26,12 +26,12 @@ export async function generateMetadata({
 
   if (!project) {
     return {
-      title: "Proyek Tidak Ditemukan | Khakim Interior",
+      title: "Proyek Tidak Ditemukan",
     };
   }
 
   return {
-    title: `${project.title} | Khakim Interior`,
+    title: `${project.title}`,
     description: project.description.substring(0, 160),
     openGraph: {
       images: [project.coverImageUrl],
