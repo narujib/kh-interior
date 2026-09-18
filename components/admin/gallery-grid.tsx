@@ -1,12 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import Image from "next/image";
 import { GalleryItem } from "@/generated/prisma/client";
-import { Trash2, Loader2 } from "lucide-react";
+import { Trash2, Loader2, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { deleteGalleryItemAction } from "@/lib/actions/admin-gallery";
+import {
+  deleteGalleryItemAction,
+  toggleFeaturedGalleryItemAction,
+} from "@/lib/actions/admin-gallery";
 
 interface GalleryGridProps {
   items: GalleryItem[];
@@ -14,6 +17,7 @@ interface GalleryGridProps {
 
 export function GalleryGrid({ items }: GalleryGridProps) {
   const [isDeleting, setIsDeleting] = useState<string | null>(null);
+  const [isPending, startTransition] = useTransition();
 
   const handleDelete = async (id: string) => {
     if (!confirm("Apakah Anda yakin ingin menghapus item galeri ini?")) return;
@@ -29,6 +33,19 @@ export function GalleryGrid({ items }: GalleryGridProps) {
     } finally {
       setIsDeleting(null);
     }
+  };
+
+  const handleToggleFeatured = (id: string) => {
+    startTransition(async () => {
+      try {
+        await toggleFeaturedGalleryItemAction(id);
+        toast.success("Status unggulan (featured) berhasil diperbarui");
+      } catch (error) {
+        toast.error(
+          error instanceof Error ? error.message : "Gagal mengubah status"
+        );
+      }
+    });
   };
 
   if (items.length === 0) {
@@ -54,12 +71,28 @@ export function GalleryGrid({ items }: GalleryGridProps) {
             />
           </div>
 
-          <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
+          {/* Badge isFeatured always visible if true */}
+          {item.isFeatured && (
+            <div className="absolute top-2 right-2 rounded-full bg-black/60 p-1.5 text-yellow-400">
+              <Star className="h-4 w-4 fill-current" />
+            </div>
+          )}
+
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
+            <Button
+              variant={item.isFeatured ? "default" : "secondary"}
+              size="sm"
+              onClick={() => handleToggleFeatured(item.id)}
+              disabled={isPending}
+              className="rounded"
+            >
+              {item.isFeatured ? "Hapus dari Beranda" : "Tampilkan di Beranda"}
+            </Button>
             <Button
               variant="destructive"
               size="icon"
               onClick={() => handleDelete(item.id)}
-              disabled={isDeleting === item.id}
+              disabled={isDeleting === item.id || isPending}
               className="rounded"
             >
               {isDeleting === item.id ? (

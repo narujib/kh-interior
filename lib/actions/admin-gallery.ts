@@ -38,3 +38,37 @@ export async function deleteGalleryItemAction(id: string) {
   revalidatePath("/gallery");
   revalidatePath("/admin/gallery");
 }
+
+export async function toggleFeaturedGalleryItemAction(id: string) {
+  const session = await getServerSession(authOptions);
+  if (!session) {
+    throw new Error("Unauthorized");
+  }
+
+  const item = await prisma.galleryItem.findUnique({
+    where: { id },
+  });
+
+  if (!item) {
+    throw new Error("Gambar tidak ditemukan");
+  }
+
+  // Jika ingin mengubah menjadi featured (saat ini false)
+  if (!item.isFeatured) {
+    const featuredCount = await prisma.galleryItem.count({
+      where: { isFeatured: true },
+    });
+
+    if (featuredCount >= 5) {
+      throw new Error("Maksimal 5 gambar yang bisa ditampilkan di beranda.");
+    }
+  }
+
+  await prisma.galleryItem.update({
+    where: { id },
+    data: { isFeatured: !item.isFeatured },
+  });
+
+  revalidatePath("/");
+  revalidatePath("/admin/gallery");
+}

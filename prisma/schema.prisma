@@ -37,12 +37,14 @@ model ProjectImage {
 }
 
 model GalleryItem {
-  id          String             @id @default(uuid())
+  id          String   @id @default(uuid())
   imageUrl    String
   altText     String
-  createdAt   DateTime           @default(now())
+  isFeatured  Boolean  @default(false)
+  createdAt   DateTime @default(now())
 
   @@index([createdAt])
+  @@index([isFeatured])
 }
 
 model Message {
