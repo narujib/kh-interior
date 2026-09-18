@@ -9,6 +9,7 @@ import {
   MessageSquare,
   LogOut,
   PanelLeftClose,
+  Settings,
 } from "lucide-react";
 import { signOut } from "next-auth/react";
 
@@ -17,6 +18,7 @@ const NAV_ITEMS = [
   { href: "/admin/portfolio", label: "Portofolio", icon: FolderOpen },
   { href: "/admin/gallery", label: "Galeri", icon: ImageIcon },
   { href: "/admin/messages", label: "Pesan", icon: MessageSquare },
+  { href: "/admin/settings", label: "Pengaturan", icon: Settings },
 ];
 
 interface AdminSidebarProps {
