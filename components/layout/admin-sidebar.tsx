@@ -39,7 +39,7 @@ export function AdminSidebar({ isOpen, setIsOpen }: AdminSidebarProps) {
       <div className="border-border flex h-16 items-center justify-between border-b px-6">
         <Link
           href="/admin/dashboard"
-          className="flex items-center"
+          className="flex items-center gap-2"
           onClick={() => setIsOpen(false)}
         >
           <Image
@@ -47,10 +47,13 @@ export function AdminSidebar({ isOpen, setIsOpen }: AdminSidebarProps) {
             alt="Khakim Interior Logo"
             width={120}
             height={30}
-            className="h-6 w-auto"
+            className="h-8 w-auto"
             style={{ width: "auto" }}
             priority
           />
+          <span className="font-heading text-xl">
+            Admin Khakim
+          </span>
         </Link>
         <button
           onClick={() => setIsOpen(false)}

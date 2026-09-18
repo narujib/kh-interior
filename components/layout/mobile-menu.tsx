@@ -49,7 +49,7 @@ export function MobileMenu({ isOpen, setIsOpen }: MobileMenuProps) {
           <div className="border-border/50 flex items-center justify-between border-b px-5 py-6 sm:px-8">
             <Link
               href="/"
-              className="flex items-center"
+              className="flex items-center gap-3"
               onClick={() => setIsOpen(false)}
             >
               <Image
@@ -57,10 +57,13 @@ export function MobileMenu({ isOpen, setIsOpen }: MobileMenuProps) {
                 alt="Khakim Interior Logo"
                 width={160}
                 height={40}
-                className="h-8 w-auto"
+                className="h-10 w-auto md:h-12"
                 style={{ width: "auto" }}
                 priority
               />
+              <span className="font-heading text-foreground text-xl tracking-wide uppercase sm:text-2xl">
+                Khakim Interior
+              </span>
             </Link>
             <button
               onClick={() => setIsOpen(false)}

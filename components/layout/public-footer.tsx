@@ -10,16 +10,19 @@ export function PublicFooter() {
           <div className="md:col-span-2">
             <Link
               href="/"
-              className="mb-6 inline-block"
+              className="mb-6 inline-flex items-center gap-3"
             >
               <Image
                 src="/images/khakim-interior.png"
                 alt="Khakim Interior Logo"
                 width={160}
                 height={40}
-                className="h-8 w-auto md:h-10 opacity-80 transition-opacity hover:opacity-100"
+                className="h-10 w-auto md:h-12 opacity-80 transition-opacity hover:opacity-100"
                 style={{ width: "auto" }}
               />
+              <span className="font-heading text-foreground text-xl tracking-wide uppercase sm:text-2xl">
+                Khakim Interior
+              </span>
             </Link>
             <p className="text-foreground-soft max-w-sm font-light">
               Menciptakan ruang yang tak lekang oleh waktu, minimalis, dan

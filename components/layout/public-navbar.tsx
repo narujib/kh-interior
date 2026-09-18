@@ -43,17 +43,20 @@ export function PublicNavbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="relative z-50 flex items-center"
+            className="relative z-50 flex items-center gap-3"
           >
             <Image
               src="/images/khakim-interior.png"
               alt="Khakim Interior Logo"
               width={160}
               height={40}
-              className="h-8 w-auto md:h-10"
+              className="h-10 w-auto md:h-12"
               style={{ width: "auto" }}
               priority
             />
+            <span className="font-heading text-foreground text-xl tracking-wide uppercase sm:text-2xl">
+              Khakim Interior
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
