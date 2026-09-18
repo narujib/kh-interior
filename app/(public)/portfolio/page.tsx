@@ -31,48 +31,42 @@ export default async function PortfolioPage() {
             title: "Rumah Kaca",
             slug: "glass-house",
             clientName: "Hunian Pribadi",
-            coverImageUrl:
-              "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80",
+            coverImageUrl: "/images/hero.jpeg",
           },
           {
             id: "2",
             title: "Loteng Minimalis",
             slug: "minimalist-loft",
             clientName: "Hotel Butik",
-            coverImageUrl:
-              "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80",
+            coverImageUrl: "/images/workshop.jpg",
           },
           {
             id: "3",
             title: "Tempat Singgah Perkotaan",
             slug: "urban-retreat",
             clientName: "Klien Pribadi",
-            coverImageUrl:
-              "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
+            coverImageUrl: "/images/kitchenset.jpg",
           },
           {
             id: "4",
             title: "Restorasi Warisan",
             slug: "heritage-restoration",
             clientName: "Cagar Budaya",
-            coverImageUrl:
-              "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
+            coverImageUrl: "/images/wardrobe.jpg",
           },
           {
             id: "5",
             title: "Oasis Modern",
             slug: "modern-oasis",
             clientName: "Eksekutif Teknologi",
-            coverImageUrl:
-              "https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&q=80",
+            coverImageUrl: "/images/backdrop-living-room.jpg",
           },
           {
             id: "6",
             title: "Vila Pesisir",
             slug: "coastal-villa",
             clientName: "Rumah Peristirahatan Musim Panas",
-            coverImageUrl:
-              "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
+            coverImageUrl: "/images/storage.jpg",
           },
         ];
 

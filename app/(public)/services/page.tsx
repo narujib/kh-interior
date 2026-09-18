@@ -14,7 +14,7 @@ const SERVICES = [
     description:
       "Dapur adalah jantung dari setiap rumah. Layanan kitchen set kustom kami berfokus pada perpaduan sempurna antara fungsionalitas dan estetika. Kami mendesain kabinet, area persiapan, hingga kompartemen penyimpanan spesifik yang sepenuhnya disesuaikan dengan kebiasaan memasak serta gaya interior keseluruhan rumah Anda.",
     image:
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80",
+      "/images/kitchenset.jpg",
     features: [
       "Optimalisasi Alur Memasak",
       "Material Tahan Lama & Tahan Air",
@@ -27,7 +27,7 @@ const SERVICES = [
     description:
       "Ciptakan area penyimpanan pakaian impian Anda dengan lemari (wardrobe) yang dirancang khusus. Mulai dari lemari tanam (built-in) hingga walk-in closet yang mewah, kami memastikan setiap potong pakaian, aksesori, dan sepatu Anda memiliki tempatnya sendiri dengan tampilan elegan yang tak lekang oleh waktu.",
     image:
-      "https://images.unsplash.com/photo-1595526114101-23da94d77252?auto=format&fit=crop&q=80",
+      "/images/wardrobe.jpg",
     features: [
       "Desain Walk-in Closet",
       "Organisasi Ruang Fleksibel",
@@ -40,7 +40,7 @@ const SERVICES = [
     description:
       "Ruang keluarga adalah pusat berkumpul dan bersantai. Kami merancang backdrop TV dan furnitur living room yang tidak hanya menyembunyikan kabel secara rapi, tetapi juga menciptakan titik fokus ruangan yang memukau, hangat, dan selaras dengan tema keseluruhan interior Anda.",
     image:
-      "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
+      "/images/backdrop-living-room.jpg",
     features: [
       "Manajemen Kabel Tersembunyi",
       "Integrasi Rak Pajangan",
@@ -53,7 +53,7 @@ const SERVICES = [
     description:
       "Ketika produk siap pakai tidak memenuhi standar atau ukuran ruang Anda, meja kerja, meja rias, dan solusi penyimpanan kustom adalah jawabannya. Kami membuat furnitur yang presisi sesuai dengan proporsi ruangan Anda, menghadirkan estetika premium tanpa mengorbankan utilitas.",
     image:
-      "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80",
+      "/images/storage.jpg",
     features: [
       "Meja Kerja Ergonomis",
       "Meja Rias & Konsol Unik",

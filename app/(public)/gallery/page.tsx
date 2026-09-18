@@ -23,42 +23,42 @@ export default async function GalleryPage() {
           {
             id: "1",
             imageUrl:
-              "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
+              "/images/hero.jpeg",
             altText: "Detail Interior",
             orientation: "PORTRAIT" as const,
           },
           {
             id: "2",
             imageUrl:
-              "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80",
+              "/images/workshop.jpg",
             altText: "Tekstur Material",
             orientation: "LANDSCAPE" as const,
           },
           {
             id: "3",
             imageUrl:
-              "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80",
+              "/images/kitchenset.jpg",
             altText: "Ruang Keluarga",
             orientation: "PORTRAIT" as const,
           },
           {
             id: "4",
             imageUrl:
-              "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
+              "/images/wardrobe.jpg",
             altText: "Desain Dapur",
             orientation: "LANDSCAPE" as const,
           },
           {
             id: "5",
             imageUrl:
-              "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
+              "/images/backdrop-living-room.jpg",
             altText: "Cahaya Alami",
             orientation: "LANDSCAPE" as const,
           },
           {
             id: "6",
             imageUrl:
-              "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
+              "/images/storage.jpg",
             altText: "Detail Kamar Tidur",
             orientation: "PORTRAIT" as const,
           },

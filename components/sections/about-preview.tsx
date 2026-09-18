@@ -70,7 +70,7 @@ export function AboutPreview() {
           <div className="relative order-1 h-[600px] w-full lg:order-2 lg:h-[800px]">
             <ImageReveal delay={0.2} className="h-full w-full">
               <Image
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80"
+                src="/images/workshop.jpg"
                 alt="Khakim Interior Studio Design Approach"
                 fill
                 className="object-cover object-center"

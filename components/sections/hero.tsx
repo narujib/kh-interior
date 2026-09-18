@@ -22,8 +22,8 @@ export function Hero() {
         }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80"
-          alt="Khakim Interior Minimalist Design"
+          src="/images/hero.jpeg"
+          alt="Interior Mewah Kustom Design"
           fill
           priority
           className="object-cover object-center"
