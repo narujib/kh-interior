@@ -106,7 +106,7 @@ export function GalleryClient({ items }: GalleryClientProps) {
 
           <button
             onClick={closeLightbox}
-            className="absolute top-6 right-6 z-50 rounded-full bg-white/10 p-3 text-white/70 backdrop-blur-sm transition-all hover:bg-white/20 hover:text-white"
+            className="absolute top-6 right-6 z-50 rounded-full bg-black/60 p-3 text-white backdrop-blur-md transition-all hover:scale-110 hover:bg-black/80"
             aria-label="Tutup lightbox"
           >
             <X className="h-6 w-6" />
@@ -116,7 +116,7 @@ export function GalleryClient({ items }: GalleryClientProps) {
             <div className="relative flex h-full w-full items-center justify-center">
               <button
                 onClick={showPrev}
-                className="absolute left-4 z-50 rounded-full bg-white/10 p-4 text-white/70 backdrop-blur-sm transition-all hover:scale-110 hover:bg-white/20 hover:text-white md:left-8"
+                className="absolute left-4 z-50 rounded-full bg-black/60 p-4 text-white backdrop-blur-md transition-all hover:scale-110 hover:bg-black/80 md:left-8"
                 aria-label="Gambar sebelumnya"
               >
                 <ChevronLeft className="h-8 w-8" />
@@ -137,7 +137,7 @@ export function GalleryClient({ items }: GalleryClientProps) {
 
               <button
                 onClick={showNext}
-                className="absolute right-4 z-50 rounded-full bg-white/10 p-4 text-white/70 backdrop-blur-sm transition-all hover:scale-110 hover:bg-white/20 hover:text-white md:right-8"
+                className="absolute right-4 z-50 rounded-full bg-black/60 p-4 text-white backdrop-blur-md transition-all hover:scale-110 hover:bg-black/80 md:right-8"
                 aria-label="Gambar selanjutnya"
               >
                 <ChevronRight className="h-8 w-8" />
