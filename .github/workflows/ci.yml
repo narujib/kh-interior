@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-and-build:
+    name: Lint, Typecheck, and Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Check Formatting (Prettier)
+        run: npx prettier . --check
+
+      - name: Lint Code
+        run: npm run lint
+
+      - name: Generate Prisma Client
+        run: npm run db:generate
+
+      - name: Type Check
+        run: npx tsc --noEmit
+
+      - name: Build Next.js App
+        run: npm run build
+        env:
+          # Dummy environment variables to allow Next.js to build without a real database
+          DATABASE_URL: 'postgresql://postgres:postgres@localhost:5432/dummy'
+          DIRECT_URL: 'postgresql://postgres:postgres@localhost:5432/dummy'
+          NEXTAUTH_SECRET: 'dummy_secret_for_ci_build_only'
+          NEXTAUTH_URL: 'http://localhost:3000'
+          CLOUDINARY_CLOUD_NAME: 'dummy_cloud_name'
+          CLOUDINARY_API_KEY: 'dummy_api_key'
+          CLOUDINARY_API_SECRET: 'dummy_api_secret'
