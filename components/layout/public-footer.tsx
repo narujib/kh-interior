@@ -17,7 +17,7 @@ export function PublicFooter() {
                 alt="Khakim Interior Logo"
                 width={160}
                 height={40}
-                className="h-10 w-auto md:h-12 opacity-80 transition-opacity hover:opacity-100"
+                className="h-10 w-auto md:h-12"
                 style={{ width: "auto" }}
               />
               <span className="font-heading text-foreground text-xl tracking-wide uppercase sm:text-2xl">
