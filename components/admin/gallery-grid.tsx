@@ -10,6 +10,17 @@ import {
   deleteGalleryItemAction,
   toggleFeaturedGalleryItemAction,
 } from "@/lib/actions/admin-gallery";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 interface GalleryGridProps {
   items: GalleryItem[];
@@ -20,7 +31,6 @@ export function GalleryGrid({ items }: GalleryGridProps) {
   const [isPending, startTransition] = useTransition();
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Apakah Anda yakin ingin menghapus item galeri ini?")) return;
 
     setIsDeleting(id);
     try {
@@ -88,20 +98,40 @@ export function GalleryGrid({ items }: GalleryGridProps) {
             >
               {item.isFeatured ? "Hapus dari Beranda" : "Tampilkan di Beranda"}
             </Button>
-            <Button
-              variant="destructive"
-              size="sm"
-              onClick={() => handleDelete(item.id)}
-              disabled={isDeleting === item.id || isPending}
-              className="w-full rounded text-xs"
-            >
-              {isDeleting === item.id ? (
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              ) : (
-                <Trash2 className="mr-2 h-4 w-4" />
-              )}
-              Hapus Item
-            </Button>
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button
+                  variant="destructive"
+                  size="sm"
+                  disabled={isDeleting === item.id || isPending}
+                  className="w-full rounded text-xs"
+                >
+                  {isDeleting === item.id ? (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  ) : (
+                    <Trash2 className="mr-2 h-4 w-4" />
+                  )}
+                  Hapus Item
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent className="rounded-none border-border">
+                <AlertDialogHeader>
+                  <AlertDialogTitle className="font-heading">Hapus Item Galeri</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    Apakah Anda yakin ingin menghapus item galeri ini? Tindakan ini tidak dapat dibatalkan.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel className="rounded-none">Batal</AlertDialogCancel>
+                  <AlertDialogAction
+                    onClick={() => handleDelete(item.id)}
+                    className="rounded-none bg-red-600 hover:bg-red-700 text-white"
+                  >
+                    Hapus
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
           </div>
         </div>
       ))}

@@ -21,6 +21,17 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { toast } from "sonner";
 import {
   toggleMessageReadAction,
@@ -61,7 +72,6 @@ export function MessageTable({ messages }: MessageTableProps) {
 
   const handleDelete = async (id: string, e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
-    if (!confirm("Apakah Anda yakin ingin menghapus pesan ini?")) return;
 
     setIsUpdating(id);
     try {
@@ -146,16 +156,38 @@ export function MessageTable({ messages }: MessageTableProps) {
                   })}
                 </TableCell>
                 <TableCell className="text-right">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={(e) => handleDelete(msg.id, e)}
-                    disabled={isUpdating === msg.id}
-                    className="h-8 w-8 text-red-500 hover:bg-red-50 hover:text-red-600"
-                  >
-                    <Trash2 className="h-4 w-4" />
-                    <span className="sr-only">Hapus</span>
-                  </Button>
+                  <div onClick={(e) => e.stopPropagation()}>
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          disabled={isUpdating === msg.id}
+                          className="h-8 w-8 text-red-500 hover:bg-red-50 hover:text-red-600"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                          <span className="sr-only">Hapus</span>
+                        </Button>
+                      </AlertDialogTrigger>
+                      <AlertDialogContent className="rounded-none border-border">
+                        <AlertDialogHeader>
+                          <AlertDialogTitle className="font-heading">Hapus Pesan</AlertDialogTitle>
+                          <AlertDialogDescription>
+                            Apakah Anda yakin ingin menghapus pesan dari {msg.senderName}? Tindakan ini tidak dapat dibatalkan.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel className="rounded-none">Batal</AlertDialogCancel>
+                          <AlertDialogAction
+                            onClick={(e) => handleDelete(msg.id, e as unknown as React.MouseEvent)}
+                            className="rounded-none bg-red-600 hover:bg-red-700 text-white"
+                          >
+                            Hapus
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
+                  </div>
                 </TableCell>
               </TableRow>
             ))}
@@ -223,19 +255,39 @@ export function MessageTable({ messages }: MessageTableProps) {
                   {selectedMessage.isRead ? "Belum Dibaca" : "Sudah Dibaca"}
                 </Button>
 
-                <Button
-                  variant="destructive"
-                  onClick={() => handleDelete(selectedMessage.id)}
-                  className="rounded-none"
-                  disabled={isUpdating === selectedMessage.id}
-                >
-                  {isUpdating === selectedMessage.id ? (
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  ) : (
-                    <Trash2 className="mr-2 h-4 w-4" />
-                  )}
-                  Hapus
-                </Button>
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <Button
+                      variant="destructive"
+                      className="rounded-none"
+                      disabled={isUpdating === selectedMessage.id}
+                    >
+                      {isUpdating === selectedMessage.id ? (
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      ) : (
+                        <Trash2 className="mr-2 h-4 w-4" />
+                      )}
+                      Hapus
+                    </Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent className="rounded-none border-border">
+                    <AlertDialogHeader>
+                      <AlertDialogTitle className="font-heading">Hapus Pesan</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        Apakah Anda yakin ingin menghapus pesan ini? Tindakan ini tidak dapat dibatalkan.
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel className="rounded-none">Batal</AlertDialogCancel>
+                      <AlertDialogAction
+                        onClick={() => handleDelete(selectedMessage.id)}
+                        className="rounded-none bg-red-600 hover:bg-red-700 text-white"
+                      >
+                        Hapus
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
               </div>
             </>
           )}

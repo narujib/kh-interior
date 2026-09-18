@@ -9,6 +9,17 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Edit, Trash2, Loader2 } from "lucide-react";
 import Link from "next/link";
@@ -35,12 +46,6 @@ export function ProjectTable({ projects }: ProjectTableProps) {
   const [isToggling, setIsToggling] = useState<string | null>(null);
 
   const handleDelete = async (id: string) => {
-    if (
-      !confirm(
-        "Apakah Anda yakin ingin menghapus proyek ini? Ini juga akan menghapus semua gambar proyek yang terkait."
-      )
-    )
-      return;
 
     setIsDeleting(id);
     try {
@@ -147,20 +152,40 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                   <Edit className="h-4 w-4" />
                   <span className="sr-only">Edit</span>
                 </Link>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => handleDelete(project.id)}
-                  disabled={isDeleting === project.id}
-                  className="border-border h-8 w-8 rounded-none text-red-500 hover:bg-red-50 hover:text-red-600"
-                >
-                  {isDeleting === project.id ? (
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                  ) : (
-                    <Trash2 className="h-4 w-4" />
-                  )}
-                  <span className="sr-only">Hapus</span>
-                </Button>
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      disabled={isDeleting === project.id}
+                      className="border-border h-8 w-8 rounded-none text-red-500 hover:bg-red-50 hover:text-red-600"
+                    >
+                      {isDeleting === project.id ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        <Trash2 className="h-4 w-4" />
+                      )}
+                      <span className="sr-only">Hapus</span>
+                    </Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent className="rounded-none border-border">
+                    <AlertDialogHeader>
+                      <AlertDialogTitle className="font-heading">Hapus Proyek</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        Apakah Anda yakin ingin menghapus proyek ini? Ini juga akan menghapus semua gambar proyek yang terkait dan tindakan ini tidak dapat dibatalkan.
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel className="rounded-none">Batal</AlertDialogCancel>
+                      <AlertDialogAction
+                        onClick={() => handleDelete(project.id)}
+                        className="rounded-none bg-red-600 hover:bg-red-700 text-white"
+                      >
+                        Hapus Proyek
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
               </TableCell>
             </TableRow>
           ))}

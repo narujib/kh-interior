@@ -7,6 +7,17 @@ import Image from "next/image";
 import { ImageUpload } from "./image-upload";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 interface ImageSorterProps {
   projectId: string;
@@ -102,8 +113,6 @@ export function ImageSorter({ projectId, initialImages }: ImageSorterProps) {
   };
 
   const handleDeleteImage = async (imageId: string) => {
-    if (!confirm("Apakah Anda yakin ingin menghapus gambar ini?")) return;
-
     setIsUpdating(true);
     try {
       const response = await fetch(
@@ -167,13 +176,33 @@ export function ImageSorter({ projectId, initialImages }: ImageSorterProps) {
               >
                 <GripVertical className="h-5 w-5" />
               </button>
-              <button
-                type="button"
-                onClick={() => handleDeleteImage(image.id)}
-                className="rounded bg-red-500/80 p-2 text-white backdrop-blur-sm transition-colors hover:bg-red-500"
-              >
-                <X className="h-5 w-5" />
-              </button>
+              <AlertDialog>
+                <AlertDialogTrigger asChild>
+                  <button
+                    type="button"
+                    className="rounded bg-red-500/80 p-2 text-white backdrop-blur-sm transition-colors hover:bg-red-500"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </AlertDialogTrigger>
+                <AlertDialogContent className="rounded-none border-border">
+                  <AlertDialogHeader>
+                    <AlertDialogTitle className="font-heading">Hapus Gambar</AlertDialogTitle>
+                    <AlertDialogDescription>
+                      Apakah Anda yakin ingin menghapus gambar ini? Tindakan ini tidak dapat dibatalkan.
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel className="rounded-none">Batal</AlertDialogCancel>
+                    <AlertDialogAction
+                      onClick={() => handleDeleteImage(image.id)}
+                      className="rounded-none bg-red-600 hover:bg-red-700 text-white"
+                    >
+                      Hapus
+                    </AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
             </div>
           </div>
         ))}
