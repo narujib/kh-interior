@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/shared/container";
 
 export function PublicFooter() {
@@ -9,9 +10,15 @@ export function PublicFooter() {
           <div className="md:col-span-2">
             <Link
               href="/"
-              className="font-heading text-foreground mb-6 inline-block text-2xl tracking-wide uppercase"
+              className="mb-6 inline-block"
             >
-              Khakim Interior
+              <Image
+                src="/images/khakim-interior.png"
+                alt="Khakim Interior Logo"
+                width={160}
+                height={40}
+                className="h-8 w-auto md:h-10 opacity-80 transition-opacity hover:opacity-100"
+              />
             </Link>
             <p className="text-foreground-soft max-w-sm font-light">
               Menciptakan ruang yang tak lekang oleh waktu, minimalis, dan

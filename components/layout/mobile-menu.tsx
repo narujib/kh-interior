@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { X } from "lucide-react";
 import { useEffect } from "react";
@@ -48,10 +49,17 @@ export function MobileMenu({ isOpen, setIsOpen }: MobileMenuProps) {
           <div className="border-border/50 flex items-center justify-between border-b px-5 py-6 sm:px-8">
             <Link
               href="/"
-              className="font-heading text-foreground text-2xl tracking-wide uppercase"
+              className="flex items-center"
               onClick={() => setIsOpen(false)}
             >
-              Khakim Interior
+              <Image
+                src="/images/khakim-interior.png"
+                alt="Khakim Interior Logo"
+                width={160}
+                height={40}
+                className="h-8 w-auto"
+                priority
+              />
             </Link>
             <button
               onClick={() => setIsOpen(false)}

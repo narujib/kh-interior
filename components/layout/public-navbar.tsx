@@ -7,6 +7,7 @@ import { MobileMenu } from "./mobile-menu";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
+import Image from "next/image";
 
 const links = [
   { href: "/portfolio", label: "Portofolio" },
@@ -42,9 +43,16 @@ export function PublicNavbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-heading text-foreground relative z-50 text-xl tracking-wide uppercase sm:text-2xl"
+            className="relative z-50 flex items-center"
           >
-            Khakim Interior
+            <Image
+              src="/images/khakim-interior.png"
+              alt="Khakim Interior Logo"
+              width={160}
+              height={40}
+              className="h-8 w-auto md:h-10"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

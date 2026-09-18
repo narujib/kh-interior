@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
@@ -38,10 +39,17 @@ export function AdminSidebar({ isOpen, setIsOpen }: AdminSidebarProps) {
       <div className="border-border flex h-16 items-center justify-between border-b px-6">
         <Link
           href="/admin/dashboard"
-          className="font-heading text-xl"
+          className="flex items-center"
           onClick={() => setIsOpen(false)}
         >
-          Admin Khakim
+          <Image
+            src="/images/khakim-interior.png"
+            alt="Khakim Interior Logo"
+            width={120}
+            height={30}
+            className="h-6 w-auto"
+            priority
+          />
         </Link>
         <button
           onClick={() => setIsOpen(false)}
