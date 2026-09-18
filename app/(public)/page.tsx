@@ -7,6 +7,8 @@ import { ProcessSection } from "@/components/sections/process-section";
 import { Testimonials } from "@/components/sections/testimonials";
 import { ContactCTA } from "@/components/sections/contact-cta";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <>
