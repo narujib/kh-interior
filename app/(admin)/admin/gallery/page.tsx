@@ -22,7 +22,7 @@ export default async function AdminGalleryPage() {
   });
 
   return (
-    <div className="animate-fade-in max-w-5xl space-y-8">
+    <div className="animate-fade-in space-y-8">
       <div className="flex flex-col gap-1">
         <h2 className="font-heading text-2xl font-medium">Manajemen Galeri</h2>
         <p className="text-foreground-soft text-sm">

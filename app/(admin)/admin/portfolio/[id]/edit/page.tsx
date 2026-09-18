@@ -40,7 +40,7 @@ export default async function EditProjectPage({
   const updateAction = updateProjectAction.bind(null, project.id);
 
   return (
-    <div className="animate-fade-in max-w-4xl space-y-12">
+    <div className="animate-fade-in space-y-12">
       <div className="flex flex-col gap-1">
         <h2 className="font-heading text-2xl font-medium">Edit Proyek</h2>
         <p className="text-foreground-soft text-sm">

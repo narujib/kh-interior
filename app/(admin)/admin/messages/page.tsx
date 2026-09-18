@@ -21,7 +21,7 @@ export default async function AdminMessagesPage() {
   });
 
   return (
-    <div className="animate-fade-in max-w-4xl space-y-8">
+    <div className="animate-fade-in space-y-8">
       <div className="flex flex-col gap-1">
         <h2 className="font-heading text-2xl font-medium">Pesan</h2>
         <p className="text-foreground-soft text-sm">
