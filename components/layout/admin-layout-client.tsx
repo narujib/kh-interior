@@ -42,9 +42,7 @@ export function AdminLayoutClient({ children }: AdminLayoutClientProps) {
       <div className="flex min-h-screen flex-1 flex-col transition-all duration-300 lg:pl-64">
         <AdminHeader setSidebarOpen={setSidebarOpen} title={title} />
 
-        <main className="flex-1 p-4 lg:p-8">
-          <div className="mx-auto w-full max-w-6xl">{children}</div>
-        </main>
+        <main className="flex-1 p-4 lg:p-8">{children}</main>
       </div>
     </div>
   );
