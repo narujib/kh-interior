@@ -183,7 +183,11 @@ export function MessageTable({ messages }: MessageTableProps) {
                           <AlertDialogAction
                             onClick={(e) => handleDelete(msg.id, e as unknown as React.MouseEvent)}
                             className="rounded-none bg-red-600 hover:bg-red-700 text-white"
+                            disabled={isUpdating === msg.id}
                           >
+                            {isUpdating === msg.id ? (
+                              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                            ) : null}
                             Hapus
                           </AlertDialogAction>
                         </AlertDialogFooter>
@@ -286,7 +290,11 @@ export function MessageTable({ messages }: MessageTableProps) {
                       <AlertDialogAction
                         onClick={() => handleDelete(selectedMessage.id)}
                         className="rounded-none bg-red-600 hover:bg-red-700 text-white"
+                        disabled={isUpdating === selectedMessage.id}
                       >
+                        {isUpdating === selectedMessage.id ? (
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        ) : null}
                         Hapus
                       </AlertDialogAction>
                     </AlertDialogFooter>

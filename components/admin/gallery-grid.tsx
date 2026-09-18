@@ -129,7 +129,11 @@ export function GalleryGrid({ items }: GalleryGridProps) {
                   <AlertDialogAction
                     onClick={() => handleDelete(item.id)}
                     className="rounded-none bg-red-600 hover:bg-red-700 text-white"
+                    disabled={isDeleting === item.id}
                   >
+                    {isDeleting === item.id ? (
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    ) : null}
                     Hapus
                   </AlertDialogAction>
                 </AlertDialogFooter>

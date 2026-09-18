@@ -182,7 +182,11 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                       <AlertDialogAction
                         onClick={() => handleDelete(project.id)}
                         className="rounded-none bg-red-600 hover:bg-red-700 text-white"
+                        disabled={isDeleting === project.id}
                       >
+                        {isDeleting === project.id ? (
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        ) : null}
                         Hapus Proyek
                       </AlertDialogAction>
                     </AlertDialogFooter>
