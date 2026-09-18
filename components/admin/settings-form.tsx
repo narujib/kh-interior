@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition, useEffect } from "react";
+import { useTransition, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
-import { signOut, useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import {
   Card,
   CardContent,
@@ -22,8 +22,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export function SettingsForm() {
-  const { data: session } = useSession();
+interface SettingsFormProps {
+  initialUsername?: string;
+}
+
+export function SettingsForm({ initialUsername = "" }: SettingsFormProps) {
   const [isPending, startTransition] = useTransition();
 
   const {
@@ -35,21 +38,21 @@ export function SettingsForm() {
     resolver: zodResolver(adminSettingsSchema),
     defaultValues: {
       currentPassword: "",
-      newUsername: "",
+      newUsername: initialUsername,
       newPassword: "",
     },
   });
 
-  // Set default username once session is loaded
+  // Set default username once initialUsername is loaded
   useEffect(() => {
-    if (session?.user?.name) {
+    if (initialUsername) {
       reset({
         currentPassword: "",
-        newUsername: session.user.name,
+        newUsername: initialUsername,
         newPassword: "",
       });
     }
-  }, [session, reset]);
+  }, [initialUsername, reset]);
 
   const onSubmit = (data: AdminSettingsFormData) => {
     startTransition(async () => {
