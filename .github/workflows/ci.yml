@@ -18,8 +18,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install Dependencies
         run: npm ci
@@ -40,10 +40,10 @@ jobs:
         run: npm run build
         env:
           # Dummy environment variables to allow Next.js to build without a real database
-          DATABASE_URL: 'postgresql://postgres:postgres@localhost:5432/dummy'
-          DIRECT_URL: 'postgresql://postgres:postgres@localhost:5432/dummy'
-          NEXTAUTH_SECRET: 'dummy_secret_for_ci_build_only'
-          NEXTAUTH_URL: 'http://localhost:3000'
-          CLOUDINARY_CLOUD_NAME: 'dummy_cloud_name'
-          CLOUDINARY_API_KEY: 'dummy_api_key'
-          CLOUDINARY_API_SECRET: 'dummy_api_secret'
+          DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/dummy"
+          DIRECT_URL: "postgresql://postgres:postgres@localhost:5432/dummy"
+          NEXTAUTH_SECRET: "dummy_secret_for_ci_build_only"
+          NEXTAUTH_URL: "http://localhost:3000"
+          CLOUDINARY_CLOUD_NAME: "dummy_cloud_name"
+          CLOUDINARY_API_KEY: "dummy_api_key"
+          CLOUDINARY_API_SECRET: "dummy_api_secret"
