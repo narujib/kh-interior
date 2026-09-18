@@ -47,6 +47,7 @@ export async function FeaturedProjects() {
                 slug={project.slug}
                 coverImage={project.coverImageUrl}
                 clientName={project.clientName}
+                priority={index <= 1}
               />
             </StaggerItem>
           ))}

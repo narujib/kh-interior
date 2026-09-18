@@ -52,6 +52,7 @@ export async function GalleryPreview() {
                   src={item.imageUrl}
                   alt={item.altText}
                   fill
+                  priority={index <= 2}
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes={
                     isLarge

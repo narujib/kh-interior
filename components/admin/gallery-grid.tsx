@@ -60,13 +60,14 @@ export function GalleryGrid({ items }: GalleryGridProps) {
 
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-      {items.map((item) => (
+      {items.map((item, index) => (
         <div key={item.id} className="border-border relative flex flex-col border bg-surface">
           <div className="relative aspect-square border-b border-border">
             <Image
               src={item.imageUrl}
               alt={item.altText}
               fill
+              priority={index <= 4}
               className="object-cover"
             />
             {/* Badge isFeatured always visible if true */}

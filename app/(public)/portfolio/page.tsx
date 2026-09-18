@@ -96,6 +96,7 @@ export default async function PortfolioPage() {
                     slug={project.slug}
                     coverImage={project.coverImageUrl}
                     clientName={project.clientName}
+                    priority={index <= 1}
                   />
                 </StaggerItem>
               ))}
