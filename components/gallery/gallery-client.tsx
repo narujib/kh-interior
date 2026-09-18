@@ -72,6 +72,11 @@ export function GalleryClient({ items }: GalleryClientProps) {
             spanClasses = "col-span-1 row-span-2"; // Tinggi (1x2)
           }
 
+          const isWide = spanClasses.includes("col-span-2");
+          const imageSizes = isWide
+            ? "(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 50vw"
+            : "(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw";
+
           return (
             <div
               key={item.id}
@@ -82,8 +87,9 @@ export function GalleryClient({ items }: GalleryClientProps) {
                 src={item.imageUrl}
                 alt={item.altText}
                 fill
+                priority={index <= 4}
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                sizes={imageSizes}
               />
               <div className="bg-black-soft/0 group-hover:bg-black-soft/20 absolute inset-0 transition-colors duration-500" />
             </div>
