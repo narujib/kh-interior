@@ -15,7 +15,7 @@ import {
 import { signOut } from "next-auth/react";
 
 const NAV_ITEMS = [
-  { href: "/admin/dashboard", label: "Dasbor", icon: LayoutDashboard },
+  { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/portfolio", label: "Portofolio", icon: FolderOpen },
   { href: "/admin/gallery", label: "Galeri", icon: ImageIcon },
   { href: "/admin/messages", label: "Pesan", icon: MessageSquare },
@@ -51,9 +51,7 @@ export function AdminSidebar({ isOpen, setIsOpen }: AdminSidebarProps) {
             style={{ width: "auto" }}
             priority
           />
-          <span className="font-heading text-xl">
-            Admin Khakim
-          </span>
+          <span className="font-heading text-xl">Khakim Interior</span>
         </Link>
         <button
           onClick={() => setIsOpen(false)}

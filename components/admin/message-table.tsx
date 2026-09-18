@@ -171,18 +171,29 @@ export function MessageTable({ messages }: MessageTableProps) {
                         <Trash2 className="h-4 w-4" />
                         <span className="sr-only">Hapus</span>
                       </AlertDialogTrigger>
-                      <AlertDialogContent className="rounded-none border-border">
+                      <AlertDialogContent className="border-border rounded-none">
                         <AlertDialogHeader>
-                          <AlertDialogTitle className="font-heading">Hapus Pesan</AlertDialogTitle>
+                          <AlertDialogTitle className="font-heading">
+                            Hapus Pesan
+                          </AlertDialogTitle>
                           <AlertDialogDescription>
-                            Apakah Anda yakin ingin menghapus pesan dari {msg.senderName}? Tindakan ini tidak dapat dibatalkan.
+                            Apakah Anda yakin ingin menghapus pesan dari{" "}
+                            {msg.senderName}? Tindakan ini tidak dapat
+                            dibatalkan.
                           </AlertDialogDescription>
                         </AlertDialogHeader>
                         <AlertDialogFooter>
-                          <AlertDialogCancel className="rounded-none">Batal</AlertDialogCancel>
+                          <AlertDialogCancel className="rounded-none">
+                            Batal
+                          </AlertDialogCancel>
                           <AlertDialogAction
-                            onClick={(e) => handleDelete(msg.id, e as unknown as React.MouseEvent)}
-                            className="rounded-none bg-red-600 hover:bg-red-700 text-white"
+                            onClick={(e) =>
+                              handleDelete(
+                                msg.id,
+                                e as unknown as React.MouseEvent
+                              )
+                            }
+                            className="rounded-none bg-red-600 text-white hover:bg-red-700"
                             disabled={isUpdating === msg.id}
                           >
                             {isUpdating === msg.id ? (
@@ -278,18 +289,23 @@ export function MessageTable({ messages }: MessageTableProps) {
                     )}
                     Hapus
                   </AlertDialogTrigger>
-                  <AlertDialogContent className="rounded-none border-border">
+                  <AlertDialogContent className="border-border rounded-none">
                     <AlertDialogHeader>
-                      <AlertDialogTitle className="font-heading">Hapus Pesan</AlertDialogTitle>
+                      <AlertDialogTitle className="font-heading">
+                        Hapus Pesan
+                      </AlertDialogTitle>
                       <AlertDialogDescription>
-                        Apakah Anda yakin ingin menghapus pesan ini? Tindakan ini tidak dapat dibatalkan.
+                        Apakah Anda yakin ingin menghapus pesan ini? Tindakan
+                        ini tidak dapat dibatalkan.
                       </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
-                      <AlertDialogCancel className="rounded-none">Batal</AlertDialogCancel>
+                      <AlertDialogCancel className="rounded-none">
+                        Batal
+                      </AlertDialogCancel>
                       <AlertDialogAction
                         onClick={() => handleDelete(selectedMessage.id)}
-                        className="rounded-none bg-red-600 hover:bg-red-700 text-white"
+                        className="rounded-none bg-red-600 text-white hover:bg-red-700"
                         disabled={isUpdating === selectedMessage.id}
                       >
                         {isUpdating === selectedMessage.id ? (

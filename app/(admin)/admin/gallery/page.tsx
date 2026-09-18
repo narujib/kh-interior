@@ -25,9 +25,11 @@ export default async function AdminGalleryPage() {
     <div className="animate-fade-in space-y-8">
       <div className="flex flex-col gap-1">
         <h2 className="font-heading text-2xl font-medium">Manajemen Galeri</h2>
-        <p className="text-foreground-soft text-sm max-w-2xl">
+        <p className="text-foreground-soft max-w-2xl text-sm">
           Tambahkan gambar baru ke galeri global atau hapus gambar yang sudah
-          ada. Gunakan tombol <strong>"Tampilkan di Beranda"</strong> di bawah gambar untuk memajang gambar tersebut di halaman utama (maksimal 5 gambar unggulan).
+          ada. Gunakan tombol <strong>&quot;Tampilkan di Beranda&quot;</strong>{" "}
+          di bawah gambar untuk memajang gambar tersebut di halaman utama
+          (maksimal 5 gambar unggulan).
         </p>
       </div>
 

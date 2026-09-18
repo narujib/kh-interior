@@ -36,7 +36,7 @@ export function Hero() {
       <Container className="relative z-10 flex h-full flex-col justify-end pb-24 md:pb-32">
         <div className="max-w-3xl">
           <FadeIn delay={0.2} duration={1}>
-            <h1 className="font-heading font-bold text-white-soft mb-6 text-4xl leading-[1.1] sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="font-heading text-white-soft mb-6 text-4xl leading-[1.1] font-bold sm:text-5xl md:text-6xl lg:text-7xl">
               Mendesain Ruang yang Bercerita Tentang Anda.
             </h1>
           </FadeIn>

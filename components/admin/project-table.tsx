@@ -23,8 +23,6 @@ import {
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Edit, Trash2, Loader2 } from "lucide-react";
 import Link from "next/link";
-import { format } from "date-fns";
-import { id } from "date-fns/locale";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
@@ -46,7 +44,6 @@ export function ProjectTable({ projects }: ProjectTableProps) {
   const [isToggling, setIsToggling] = useState<string | null>(null);
 
   const handleDelete = async (id: string) => {
-
     setIsDeleting(id);
     try {
       const res = await fetch(`/api/admin/projects/${id}`, {
@@ -64,7 +61,10 @@ export function ProjectTable({ projects }: ProjectTableProps) {
     }
   };
 
-  const handleToggleFeatured = async (id: string, isCurrentlyFeatured: boolean) => {
+  const handleToggleFeatured = async (
+    id: string,
+    isCurrentlyFeatured: boolean
+  ) => {
     setIsToggling(id);
     try {
       const res = await fetch(`/api/admin/projects/${id}/featured`, {
@@ -83,7 +83,9 @@ export function ProjectTable({ projects }: ProjectTableProps) {
       );
       router.refresh();
     } catch (error) {
-      toast.error(error instanceof Error ? error.message : "Gagal mengubah status");
+      toast.error(
+        error instanceof Error ? error.message : "Gagal mengubah status"
+      );
     } finally {
       setIsToggling(null);
     }
@@ -130,10 +132,14 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                 <Button
                   variant={project.isFeatured ? "default" : "outline"}
                   size="sm"
-                  onClick={() => handleToggleFeatured(project.id, project.isFeatured)}
+                  onClick={() =>
+                    handleToggleFeatured(project.id, project.isFeatured)
+                  }
                   disabled={isToggling === project.id}
                   className={`border-border h-8 rounded-none px-3 text-xs tracking-widest uppercase ${
-                    project.isFeatured ? "bg-foreground text-white-soft hover:bg-foreground-soft" : ""
+                    project.isFeatured
+                      ? "bg-foreground text-white-soft hover:bg-foreground-soft"
+                      : ""
                   }`}
                 >
                   {isToggling === project.id ? (
@@ -170,18 +176,24 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                     )}
                     <span className="sr-only">Hapus</span>
                   </AlertDialogTrigger>
-                  <AlertDialogContent className="rounded-none border-border">
+                  <AlertDialogContent className="border-border rounded-none">
                     <AlertDialogHeader>
-                      <AlertDialogTitle className="font-heading">Hapus Proyek</AlertDialogTitle>
+                      <AlertDialogTitle className="font-heading">
+                        Hapus Proyek
+                      </AlertDialogTitle>
                       <AlertDialogDescription>
-                        Apakah Anda yakin ingin menghapus proyek ini? Ini juga akan menghapus semua gambar proyek yang terkait dan tindakan ini tidak dapat dibatalkan.
+                        Apakah Anda yakin ingin menghapus proyek ini? Ini juga
+                        akan menghapus semua gambar proyek yang terkait dan
+                        tindakan ini tidak dapat dibatalkan.
                       </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
-                      <AlertDialogCancel className="rounded-none">Batal</AlertDialogCancel>
+                      <AlertDialogCancel className="rounded-none">
+                        Batal
+                      </AlertDialogCancel>
                       <AlertDialogAction
                         onClick={() => handleDelete(project.id)}
-                        className="rounded-none bg-red-600 hover:bg-red-700 text-white"
+                        className="rounded-none bg-red-600 text-white hover:bg-red-700"
                         disabled={isDeleting === project.id}
                       >
                         {isDeleting === project.id ? (

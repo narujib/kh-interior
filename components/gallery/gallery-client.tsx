@@ -27,7 +27,7 @@ export function GalleryClient({ items }: GalleryClientProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const observerRef = useRef<IntersectionObserver | null>(null);
   const loadingTriggerRef = useRef<HTMLDivElement | null>(null);
 
@@ -41,7 +41,9 @@ export function GalleryClient({ items }: GalleryClientProps) {
         setIsLoading(true);
         // Simulate network delay for the "loading" effect
         setTimeout(() => {
-          setVisibleCount((prev) => Math.min(prev + ITEMS_PER_PAGE, items.length));
+          setVisibleCount((prev) =>
+            Math.min(prev + ITEMS_PER_PAGE, items.length)
+          );
           setIsLoading(false);
         }, 800);
       }
@@ -87,7 +89,9 @@ export function GalleryClient({ items }: GalleryClientProps) {
   const showPrev = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex - 1 + displayedItems.length) % displayedItems.length);
+      setSelectedIndex(
+        (selectedIndex - 1 + displayedItems.length) % displayedItems.length
+      );
     }
   };
 
@@ -125,7 +129,7 @@ export function GalleryClient({ items }: GalleryClientProps) {
           return (
             <div
               key={item.id}
-              className={`group relative cursor-pointer overflow-hidden rounded-md animate-in fade-in zoom-in duration-500 fill-mode-both ${spanClasses}`}
+              className={`group animate-in fade-in zoom-in fill-mode-both relative cursor-pointer overflow-hidden rounded-md duration-500 ${spanClasses}`}
               style={{ animationDelay: `${(index % ITEMS_PER_PAGE) * 50}ms` }}
               onClick={() => openLightbox(index)}
             >
@@ -142,17 +146,19 @@ export function GalleryClient({ items }: GalleryClientProps) {
           );
         })}
       </div>
-      
+
       {/* Loading Trigger Element */}
       {hasMore && (
-        <div 
-          ref={loadingTriggerRef} 
+        <div
+          ref={loadingTriggerRef}
           className="mt-16 flex w-full justify-center pb-8"
         >
           {isLoading && (
-            <div className="flex flex-col items-center justify-center gap-2 text-foreground-soft animate-pulse">
+            <div className="text-foreground-soft flex animate-pulse flex-col items-center justify-center gap-2">
               <Loader2 className="h-6 w-6 animate-spin" />
-              <span className="text-xs uppercase tracking-widest font-medium">Memuat Galeri...</span>
+              <span className="text-xs font-medium tracking-widest uppercase">
+                Memuat Galeri...
+              </span>
             </div>
           )}
         </div>

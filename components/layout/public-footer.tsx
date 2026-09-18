@@ -8,10 +8,7 @@ export function PublicFooter() {
       <Container>
         <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-8">
           <div className="md:col-span-2">
-            <Link
-              href="/"
-              className="mb-6 inline-flex items-center gap-3"
-            >
+            <Link href="/" className="mb-6 inline-flex items-center gap-3">
               <Image
                 src="/images/khakim-interior.png"
                 alt="Khakim Interior Logo"

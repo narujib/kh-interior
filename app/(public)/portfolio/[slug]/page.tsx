@@ -11,8 +11,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { format } from "date-fns";
-import { id } from "date-fns/locale";
 
 export const dynamic = "force-dynamic";
 
@@ -70,25 +68,21 @@ export default async function ProjectDetailPage({
         clientName: "Hunian Pribadi",
         description:
           "Terletak di atas bukit yang landai, The Glass House adalah mahakarya dalam memadukan ruang interior dan eksterior. Tujuan desainnya adalah untuk menciptakan tempat perlindungan yang terasa sepenuhnya terhubung dengan alam sekitar sambil mempertahankan rasa keintiman yang mendalam. Kami menggunakan palet bahan terbatas seperti batu alam, kayu ek hangat, dan perunggu berpatina untuk menyeimbangkan dinding kaca yang luas. Setiap perabot dirancang khusus atau didapatkan dari penjual barang antik untuk memastikan estetika yang benar-benar unik, terasa tertata rapi sekaligus nyaman untuk ditinggali.",
-        coverImageUrl:
-          "/images/hero.jpeg",
+        coverImageUrl: "/images/hero.jpeg",
         images: [
           {
             id: "img1",
-            imageUrl:
-              "/images/workshop.jpg",
+            imageUrl: "/images/workshop.jpg",
             altText: "Pemandangan Ruang Keluarga",
           },
           {
             id: "img2",
-            imageUrl:
-              "/images/kitchenset.jpg",
+            imageUrl: "/images/kitchenset.jpg",
             altText: "Detail Dapur",
           },
           {
             id: "img3",
-            imageUrl:
-              "/images/wardrobe.jpg",
+            imageUrl: "/images/wardrobe.jpg",
             altText: "Kamar Tidur Utama",
           },
         ],

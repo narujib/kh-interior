@@ -123,9 +123,7 @@ export function MultiImageUpload({
         ) : (
           <div className="text-foreground-soft flex flex-col items-center">
             <UploadCloud className="mb-2 h-6 w-6" />
-            <p className="mb-1 text-sm font-medium">
-              Tambah Gambar Pendukung
-            </p>
+            <p className="mb-1 text-sm font-medium">Tambah Gambar Pendukung</p>
           </div>
         )}
       </div>

@@ -41,10 +41,7 @@ export function PublicNavbar() {
       >
         <Container className="flex items-center justify-between">
           {/* Logo */}
-          <Link
-            href="/"
-            className="relative z-50 flex items-center gap-3"
-          >
+          <Link href="/" className="relative z-50 flex items-center gap-3">
             <Image
               src="/images/khakim-interior.png"
               alt="Khakim Interior Logo"
@@ -67,7 +64,7 @@ export function PublicNavbar() {
                 href={link.href}
                 className={cn(
                   "relative py-1 text-sm font-medium tracking-wide uppercase transition-colors",
-                  "after:absolute after:bottom-0 after:left-0 after:h-[1px] after:bg-foreground after:transition-all after:duration-300",
+                  "after:bg-foreground after:absolute after:bottom-0 after:left-0 after:h-[1px] after:transition-all after:duration-300",
                   pathname === link.href
                     ? "text-foreground after:w-full"
                     : "text-foreground-soft hover:text-foreground after:w-0 hover:after:w-full"

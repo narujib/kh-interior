@@ -9,7 +9,7 @@ export const metadata = {
 
 export default async function SettingsPage() {
   const session = await getServerSession(authOptions);
-  
+
   return (
     <div className="space-y-12">
       <PageHeading

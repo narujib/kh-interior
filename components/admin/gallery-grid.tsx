@@ -31,7 +31,6 @@ export function GalleryGrid({ items }: GalleryGridProps) {
   const [isPending, startTransition] = useTransition();
 
   const handleDelete = async (id: string) => {
-
     setIsDeleting(id);
     try {
       await deleteGalleryItemAction(id);
@@ -71,8 +70,11 @@ export function GalleryGrid({ items }: GalleryGridProps) {
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
       {items.map((item, index) => (
-        <div key={item.id} className="border-border relative flex flex-col border bg-surface">
-          <div className="relative aspect-square border-b border-border">
+        <div
+          key={item.id}
+          className="border-border bg-surface relative flex flex-col border"
+        >
+          <div className="border-border relative aspect-square border-b">
             <Image
               src={item.imageUrl}
               alt={item.altText}
@@ -117,18 +119,23 @@ export function GalleryGrid({ items }: GalleryGridProps) {
                 )}
                 Hapus Item
               </AlertDialogTrigger>
-              <AlertDialogContent className="rounded-none border-border">
+              <AlertDialogContent className="border-border rounded-none">
                 <AlertDialogHeader>
-                  <AlertDialogTitle className="font-heading">Hapus Item Galeri</AlertDialogTitle>
+                  <AlertDialogTitle className="font-heading">
+                    Hapus Item Galeri
+                  </AlertDialogTitle>
                   <AlertDialogDescription>
-                    Apakah Anda yakin ingin menghapus item galeri ini? Tindakan ini tidak dapat dibatalkan.
+                    Apakah Anda yakin ingin menghapus item galeri ini? Tindakan
+                    ini tidak dapat dibatalkan.
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                  <AlertDialogCancel className="rounded-none">Batal</AlertDialogCancel>
+                  <AlertDialogCancel className="rounded-none">
+                    Batal
+                  </AlertDialogCancel>
                   <AlertDialogAction
                     onClick={() => handleDelete(item.id)}
-                    className="rounded-none bg-red-600 hover:bg-red-700 text-white"
+                    className="rounded-none bg-red-600 text-white hover:bg-red-700"
                     disabled={isDeleting === item.id}
                   >
                     {isDeleting === item.id ? (

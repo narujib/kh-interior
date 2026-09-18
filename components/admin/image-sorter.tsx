@@ -188,18 +188,23 @@ export function ImageSorter({ projectId, initialImages }: ImageSorterProps) {
                 >
                   <X className="h-5 w-5" />
                 </AlertDialogTrigger>
-                <AlertDialogContent className="rounded-none border-border">
+                <AlertDialogContent className="border-border rounded-none">
                   <AlertDialogHeader>
-                    <AlertDialogTitle className="font-heading">Hapus Gambar</AlertDialogTitle>
+                    <AlertDialogTitle className="font-heading">
+                      Hapus Gambar
+                    </AlertDialogTitle>
                     <AlertDialogDescription>
-                      Apakah Anda yakin ingin menghapus gambar ini? Tindakan ini tidak dapat dibatalkan.
+                      Apakah Anda yakin ingin menghapus gambar ini? Tindakan ini
+                      tidak dapat dibatalkan.
                     </AlertDialogDescription>
                   </AlertDialogHeader>
                   <AlertDialogFooter>
-                    <AlertDialogCancel className="rounded-none">Batal</AlertDialogCancel>
+                    <AlertDialogCancel className="rounded-none">
+                      Batal
+                    </AlertDialogCancel>
                     <AlertDialogAction
                       onClick={() => handleDeleteImage(image.id)}
-                      className="rounded-none bg-red-600 hover:bg-red-700 text-white"
+                      className="rounded-none bg-red-600 text-white hover:bg-red-700"
                       disabled={isUpdating}
                     >
                       {isUpdating ? (

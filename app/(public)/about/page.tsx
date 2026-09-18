@@ -50,30 +50,42 @@ export default function AboutPage() {
               <div className="text-foreground-soft mb-12 space-y-6 text-lg leading-relaxed font-light">
                 <FadeIn delay={0.2}>
                   <p>
-                    Berawal dari sebuah workshop kecil di Demak pada tahun 2015, Khakim Interior kini telah berkembang menjadi penyedia 
-                    jasa desain interior terpercaya untuk proyek hunian pribadi, apartemen mewah, hingga kantor skala menengah. 
-                    Kami bangga dengan pendekatan desain kami yang selalu memadukan estetika minimalis modern dengan 
-                    fungsionalitas ruang yang maksimal, menciptakan ruang yang tidak hanya memanjakan mata tetapi juga nyaman ditinggali.
+                    Berawal dari sebuah workshop kecil di Demak pada tahun 2015,
+                    Khakim Interior kini telah berkembang menjadi penyedia jasa
+                    desain interior terpercaya untuk proyek hunian pribadi,
+                    apartemen mewah, hingga kantor skala menengah. Kami bangga
+                    dengan pendekatan desain kami yang selalu memadukan estetika
+                    minimalis modern dengan fungsionalitas ruang yang maksimal,
+                    menciptakan ruang yang tidak hanya memanjakan mata tetapi
+                    juga nyaman ditinggali.
                   </p>
                 </FadeIn>
                 <FadeIn delay={0.3}>
                   <p>
-                    Kekuatan utama kami terletak pada tim in-house profesional yang solid. Khakim Interior didukung oleh 
-                    desainer interior yang kreatif, <em>drafter</em> teknis yang sangat presisi, operator CNC andal, 
-                    spesialis <em>finishing</em>, serta <em>installer</em> berpengalaman. Sinergi inilah yang memastikan 
-                    setiap detail rancangan dapat dieksekusi dengan sempurna di lapangan.
+                    Kekuatan utama kami terletak pada tim in-house profesional
+                    yang solid. Khakim Interior didukung oleh desainer interior
+                    yang kreatif, <em>drafter</em> teknis yang sangat presisi,
+                    operator CNC andal, spesialis <em>finishing</em>, serta{" "}
+                    <em>installer</em> berpengalaman. Sinergi inilah yang
+                    memastikan setiap detail rancangan dapat dieksekusi dengan
+                    sempurna di lapangan.
                   </p>
                 </FadeIn>
                 <FadeIn delay={0.4}>
                   <p>
-                    Berbeda dengan kebanyakan studio lainnya, seluruh tahap produksi furnitur kustom (<em>custom furniture</em>) 
-                    dilakukan secara langsung di <strong>workshop in-house</strong> kami sendiri. Dengan mesin potong presisi dan 
-                    penggunaan perangkat keras (<em>hardware</em>) premium dari merek-merek terpercaya, kami menjaga kontrol 
-                    kualitas yang sangat ketat.
+                    Berbeda dengan kebanyakan studio lainnya, seluruh tahap
+                    produksi furnitur kustom (<em>custom furniture</em>)
+                    dilakukan secara langsung di{" "}
+                    <strong>workshop in-house</strong> kami sendiri. Dengan
+                    mesin potong presisi dan penggunaan perangkat keras (
+                    <em>hardware</em>) premium dari merek-merek terpercaya, kami
+                    menjaga kontrol kualitas yang sangat ketat.
                   </p>
                   <p className="mt-6">
-                    Kami juga berkomitmen pada transparansi material; menyediakan <em>mockup finishing</em> beserta sampel material, 
-                    sehingga Anda dapat melihat, menyentuh, dan merasakan langsung kualitas premium yang kami tawarkan 
+                    Kami juga berkomitmen pada transparansi material;
+                    menyediakan <em>mockup finishing</em> beserta sampel
+                    material, sehingga Anda dapat melihat, menyentuh, dan
+                    merasakan langsung kualitas premium yang kami tawarkan
                     sebelum proses produksi massal dimulai.
                   </p>
                 </FadeIn>

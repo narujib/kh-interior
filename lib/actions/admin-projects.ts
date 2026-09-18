@@ -20,7 +20,7 @@ export async function createProjectAction(data: ProjectFormData) {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)+/g, "");
-    
+
   let finalSlug = baseSlug;
   let isUnique = false;
 
@@ -42,13 +42,16 @@ export async function createProjectAction(data: ProjectFormData) {
       description: parsed.description,
       clientName: parsed.clientName,
       coverImageUrl: parsed.coverImageUrl,
-      images: parsed.images && parsed.images.length > 0 ? {
-        create: parsed.images.map((url, index) => ({
-          imageUrl: url,
-          altText: `${parsed.title} - Image ${index + 1}`,
-          orderIndex: index,
-        })),
-      } : undefined,
+      images:
+        parsed.images && parsed.images.length > 0
+          ? {
+              create: parsed.images.map((url, index) => ({
+                imageUrl: url,
+                altText: `${parsed.title} - Image ${index + 1}`,
+                orderIndex: index,
+              })),
+            }
+          : undefined,
     },
   });
 

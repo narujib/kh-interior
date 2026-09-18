@@ -23,7 +23,9 @@ export function FloatingWhatsApp() {
 
   // Ganti dengan nomor asli klien
   const waNumber = "6281234567890";
-  const waMessage = encodeURIComponent("Halo Khakim Interior, saya tertarik untuk berkonsultasi mengenai desain interior.");
+  const waMessage = encodeURIComponent(
+    "Halo Khakim Interior, saya tertarik untuk berkonsultasi mengenai desain interior."
+  );
 
   return (
     <Link
@@ -31,8 +33,10 @@ export function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-500 hover:scale-110 hover:shadow-xl md:bottom-10 md:right-10",
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0 pointer-events-none"
+        "fixed right-6 bottom-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-500 hover:scale-110 hover:shadow-xl md:right-10 md:bottom-10",
+        isVisible
+          ? "translate-y-0 opacity-100"
+          : "pointer-events-none translate-y-16 opacity-0"
       )}
       aria-label="Chat via WhatsApp"
     >

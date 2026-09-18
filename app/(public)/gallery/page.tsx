@@ -22,43 +22,37 @@ export default async function GalleryPage() {
       : [
           {
             id: "1",
-            imageUrl:
-              "/images/hero.jpeg",
+            imageUrl: "/images/hero.jpeg",
             altText: "Detail Interior",
             orientation: "PORTRAIT" as const,
           },
           {
             id: "2",
-            imageUrl:
-              "/images/workshop.jpg",
+            imageUrl: "/images/workshop.jpg",
             altText: "Tekstur Material",
             orientation: "LANDSCAPE" as const,
           },
           {
             id: "3",
-            imageUrl:
-              "/images/kitchenset.jpg",
+            imageUrl: "/images/kitchenset.jpg",
             altText: "Ruang Keluarga",
             orientation: "PORTRAIT" as const,
           },
           {
             id: "4",
-            imageUrl:
-              "/images/wardrobe.jpg",
+            imageUrl: "/images/wardrobe.jpg",
             altText: "Desain Dapur",
             orientation: "LANDSCAPE" as const,
           },
           {
             id: "5",
-            imageUrl:
-              "/images/backdrop-living-room.jpg",
+            imageUrl: "/images/backdrop-living-room.jpg",
             altText: "Cahaya Alami",
             orientation: "LANDSCAPE" as const,
           },
           {
             id: "6",
-            imageUrl:
-              "/images/storage.jpg",
+            imageUrl: "/images/storage.jpg",
             altText: "Detail Kamar Tidur",
             orientation: "PORTRAIT" as const,
           },

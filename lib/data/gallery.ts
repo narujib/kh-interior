@@ -19,7 +19,8 @@ export const getGalleryItems = cache(async () => {
         imageUrl: p.coverImageUrl,
         altText: `Sampul: ${p.title}`,
         // We alternate orientations to make the masonry grid look dynamic
-        orientation: idx % 2 === 0 ? ("LANDSCAPE" as const) : ("PORTRAIT" as const),
+        orientation:
+          idx % 2 === 0 ? ("LANDSCAPE" as const) : ("PORTRAIT" as const),
         isFeatured: false,
         createdAt: p.createdAt,
       },
@@ -27,7 +28,8 @@ export const getGalleryItems = cache(async () => {
         id: `p-img-${img.id}`,
         imageUrl: img.imageUrl,
         altText: img.altText || p.title,
-        orientation: imgIdx % 2 !== 0 ? ("LANDSCAPE" as const) : ("PORTRAIT" as const),
+        orientation:
+          imgIdx % 2 !== 0 ? ("LANDSCAPE" as const) : ("PORTRAIT" as const),
         isFeatured: false,
         createdAt: p.createdAt,
       })),
