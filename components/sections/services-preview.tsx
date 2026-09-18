@@ -9,24 +9,24 @@ import { ArrowRight } from "lucide-react";
 
 const SERVICES = [
   {
-    title: "Desain Interior",
+    title: "Kitchenset Custom",
     description:
-      "Layanan desain interior menyeluruh untuk hunian dan ruang komersial butik, mulai dari konsep hingga penataan akhir.",
+      "Desain dan pembuatan kitchen set yang fungsional, estetis, dan disesuaikan secara presisi dengan kebutuhan memasak serta gaya interior Anda.",
   },
   {
-    title: "Perencanaan Ruang",
+    title: "Wardrobe Custom",
     description:
-      "Mengoptimalkan tata letak dan alur lingkungan Anda untuk memaksimalkan fungsionalitas dan harmoni estetika.",
+      "Solusi lemari pakaian kustom yang mengoptimalkan ruang penyimpanan dengan desain elegan, memaksimalkan tata letak ruangan Anda.",
   },
   {
-    title: "Furnitur Kustom",
+    title: "Backdrop TV & Living Room",
     description:
-      "Desain dan pembuatan furnitur khusus yang disesuaikan dengan dimensi dan gaya unik ruang Anda.",
+      "Pusat hiburan dan ruang keluarga yang dirancang khusus untuk menciptakan titik fokus yang menawan dan selaras dengan tema ruangan.",
   },
   {
-    title: "Konsultasi Renovasi",
+    title: "Meja & Storage Custom",
     description:
-      "Panduan ahli di sepanjang proses renovasi, memastikan integritas desain dan eksekusi berkualitas tinggi.",
+      "Pembuatan meja kerja, meja rias, dan berbagai solusi penyimpanan inovatif yang dirancang khusus mengikuti dimensi dan kebutuhan unik Anda.",
   },
 ];
 

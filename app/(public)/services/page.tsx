@@ -10,42 +10,55 @@ import Image from "next/image";
 
 const SERVICES = [
   {
-    title: "Desain Interior",
+    title: "Kitchenset Custom",
     description:
-      "Layanan desain interior menyeluruh untuk hunian dan ruang komersial butik, mulai dari konsep awal hingga penataan akhir. Kami bekerja erat dengan Anda untuk memahami gaya hidup, preferensi, dan karakteristik unik ruang Anda, menghasilkan desain kohesif yang menyeimbangkan bentuk dan fungsi dengan sempurna.",
+      "Dapur adalah jantung dari setiap rumah. Layanan kitchen set kustom kami berfokus pada perpaduan sempurna antara fungsionalitas dan estetika. Kami mendesain kabinet, area persiapan, hingga kompartemen penyimpanan spesifik yang sepenuhnya disesuaikan dengan kebiasaan memasak serta gaya interior keseluruhan rumah Anda.",
+    image:
+      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80",
+    features: [
+      "Optimalisasi Alur Memasak",
+      "Material Tahan Lama & Tahan Air",
+      "Pencahayaan Kabinet Terintegrasi",
+      "Sistem Penyimpanan Cerdas",
+    ],
+  },
+  {
+    title: "Wardrobe Custom",
+    description:
+      "Ciptakan area penyimpanan pakaian impian Anda dengan lemari (wardrobe) yang dirancang khusus. Mulai dari lemari tanam (built-in) hingga walk-in closet yang mewah, kami memastikan setiap potong pakaian, aksesori, dan sepatu Anda memiliki tempatnya sendiri dengan tampilan elegan yang tak lekang oleh waktu.",
+    image:
+      "https://images.unsplash.com/photo-1595526114101-23da94d77252?auto=format&fit=crop&q=80",
+    features: [
+      "Desain Walk-in Closet",
+      "Organisasi Ruang Fleksibel",
+      "Lemari Built-in Estetik",
+      "Pilihan Finishing Premium",
+    ],
+  },
+  {
+    title: "Backdrop TV & Living Room",
+    description:
+      "Ruang keluarga adalah pusat berkumpul dan bersantai. Kami merancang backdrop TV dan furnitur living room yang tidak hanya menyembunyikan kabel secara rapi, tetapi juga menciptakan titik fokus ruangan yang memukau, hangat, dan selaras dengan tema keseluruhan interior Anda.",
     image:
       "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
     features: [
-      "Pengembangan Konsep",
-      "Pemilihan Material",
-      "Desain Furnitur Kayu Kustom",
-      "Penataan & Aksesori",
+      "Manajemen Kabel Tersembunyi",
+      "Integrasi Rak Pajangan",
+      "Kombinasi Tekstur Kayu & Batu",
+      "Pencahayaan Aksen Sekitar TV",
     ],
   },
   {
-    title: "Perencanaan Ruang",
+    title: "Meja & Storage Custom",
     description:
-      "Ruang yang didesain dengan baik harus direncanakan dengan baik pula. Kami menganalisis cara Anda menggunakan lingkungan dan menciptakan tata letak optimal yang meningkatkan alur, memaksimalkan luas ruang yang dapat digunakan, serta menyempurnakan pengalaman spasial secara keseluruhan tanpa mengorbankan estetika.",
-    image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80",
-    features: [
-      "Optimasi Denah Lantai",
-      "Analisis Alur Lalu Lintas Ruang",
-      "Tata Letak Furnitur",
-      "Ergonomi Spasial",
-    ],
-  },
-  {
-    title: "Furnitur Kustom",
-    description:
-      "Ketika produk siap pakai tidak memenuhi standar tinggi Anda, layanan furnitur kustom kami memberikan solusi khusus. Kami merancang dan mengawasi pembuatan karya unik yang disesuaikan secara khusus dengan dimensi, gaya, dan kebutuhan fungsional proyek Anda.",
+      "Ketika produk siap pakai tidak memenuhi standar atau ukuran ruang Anda, meja kerja, meja rias, dan solusi penyimpanan kustom adalah jawabannya. Kami membuat furnitur yang presisi sesuai dengan proporsi ruangan Anda, menghadirkan estetika premium tanpa mengorbankan utilitas.",
     image:
       "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80",
     features: [
-      "Kabinet Khusus",
-      "Pelapis Furnitur Kustom",
-      "Meja Makan & Kopi Unik",
-      "Solusi Penyimpanan Bawaan",
+      "Meja Kerja Ergonomis",
+      "Meja Rias & Konsol Unik",
+      "Solusi Penyimpanan Bawah Tangga",
+      "Rak Buku Kustom",
     ],
   },
 ];
