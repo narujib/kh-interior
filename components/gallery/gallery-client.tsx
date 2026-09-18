@@ -95,7 +95,10 @@ export function GalleryClient({ items }: GalleryClientProps) {
         open={selectedIndex !== null}
         onOpenChange={(open) => !open && closeLightbox()}
       >
-        <DialogContent className="flex h-screen max-w-[100vw] flex-col items-center justify-center border-none bg-black/95 p-0 shadow-none">
+        <DialogContent
+          showCloseButton={false}
+          className="flex h-[100dvh] w-full max-w-full flex-col items-center justify-center border-none bg-transparent p-0 shadow-none sm:max-w-full md:max-w-full"
+        >
           <VisuallyHidden>
             <DialogTitle>Image Lightbox</DialogTitle>
             <DialogDescription>View high resolution image</DialogDescription>
