@@ -30,7 +30,7 @@ export default function AboutPage() {
             <div className="relative h-[50vh] min-h-[400px] lg:col-span-5 lg:h-auto lg:min-h-[700px]">
               <ImageReveal className="h-full w-full">
                 <Image
-                  src="https://images.unsplash.com/photo-1600607688969-a5bfcd64bd28?auto=format&fit=crop&q=80"
+                  src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80"
                   alt="Khakim Interior Studio Details"
                   fill
                   priority

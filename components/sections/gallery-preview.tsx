@@ -67,7 +67,7 @@ export function GalleryPreview() {
               className={`group relative overflow-hidden ${
                 item.orientation === "PORTRAIT"
                   ? "col-span-2 aspect-[3/4] md:col-span-1"
-                  : "col-span-2 aspect-[4/3] md:col-span-2 md:aspect-auto"
+                  : "col-span-2 aspect-[4/3] md:col-span-2"
               }`}
             >
               <Image

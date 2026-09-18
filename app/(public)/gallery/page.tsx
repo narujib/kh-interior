@@ -44,21 +44,21 @@ export default async function GalleryPage() {
           {
             id: "4",
             imageUrl:
-              "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&q=80",
+              "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
             altText: "Desain Dapur",
             orientation: "LANDSCAPE" as const,
           },
           {
             id: "5",
             imageUrl:
-              "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80",
+              "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
             altText: "Cahaya Alami",
             orientation: "LANDSCAPE" as const,
           },
           {
             id: "6",
             imageUrl:
-              "https://images.unsplash.com/photo-1600566752229-250de485458f?auto=format&fit=crop&q=80",
+              "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
             altText: "Detail Kamar Tidur",
             orientation: "PORTRAIT" as const,
           },

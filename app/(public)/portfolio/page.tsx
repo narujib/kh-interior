@@ -48,7 +48,7 @@ export default async function PortfolioPage() {
             slug: "urban-retreat",
             clientName: "Klien Pribadi",
             coverImageUrl:
-              "https://images.unsplash.com/photo-1600607687644-aac4c15a819c?auto=format&fit=crop&q=80",
+              "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
           },
           {
             id: "4",
@@ -56,7 +56,7 @@ export default async function PortfolioPage() {
             slug: "heritage-restoration",
             clientName: "Cagar Budaya",
             coverImageUrl:
-              "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&q=80",
+              "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
           },
           {
             id: "5",
@@ -72,7 +72,7 @@ export default async function PortfolioPage() {
             slug: "coastal-villa",
             clientName: "Rumah Peristirahatan Musim Panas",
             coverImageUrl:
-              "https://images.unsplash.com/photo-1600566753086-00f18efc2291?auto=format&fit=crop&q=80",
+              "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
           },
         ];
 

@@ -40,7 +40,7 @@ export function ImageReveal({
           ease: [0.33, 1, 0.68, 1],
           delay,
         }}
-        className="h-full w-full"
+        className="relative h-full w-full"
       >
         {children}
       </motion.div>

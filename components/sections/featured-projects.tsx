@@ -32,7 +32,7 @@ const MOCK_PROJECTS = [
     slug: "urban-retreat",
     clientName: "Private Client",
     coverImageUrl:
-      "https://images.unsplash.com/photo-1600607687644-aac4c15a819c?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
   },
   {
     id: "4",
@@ -40,7 +40,7 @@ const MOCK_PROJECTS = [
     slug: "heritage-restoration",
     clientName: "Cultural Trust",
     coverImageUrl:
-      "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
   },
 ];
 

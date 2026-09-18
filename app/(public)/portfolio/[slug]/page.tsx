@@ -84,7 +84,7 @@ export default async function ProjectDetailPage({
           {
             id: "img2",
             imageUrl:
-              "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80",
+              "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&q=80",
             altText: "Detail Dapur",
           },
           {
