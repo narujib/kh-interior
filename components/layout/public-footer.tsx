@@ -18,6 +18,7 @@ export function PublicFooter() {
                 width={160}
                 height={40}
                 className="h-8 w-auto md:h-10 opacity-80 transition-opacity hover:opacity-100"
+                style={{ width: "auto" }}
               />
             </Link>
             <p className="text-foreground-soft max-w-sm font-light">

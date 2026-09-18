@@ -48,6 +48,7 @@ export function AdminSidebar({ isOpen, setIsOpen }: AdminSidebarProps) {
             width={120}
             height={30}
             className="h-6 w-auto"
+            style={{ width: "auto" }}
             priority
           />
         </Link>

@@ -58,6 +58,7 @@ export function MobileMenu({ isOpen, setIsOpen }: MobileMenuProps) {
                 width={160}
                 height={40}
                 className="h-8 w-auto"
+                style={{ width: "auto" }}
                 priority
               />
             </Link>

@@ -51,6 +51,7 @@ export function PublicNavbar() {
               width={160}
               height={40}
               className="h-8 w-auto md:h-10"
+              style={{ width: "auto" }}
               priority
             />
           </Link>
