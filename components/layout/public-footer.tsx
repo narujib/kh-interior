@@ -74,7 +74,7 @@ export function PublicFooter() {
             <ul className="text-foreground-soft space-y-4 font-light">
               <li>
                 <a
-                  href="https://instagram.com"
+                  href="https://instagram.com/khakiminterior"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-foreground transition-colors"
@@ -84,12 +84,22 @@ export function PublicFooter() {
               </li>
               <li>
                 <a
-                  href="https://pinterest.com"
+                  href="https://tiktok.com/@khakiminterior"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-foreground transition-colors"
                 >
-                  Pinterest
+                  TikTok
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://facebook.com/khakiminterior"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Facebook
                 </a>
               </li>
               <li>
