@@ -59,7 +59,6 @@ export default async function ProjectDetailPage({
         id: string;
         title: string;
         clientName: string;
-        completionDate: Date;
         description: string;
         coverImageUrl: string;
         images: Array<{ id: string; imageUrl: string; altText: string }>;
@@ -69,7 +68,6 @@ export default async function ProjectDetailPage({
         id: "1",
         title: "Rumah Kaca",
         clientName: "Hunian Pribadi",
-        completionDate: new Date("2025-10-15"),
         description:
           "Terletak di atas bukit yang landai, The Glass House adalah mahakarya dalam memadukan ruang interior dan eksterior. Tujuan desainnya adalah untuk menciptakan tempat perlindungan yang terasa sepenuhnya terhubung dengan alam sekitar sambil mempertahankan rasa keintiman yang mendalam. Kami menggunakan palet bahan terbatas seperti batu alam, kayu ek hangat, dan perunggu berpatina untuk menyeimbangkan dinding kaca yang luas. Setiap perabot dirancang khusus atau didapatkan dari penjual barang antik untuk memastikan estetika yang benar-benar unik, terasa tertata rapi sekaligus nyaman untuk ditinggali.",
         coverImageUrl:
@@ -162,18 +160,6 @@ export default async function ProjectDetailPage({
                   </p>
                   <p className="text-foreground font-medium">
                     {displayProject.clientName}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-foreground-soft mb-1 text-xs tracking-widest uppercase">
-                    Selesai
-                  </p>
-                  <p className="text-foreground font-medium">
-                    {format(
-                      new Date(displayProject.completionDate),
-                      "MMMM yyyy",
-                      { locale: id }
-                    )}
                   </p>
                 </div>
               </FadeIn>

@@ -10,31 +10,26 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { ImageUpload } from "@/components/admin/image-upload";
+import { MultiImageUpload } from "@/components/admin/multi-image-upload";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 
 interface ProjectFormProps {
-  initialData?: ProjectFormData & { id?: string };
+  initialData?: ProjectFormData & { id?: string; images?: string[] };
   onSubmit: (data: ProjectFormData) => Promise<void>;
 }
 
 export function ProjectForm({ initialData, onSubmit }: ProjectFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Helper to format date for date input (YYYY-MM-DD)
-  const defaultDate = initialData?.completionDate
-    ? new Date(initialData.completionDate).toISOString().split("T")[0]
-    : new Date().toISOString().split("T")[0];
-
   const form = useForm<ProjectFormData>({
     resolver: zodResolver(projectSchema),
     defaultValues: {
       title: initialData?.title || "",
-      slug: initialData?.slug || "",
       description: initialData?.description || "",
       clientName: initialData?.clientName || "",
-      completionDate: defaultDate,
       coverImageUrl: initialData?.coverImageUrl || "",
+      images: initialData?.images || [],
     },
   });
 
@@ -51,57 +46,19 @@ export function ProjectForm({ initialData, onSubmit }: ProjectFormProps) {
     }
   };
 
-  // Auto-generate slug from title
-  const generateSlug = () => {
-    const title = form.getValues("title");
-    if (title) {
-      const slug = title
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/(^-|-$)+/g, "");
-      form.setValue("slug", slug, { shouldValidate: true });
-    }
-  };
-
   return (
     <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-8">
       <div className="grid gap-6 md:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="title">Judul Proyek</Label>
-          <div className="flex gap-2">
-            <Input
-              id="title"
-              {...form.register("title")}
-              className="border-border flex-1 rounded-none"
-            />
-          </div>
+          <Input
+            id="title"
+            {...form.register("title")}
+            className="border-border rounded-none"
+          />
           {form.formState.errors.title && (
             <p className="text-sm text-red-500">
               {form.formState.errors.title.message}
-            </p>
-          )}
-        </div>
-
-        <div className="space-y-2">
-          <Label htmlFor="slug">Slug</Label>
-          <div className="flex gap-2">
-            <Input
-              id="slug"
-              {...form.register("slug")}
-              className="border-border flex-1 rounded-none"
-            />
-            <Button
-              type="button"
-              variant="outline"
-              onClick={generateSlug}
-              className="border-border rounded-none"
-            >
-              Buat
-            </Button>
-          </div>
-          {form.formState.errors.slug && (
-            <p className="text-sm text-red-500">
-              {form.formState.errors.slug.message}
             </p>
           )}
         </div>
@@ -116,21 +73,6 @@ export function ProjectForm({ initialData, onSubmit }: ProjectFormProps) {
           {form.formState.errors.clientName && (
             <p className="text-sm text-red-500">
               {form.formState.errors.clientName.message}
-            </p>
-          )}
-        </div>
-
-        <div className="space-y-2">
-          <Label htmlFor="completionDate">Tanggal Selesai</Label>
-          <Input
-            id="completionDate"
-            type="date"
-            {...form.register("completionDate")}
-            className="border-border rounded-none"
-          />
-          {form.formState.errors.completionDate && (
-            <p className="text-sm text-red-500">
-              {form.formState.errors.completionDate.message}
             </p>
           )}
         </div>
@@ -150,20 +92,31 @@ export function ProjectForm({ initialData, onSubmit }: ProjectFormProps) {
         )}
       </div>
 
-      <div className="space-y-2">
-        <Label>Gambar Sampul</Label>
-        <ImageUpload
-          folder="custom-interior/projects/covers"
-          value={form.watch("coverImageUrl")}
-          onChange={(url) =>
-            form.setValue("coverImageUrl", url, { shouldValidate: true })
-          }
-        />
-        {form.formState.errors.coverImageUrl && (
-          <p className="text-sm text-red-500">
-            {form.formState.errors.coverImageUrl.message}
-          </p>
-        )}
+      <div className="grid gap-8 md:grid-cols-12">
+        <div className="space-y-2 md:col-span-5">
+          <Label>Gambar Sampul (Wajib)</Label>
+          <ImageUpload
+            folder="custom-interior/projects/covers"
+            value={form.watch("coverImageUrl")}
+            onChange={(url) =>
+              form.setValue("coverImageUrl", url, { shouldValidate: true })
+            }
+          />
+          {form.formState.errors.coverImageUrl && (
+            <p className="text-sm text-red-500">
+              {form.formState.errors.coverImageUrl.message}
+            </p>
+          )}
+        </div>
+
+        <div className="space-y-2 md:col-span-7">
+          <Label>Gambar Galeri / Pendukung (Opsional)</Label>
+          <MultiImageUpload
+            folder="custom-interior/projects/gallery"
+            value={form.watch("images") || []}
+            onChange={(urls) => form.setValue("images", urls)}
+          />
+        </div>
       </div>
 
       <Button

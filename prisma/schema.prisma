@@ -14,13 +14,13 @@ model Project {
   description    String         @db.Text
   coverImageUrl  String
   clientName     String
-  completionDate DateTime
+  isFeatured     Boolean        @default(false)
   createdAt      DateTime       @default(now())
   updatedAt      DateTime       @updatedAt
 
   images ProjectImage[]
 
-  @@index([completionDate])
+  @@index([isFeatured])
   @@index([createdAt])
 }
 

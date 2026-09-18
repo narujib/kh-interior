@@ -22,7 +22,7 @@ type ProjectSummary = {
   title: string;
   slug: string;
   clientName: string;
-  completionDate: Date;
+  isFeatured: boolean;
 };
 
 interface ProjectTableProps {
@@ -32,6 +32,7 @@ interface ProjectTableProps {
 export function ProjectTable({ projects }: ProjectTableProps) {
   const router = useRouter();
   const [isDeleting, setIsDeleting] = useState<string | null>(null);
+  const [isToggling, setIsToggling] = useState<string | null>(null);
 
   const handleDelete = async (id: string) => {
     if (
@@ -55,6 +56,31 @@ export function ProjectTable({ projects }: ProjectTableProps) {
       toast.error("Gagal menghapus proyek");
     } finally {
       setIsDeleting(null);
+    }
+  };
+
+  const handleToggleFeatured = async (id: string, isCurrentlyFeatured: boolean) => {
+    setIsToggling(id);
+    try {
+      const res = await fetch(`/api/admin/projects/${id}/featured`, {
+        method: "PATCH",
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Gagal mengubah status");
+      }
+
+      toast.success(
+        isCurrentlyFeatured
+          ? "Proyek dihapus dari Beranda"
+          : "Proyek ditampilkan di Beranda"
+      );
+      router.refresh();
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Gagal mengubah status");
+    } finally {
+      setIsToggling(null);
     }
   };
 
@@ -85,9 +111,6 @@ export function ProjectTable({ projects }: ProjectTableProps) {
             <TableHead className="font-heading text-foreground-soft text-xs tracking-widest uppercase">
               Klien
             </TableHead>
-            <TableHead className="font-heading text-foreground-soft text-xs tracking-widest uppercase">
-              Tanggal Selesai
-            </TableHead>
             <TableHead className="font-heading text-foreground-soft text-right text-xs tracking-widest uppercase">
               Aksi
             </TableHead>
@@ -98,12 +121,21 @@ export function ProjectTable({ projects }: ProjectTableProps) {
             <TableRow key={project.id}>
               <TableCell className="font-medium">{project.title}</TableCell>
               <TableCell>{project.clientName}</TableCell>
-              <TableCell>
-                {format(new Date(project.completionDate), "MMM yyyy", {
-                  locale: id,
-                })}
-              </TableCell>
               <TableCell className="space-x-2 text-right">
+                <Button
+                  variant={project.isFeatured ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => handleToggleFeatured(project.id, project.isFeatured)}
+                  disabled={isToggling === project.id}
+                  className={`border-border h-8 rounded-none px-3 text-xs tracking-widest uppercase ${
+                    project.isFeatured ? "bg-foreground text-white-soft hover:bg-foreground-soft" : ""
+                  }`}
+                >
+                  {isToggling === project.id ? (
+                    <Loader2 className="mr-2 h-3 w-3 animate-spin" />
+                  ) : null}
+                  {project.isFeatured ? "Beranda" : "Set Beranda"}
+                </Button>
                 <Link
                   href={`/admin/portfolio/${project.id}/edit`}
                   className={buttonVariants({

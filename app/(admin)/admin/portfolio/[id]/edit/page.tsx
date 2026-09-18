@@ -39,6 +39,11 @@ export default async function EditProjectPage({
   // Pre-bind the action with the project ID
   const updateAction = updateProjectAction.bind(null, project.id);
 
+  const initialData = {
+    ...project,
+    images: project.images.map((img) => img.imageUrl),
+  };
+
   return (
     <div className="animate-fade-in space-y-12">
       <div className="flex flex-col gap-1">
@@ -52,7 +57,7 @@ export default async function EditProjectPage({
         <h3 className="font-heading mb-6 text-xl font-medium">
           Informasi Dasar
         </h3>
-        <ProjectForm initialData={project} onSubmit={updateAction} />
+        <ProjectForm initialData={initialData} onSubmit={updateAction} />
       </div>
 
       <div className="bg-surface-muted border-border border p-6">
