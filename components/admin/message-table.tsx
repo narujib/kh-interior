@@ -158,16 +158,18 @@ export function MessageTable({ messages }: MessageTableProps) {
                 <TableCell className="text-right">
                   <div onClick={(e) => e.stopPropagation()}>
                     <AlertDialog>
-                      <AlertDialogTrigger asChild>
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          disabled={isUpdating === msg.id}
-                          className="h-8 w-8 text-red-500 hover:bg-red-50 hover:text-red-600"
-                        >
-                          <Trash2 className="h-4 w-4" />
-                          <span className="sr-only">Hapus</span>
-                        </Button>
+                      <AlertDialogTrigger
+                        render={
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            disabled={isUpdating === msg.id}
+                            className="h-8 w-8 text-red-500 hover:bg-red-50 hover:text-red-600"
+                          />
+                        }
+                      >
+                        <Trash2 className="h-4 w-4" />
+                        <span className="sr-only">Hapus</span>
                       </AlertDialogTrigger>
                       <AlertDialogContent className="rounded-none border-border">
                         <AlertDialogHeader>
@@ -256,19 +258,21 @@ export function MessageTable({ messages }: MessageTableProps) {
                 </Button>
 
                 <AlertDialog>
-                  <AlertDialogTrigger asChild>
-                    <Button
-                      variant="destructive"
-                      className="rounded-none"
-                      disabled={isUpdating === selectedMessage.id}
-                    >
-                      {isUpdating === selectedMessage.id ? (
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      ) : (
-                        <Trash2 className="mr-2 h-4 w-4" />
-                      )}
-                      Hapus
-                    </Button>
+                  <AlertDialogTrigger
+                    render={
+                      <Button
+                        variant="destructive"
+                        className="rounded-none"
+                        disabled={isUpdating === selectedMessage.id}
+                      />
+                    }
+                  >
+                    {isUpdating === selectedMessage.id ? (
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    ) : (
+                      <Trash2 className="mr-2 h-4 w-4" />
+                    )}
+                    Hapus
                   </AlertDialogTrigger>
                   <AlertDialogContent className="rounded-none border-border">
                     <AlertDialogHeader>

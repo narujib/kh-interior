@@ -166,6 +166,7 @@ export function ImageSorter({ projectId, initialImages }: ImageSorterProps) {
               src={image.imageUrl}
               alt={image.altText || "Gambar proyek"}
               fill
+              sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
               className="object-cover"
             />
 
@@ -177,13 +178,15 @@ export function ImageSorter({ projectId, initialImages }: ImageSorterProps) {
                 <GripVertical className="h-5 w-5" />
               </button>
               <AlertDialog>
-                <AlertDialogTrigger asChild>
-                  <button
-                    type="button"
-                    className="rounded bg-red-500/80 p-2 text-white backdrop-blur-sm transition-colors hover:bg-red-500"
-                  >
-                    <X className="h-5 w-5" />
-                  </button>
+                <AlertDialogTrigger
+                  render={
+                    <button
+                      type="button"
+                      className="rounded bg-red-500/80 p-2 text-white backdrop-blur-sm transition-colors hover:bg-red-500"
+                    />
+                  }
+                >
+                  <X className="h-5 w-5" />
                 </AlertDialogTrigger>
                 <AlertDialogContent className="rounded-none border-border">
                   <AlertDialogHeader>

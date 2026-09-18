@@ -77,6 +77,7 @@ export function GalleryGrid({ items }: GalleryGridProps) {
               src={item.imageUrl}
               alt={item.altText}
               fill
+              sizes="(max-width: 768px) 50vw, 33vw"
               priority={index <= 4}
               className="object-cover"
             />
@@ -99,20 +100,22 @@ export function GalleryGrid({ items }: GalleryGridProps) {
               {item.isFeatured ? "Hapus dari Beranda" : "Tampilkan di Beranda"}
             </Button>
             <AlertDialog>
-              <AlertDialogTrigger asChild>
-                <Button
-                  variant="destructive"
-                  size="sm"
-                  disabled={isDeleting === item.id || isPending}
-                  className="w-full rounded text-xs"
-                >
-                  {isDeleting === item.id ? (
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  ) : (
-                    <Trash2 className="mr-2 h-4 w-4" />
-                  )}
-                  Hapus Item
-                </Button>
+              <AlertDialogTrigger
+                render={
+                  <Button
+                    variant="destructive"
+                    size="sm"
+                    disabled={isDeleting === item.id || isPending}
+                    className="w-full rounded text-xs"
+                  />
+                }
+              >
+                {isDeleting === item.id ? (
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                ) : (
+                  <Trash2 className="mr-2 h-4 w-4" />
+                )}
+                Hapus Item
               </AlertDialogTrigger>
               <AlertDialogContent className="rounded-none border-border">
                 <AlertDialogHeader>

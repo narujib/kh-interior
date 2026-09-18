@@ -153,20 +153,22 @@ export function ProjectTable({ projects }: ProjectTableProps) {
                   <span className="sr-only">Edit</span>
                 </Link>
                 <AlertDialog>
-                  <AlertDialogTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      disabled={isDeleting === project.id}
-                      className="border-border h-8 w-8 rounded-none text-red-500 hover:bg-red-50 hover:text-red-600"
-                    >
-                      {isDeleting === project.id ? (
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                      ) : (
-                        <Trash2 className="h-4 w-4" />
-                      )}
-                      <span className="sr-only">Hapus</span>
-                    </Button>
+                  <AlertDialogTrigger
+                    render={
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        disabled={isDeleting === project.id}
+                        className="border-border h-8 w-8 rounded-none text-red-500 hover:bg-red-50 hover:text-red-600"
+                      />
+                    }
+                  >
+                    {isDeleting === project.id ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : (
+                      <Trash2 className="h-4 w-4" />
+                    )}
+                    <span className="sr-only">Hapus</span>
                   </AlertDialogTrigger>
                   <AlertDialogContent className="rounded-none border-border">
                     <AlertDialogHeader>
