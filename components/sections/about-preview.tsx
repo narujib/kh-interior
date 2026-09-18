@@ -27,31 +27,29 @@ export function AboutPreview() {
 
             <FadeIn delay={0.4} direction="left" className="space-y-6">
               <h3 className="font-heading text-2xl font-medium md:text-3xl">
-                Filosofi Kami
+                Jasa Desain Interior & Furnitur Custom Sejak 2015
               </h3>
               <p className="text-foreground-soft leading-relaxed">
-                Kami percaya bahwa kemewahan sejati terletak pada kualitas
-                perhatian terhadap setiap detail. Desain kami tidak berteriak;
-                melainkan berbisik. Kami menciptakan ruang yang terasa begitu
-                pas—di mana setiap elemen memiliki tujuan dan setiap material
-                dipilih dengan niat yang jelas.
+                Berawal dari sebuah workshop kecil di Demak, Khakim Interior
+                kini berkembang menjadi penyedia jasa desain interior terpercaya
+                untuk hunian pribadi, apartemen, hingga kantor skala menengah. Kami 
+                selalu memadukan estetika minimalis modern dengan fungsionalitas ruang yang maksimal.
               </p>
             </FadeIn>
 
             <FadeIn delay={0.2}>
               <div className="text-foreground-soft mb-12 space-y-6 text-lg leading-relaxed font-light">
                 <p>
-                  Di Khakim Interior, kami percaya bahwa kemewahan sejati
-                  terletak pada kesederhanaan, kesengajaan, dan perhatian yang
-                  tak tergoyahkan terhadap detail. Ruang-ruang kami dirancang
-                  untuk membangkitkan rasa tenang, memberikan tempat
-                  perlindungan dari kebisingan dunia luar.
+                  Didukung oleh tim in-house profesional—mulai dari desainer interior, 
+                  <em>drafter</em> teknis, operator CNC, hingga spesialis <em>finishing</em> dan 
+                  <em>installer</em> berpengalaman—kami memastikan setiap detail proyek interior 
+                  Anda tereksekusi dengan presisi yang sempurna.
                 </p>
                 <p>
-                  Melalui kurasi cermat terhadap material alami, tekstur yang
-                  halus, serta pencahayaan yang mahir, kami merancang lingkungan
-                  yang tidak hanya memukau secara visual, tetapi juga
-                  beresonansi mendalam dengan mereka yang menghuninya.
+                  Seluruh produksi furnitur kustom (<em>custom furniture</em>) dilakukan di <strong>workshop in-house</strong> kami 
+                  sendiri menggunakan mesin canggih dan perangkat keras (<em>hardware</em>) premium dari merek terpercaya. 
+                  Dengan sistem kontrol kualitas yang ketat, kami juga selalu menyediakan 
+                  <em>mockup finishing</em> dan sampel material langsung agar Anda dapat merasakan kemewahan dari material yang kami gunakan.
                 </p>
               </div>
             </FadeIn>

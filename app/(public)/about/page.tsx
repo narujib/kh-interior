@@ -17,8 +17,8 @@ export default function AboutPage() {
       <div className="bg-background pt-32 pb-24 md:pt-48 md:pb-32">
         <Container>
           <PageHeading
-            title="Studio Kami"
-            subtitle="Menciptakan ruang yang melampaui tren sesaat, berfokus pada material, cahaya, dan proporsi."
+            title="Cerita Kami"
+            subtitle="Berawal dari sebuah workshop kecil di Demak pada tahun 2015, berkembang menjadi studio desain interior terpercaya yang mengutamakan kualitas, fungsi, dan presisi."
             align="left"
           />
         </Container>
@@ -43,36 +43,38 @@ export default function AboutPage() {
             <div className="flex flex-col justify-center lg:col-span-6 lg:col-start-7">
               <FadeIn delay={0.1}>
                 <h2 className="font-heading mb-8 text-3xl leading-[1.1] md:text-5xl">
-                  Filosofi Desain
+                  Jasa Desain Interior & Custom Furniture
                 </h2>
               </FadeIn>
 
               <div className="text-foreground-soft mb-12 space-y-6 text-lg leading-relaxed font-light">
                 <FadeIn delay={0.2}>
                   <p>
-                    Dibangun di atas prinsip kemewahan yang tenang dan desain
-                    yang bertujuan, Khakim Interior adalah studio butik yang
-                    berspesialisasi dalam ruang hunian dan komersial kelas atas.
-                    Kami percaya bahwa kemewahan sejati tidak ditentukan oleh
-                    kemegahan yang berlebihan, melainkan oleh kurasi cermat
-                    terhadap material, cahaya, dan bentuk.
+                    Berawal dari sebuah workshop kecil di Demak pada tahun 2015, Khakim Interior kini telah berkembang menjadi penyedia 
+                    jasa desain interior terpercaya untuk proyek hunian pribadi, apartemen mewah, hingga kantor skala menengah. 
+                    Kami bangga dengan pendekatan desain kami yang selalu memadukan estetika minimalis modern dengan 
+                    fungsionalitas ruang yang maksimal, menciptakan ruang yang tidak hanya memanjakan mata tetapi juga nyaman ditinggali.
                   </p>
                 </FadeIn>
                 <FadeIn delay={0.3}>
                   <p>
-                    Pendekatan kami sangat berdasar pada konteks. Sebelum kami
-                    menarik satu garis pun atau memilih material, kami berusaha
-                    untuk memahami secara mendalam arsitektur ruang, nuansa
-                    cahaya alami sepanjang hari, dan yang terpenting, gaya hidup
-                    serta visi dari klien kami.
+                    Kekuatan utama kami terletak pada tim in-house profesional yang solid. Khakim Interior didukung oleh 
+                    desainer interior yang kreatif, <em>drafter</em> teknis yang sangat presisi, operator CNC andal, 
+                    spesialis <em>finishing</em>, serta <em>installer</em> berpengalaman. Sinergi inilah yang memastikan 
+                    setiap detail rancangan dapat dieksekusi dengan sempurna di lapangan.
                   </p>
                 </FadeIn>
                 <FadeIn delay={0.4}>
                   <p>
-                    Kami bertindak sebagai desainer sekaligus editor—menyaring
-                    elemen ruang hingga ke bagian yang paling esensial untuk
-                    menciptakan lingkungan yang terasa tenang, canggih, dan
-                    elegan tanpa lekang oleh waktu.
+                    Berbeda dengan kebanyakan studio lainnya, seluruh tahap produksi furnitur kustom (<em>custom furniture</em>) 
+                    dilakukan secara langsung di <strong>workshop in-house</strong> kami sendiri. Dengan mesin potong presisi dan 
+                    penggunaan perangkat keras (<em>hardware</em>) premium dari merek-merek terpercaya, kami menjaga kontrol 
+                    kualitas yang sangat ketat.
+                  </p>
+                  <p className="mt-6">
+                    Kami juga berkomitmen pada transparansi material; menyediakan <em>mockup finishing</em> beserta sampel material, 
+                    sehingga Anda dapat melihat, menyentuh, dan merasakan langsung kualitas premium yang kami tawarkan 
+                    sebelum proses produksi massal dimulai.
                   </p>
                 </FadeIn>
               </div>
@@ -81,7 +83,7 @@ export default function AboutPage() {
                 <div className="border-border grid grid-cols-2 gap-8 border-t pt-8">
                   <div>
                     <h3 className="font-heading text-foreground mb-2 text-3xl md:text-4xl">
-                      15+
+                      10+
                     </h3>
                     <p className="text-foreground-soft text-xs tracking-widest uppercase">
                       Tahun Pengalaman
